@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
@@ -8,80 +8,88 @@
 
   <!-- Symbolická ochrana -->
   <script>
-  const správnéHeslo = "rikitest";
-
-  if (localStorage.getItem("pristup_dev") !== "ok") {
-    const zadané = prompt("Zadej přístupové heslo:");
-    if (zadané === správnéHeslo) {
-      localStorage.setItem("pristup_dev", "ok");
-    } else {
-      document.body.innerHTML = "<h2>Přístup zamítnut.</h2>";
+    const správnéHeslo = "rikitest";
+    if (localStorage.getItem("pristup_dev") !== "ok") {
+      const zadané = prompt("Zadej přístupové heslo:");
+      if (zadané === správnéHeslo) {
+        localStorage.setItem("pristup_dev", "ok");
+      } else {
+        document.body.innerHTML = "<h2>Přístup zamítnut.</h2>";
+      }
     }
-  }
-</script>
+  </script>
 </head>
 <body>
- <div class="topbar">
-  <div class="left-group">
-    <button class="menu-button" onclick="toggleSidebar()">☰</button>
-    <a href="/" class="logo">rikishivava.org</a>
+
+  <!-- Horní lišta -->
+  <div class="topbar">
+    <div class="left-group">
+      <button class="menu-button" onclick="toggleSidebar()">☰</button>
+      <a href="/" class="logo">rikishivava.org</a>
+    </div>
+    <div class="language-switch">
+      <a href="?lang=cs" title="Čeština">🇨🇿</a>
+      <a href="?lang=en" title="English">🇬🇧</a>
+      <a href="?lang=th" title="ไทย">🇹🇭</a>
+    </div>
   </div>
-  <div class="language-switch">
-    <a href="?lang=cs" title="Čeština">🇨🇿</a>
-    <a href="?lang=en" title="English">🇬🇧</a>
-    <a href="?lang=th" title="ไทย">🇹🇭</a>
+
+  <!-- Výsuvné menu -->
+  <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+  <div id="sidebar" class="sidebar">
+    <nav>
+      <a href="/dev/index.html">🏠 Domů</a>
+      <a href="/dev/metoda.html">🌀 Metoda</a>
+      <a href="/dev/texty.html">📖 Texty</a>
+      <a href="/dev/kontakt.html">✉️ Kontakt</a>
+    </nav>
   </div>
-</div>
- <div id="sidebar" class="sidebar">
-  <nav>
-    <a href="/dev/index.html">🏠 Domů</a>
-    <a href="/dev/metoda.html">🌀 Metoda</a>
-    <a href="/dev/texty.html">📖 Texty</a>
-    <a href="/dev/kontakt.html">✉️ Kontakt</a>
-  </nav>
-</div>
+
   <div class="wrapper">
     <header>
       <h1>rikishivava.org</h1>
       <p style="font-style: italic; color: #666;">Cesta k harmonii, tichu a poznání</p>
     </header>
 
-    <nav>
-      <a href="/index.html">Domů</a>
-      <a href="/dev/metoda.html">Metoda</a>
-      <a href="/dev/texty.html">Texty</a>
-      <a href="/dev/kontakt.html">Kontakt</a>
-    </nav>
-
     <main>
       <h2>Vítejte na rikishivava.org</h2>
       <p>Tento web je věnovaný Metodě harmonizace a kontemplativnímu zkoumání bytí. Najdete zde texty, vhledy a nástroje pro klidný, hluboký a vědomý život.</p>
     </main>
-<footer>
-  &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
 
-  <div style="margin-top: 1em;">
-    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M95 50a45 45 0 1 1-21.7-38.6"
-        stroke="#b03a2e"
-        stroke-width="6"
-        stroke-linecap="round"
-        stroke-dasharray="282"
-        stroke-dashoffset="282">
-    <animate attributeName="stroke-dashoffset"
-             from="282" to="0"
-             dur="3s"
-             fill="freeze" />
-  </path>
-</svg>
+    <footer>
+      &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+      <div style="margin-top: 1em;">
+        <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M95 50a45 45 0 1 1-21.7-38.6"
+                stroke="#b03a2e"
+                stroke-width="6"
+                stroke-linecap="round"
+                stroke-dasharray="282"
+                stroke-dashoffset="282">
+            <animate attributeName="stroke-dashoffset"
+                     from="282" to="0"
+                     dur="3s"
+                     fill="freeze" />
+          </path>
+        </svg>
+      </div>
+    </footer>
   </div>
-</footer>
-  </div>
- <script>
-  function toggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    sidebar.classList.toggle("open");
-  }
-</script>
+
+  <!-- Ovládání sidebaru -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      sidebar.classList.toggle("open");
+      overlay.classList.toggle("show");
+    }
+
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("open");
+      document.getElementById("overlay").classList.remove("show");
+    }
+  </script>
+
 </body>
 </html>
