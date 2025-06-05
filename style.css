@@ -188,3 +188,7 @@ footer {
 .overlay.show {
   display: block;
 }
+.logo-img {
+  height: 1.4em;
+  vertical-align: middle;
+}
