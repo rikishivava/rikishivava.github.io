@@ -1,16 +1,21 @@
-/* Základní nastavení */
-body {
-  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #222;
-  line-height: 1.7;
+/* Základní reset */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Centrování a rozvržení obsahu */
+body {
+  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #222;
+  line-height: 1.75;
+  font-size: 18px;
+  padding-top: 1em;
+}
+
 .wrapper {
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 2em 1em;
 }
@@ -18,20 +23,39 @@ body {
 /* Hlavička */
 header {
   text-align: center;
-  padding: 2em 0 1em;
+  margin-bottom: 2em;
+}
+
+header h1 {
+  font-size: 2em;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-style: italic;
+  color: #666;
+  margin-top: 0.5em;
+}
+
+/* Oddělovač */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2em 0;
 }
 
 /* Navigace */
 nav {
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 2.5em;
 }
 
 nav a {
   margin: 0 1em;
   text-decoration: none;
-  color: #555;
-  font-weight: 500;
+  color: #888;
+  font-size: 0.95em;
 }
 
 nav a:hover {
@@ -39,15 +63,17 @@ nav a:hover {
 }
 
 /* Nadpisy */
-h1, h2, h3 {
-  font-weight: 400;
+h2 {
   text-align: center;
-  margin-bottom: 0.5em;
+  font-weight: 400;
+  margin-bottom: 1em;
+  font-size: 1.5em;
 }
 
-/* Odstavec */
+/* Odstavce */
 p {
   margin-bottom: 1.5em;
+  text-align: justify;
 }
 
 /* Patička */
@@ -56,5 +82,6 @@ footer {
   font-size: 0.9em;
   color: #aaa;
   margin-top: 4em;
-  padding: 2em 0;
+  padding: 2em 0 1em;
+  border-top: 1px solid #eee;
 }
