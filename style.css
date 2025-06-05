@@ -85,3 +85,36 @@ footer {
   padding: 2em 0 1em;
   border-top: 1px solid #eee;
 }
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 0.4em 1em;
+  font-size: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-button {
+  font-size: 1.4em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #444;
+}
+
+.logo {
+  font-weight: bold;
+  text-decoration: none;
+  color: #222;
+  margin-left: 0.5em;
+}
+
+.language-switch a {
+  margin-left: 0.5em;
+  text-decoration: none;
+  font-size: 1.2em;
+}
