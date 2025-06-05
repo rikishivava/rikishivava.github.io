@@ -1,0 +1,60 @@
+/* Základní nastavení */
+body {
+  font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+
+/* Centrování a rozvržení obsahu */
+.wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2em 1em;
+}
+
+/* Hlavička */
+header {
+  text-align: center;
+  padding: 2em 0 1em;
+}
+
+/* Navigace */
+nav {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+nav a {
+  margin: 0 1em;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+/* Nadpisy */
+h1, h2, h3 {
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+/* Odstavec */
+p {
+  margin-bottom: 1.5em;
+}
+
+/* Patička */
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #aaa;
+  margin-top: 4em;
+  padding: 2em 0;
+}
