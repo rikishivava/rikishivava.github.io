@@ -82,30 +82,6 @@ header p {
   margin-top: 0.5em;
 }
 
-/* Navigační řádek */
-nav {
-  text-align: center;
-  margin-bottom: 2.5em;
-}
-
-nav a {
-  margin: 0 1em;
-  text-decoration: none;
-  color: #888;
-  font-size: 0.95em;
-}
-
-nav a:hover {
-  color: #000;
-}
-
-/* Oddělovače */
-hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  margin: 2em 0;
-}
-
 /* Nadpisy */
 h2 {
   text-align: center;
@@ -151,6 +127,7 @@ footer {
   text-align: center;
   margin-top: 4em;
 }
+
 /* Levé výsuvné menu */
 .sidebar {
   position: fixed;
@@ -161,31 +138,42 @@ footer {
   background-color: #fafafa;
   border-right: 1px solid #ddd;
   box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-  padding: 2em 1em;
   transition: left 0.3s ease;
   z-index: 999;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-inner {
+  padding-top: 3.5em; /* zarovnání s horní lištou */
 }
 
 .sidebar nav {
   display: flex;
   flex-direction: column;
+  padding-left: 1em;
 }
 
 .sidebar nav a {
-  margin: 0.5em 0;
+  padding: 0.6em 0;
   text-decoration: none;
   color: #444;
-  font-size: 1.1em;
+  font-size: 1.05em;
+  border-left: none;
 }
 
 .sidebar nav a:hover {
   color: #000;
 }
 
-/* Aktivní stav */
-.sidebar.open {
-  left: 0;
+.menu-divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 0.5em 0;
 }
+
 /* Overlay pod menu */
 .overlay {
   position: fixed;
