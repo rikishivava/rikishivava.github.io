@@ -8,11 +8,17 @@
 
   <!-- Symbolická ochrana -->
   <script>
-    const access = prompt("Zadej přístupové heslo:");
-    if (access !== "rikitest") {
+  const správnéHeslo = "rikitest";
+
+  if (localStorage.getItem("pristup_dev") !== "ok") {
+    const zadané = prompt("Zadej přístupové heslo:");
+    if (zadané === správnéHeslo) {
+      localStorage.setItem("pristup_dev", "ok");
+    } else {
       document.body.innerHTML = "<h2>Přístup zamítnut.</h2>";
     }
-  </script>
+  }
+</script>
 </head>
 <body>
   <div class="wrapper">
