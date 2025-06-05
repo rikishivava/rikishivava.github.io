@@ -1,26 +1,70 @@
-/* Základní reset */
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Základní tělo */
 body {
   font-family: 'Helvetica Neue', 'Segoe UI', sans-serif;
   background-color: #ffffff;
   color: #222;
   line-height: 1.75;
   font-size: 18px;
-  padding-top: 1em;
+  padding-top: 3em;
 }
 
+/* Wrapper pro omezenou šířku */
 .wrapper {
   max-width: 720px;
   margin: 0 auto;
   padding: 2em 1em;
 }
 
-/* Hlavička */
+/* Horní lišta */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+  padding: 0.4em 1em;
+  font-size: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.left-group {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  font-size: 1.4em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #444;
+  margin-right: 0.6em;
+}
+
+.logo {
+  font-weight: bold;
+  text-decoration: none;
+  color: #222;
+  font-size: 1em;
+}
+
+.language-switch a {
+  margin-left: 0.6em;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+/* Hlavička (v těle stránky) */
 header {
   text-align: center;
   margin-bottom: 2em;
@@ -38,14 +82,7 @@ header p {
   margin-top: 0.5em;
 }
 
-/* Oddělovač */
-hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  margin: 2em 0;
-}
-
-/* Navigace */
+/* Navigační řádek */
 nav {
   text-align: center;
   margin-bottom: 2.5em;
@@ -60,6 +97,13 @@ nav a {
 
 nav a:hover {
   color: #000;
+}
+
+/* Oddělovače */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2em 0;
 }
 
 /* Nadpisy */
@@ -85,36 +129,25 @@ footer {
   padding: 2em 0 1em;
   border-top: 1px solid #eee;
 }
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 0.4em 1em;
+
+/* Tlačítka */
+.btn {
+  display: inline-block;
+  margin-top: 2em;
+  padding: 0.6em 1.4em;
+  background-color: #eee;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
   font-size: 1em;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
-.menu-button {
-  font-size: 1.4em;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #444;
+.btn:hover {
+  background-color: #ddd;
 }
 
-.logo {
-  font-weight: bold;
-  text-decoration: none;
-  color: #222;
-  margin-left: 0.5em;
-}
-
-.language-switch a {
-  margin-left: 0.5em;
-  text-decoration: none;
-  font-size: 1.2em;
+/* Zarovnání na střed */
+.center {
+  text-align: center;
+  margin-top: 4em;
 }
