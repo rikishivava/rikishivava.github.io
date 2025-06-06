@@ -155,13 +155,13 @@ footer {
   flex-direction: column;
   padding-left: 1em;
 }
-
 .sidebar nav a {
-  padding: 0.6em 0;
+  padding: 0.4em 0;
   text-decoration: none;
   color: #444;
-  font-size: 1.05em;
-  border-left: none;
+  font-size: 0.95em;
+  font-weight: 300;
+  letter-spacing: 0.4px;
 }
 
 .sidebar nav a:hover {
