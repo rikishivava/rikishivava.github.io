@@ -30,10 +30,10 @@
       </a>
     </div>
     <div class="language-switch">
-  <a href="/dev/harmonizace.html" title="Čeština">🇨🇿</a>
-  <a href="/dev/harmonizace_en.html" title="English">🇬🇧</a>
-  <a href="/dev/harmonizace_th.html" title="ไทย">🇹🇭</a>
-</div>
+      <a href="/dev/harmonizace.html" title="Čeština">🇨🇿</a>
+      <a href="/dev/harmonizace_en.html" title="English">🇬🇧</a>
+      <a href="/dev/harmonizace_th.html" title="ไทย">🇹🇭</a>
+    </div>
   </div>
 
   <!-- Sidebar -->
@@ -42,7 +42,7 @@
     <div class="sidebar-inner">
       <nav>
         <div class="menu-divider"></div>
-        <a href="/dev/harmonizace_en.html">Harmonization</a>
+        <a href="/dev/harmonizace_en.html" class="active">Harmonization</a>
         <div class="menu-divider"></div>
         <a href="/dev/texts_en.html">Texts</a>
         <div class="menu-divider"></div>
@@ -52,6 +52,7 @@
     </div>
   </div>
 
+  <!-- Content -->
   <div class="wrapper">
     <h2>1. Introduction and Overview of the Method</h2>
 
@@ -94,7 +95,7 @@
     </footer>
   </div>
 
-  <!-- Sidebar functions -->
+  <!-- Sidebar toggle script -->
   <script>
     function toggleSidebar() {
       const sidebar = document.getElementById("sidebar");
