@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rikishivava.org</title>
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Symbolic dev protection -->
+  <script>
+    const correctPassword = "rikitest";
+    if (localStorage.getItem("pristup_dev") !== "ok") {
+      const input = prompt("กรุณาใส่รหัสผ่าน:");
+      if (input === correctPassword) {
+        localStorage.setItem("pristup_dev", "ok");
+      } else {
+        document.body.innerHTML = "<h2>ปฏิเสธการเข้าถึง</h2>";
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="left-group">
+      <button class="menu-button" onclick="toggleSidebar()">☰</button>
+      <a href="/" class="logo">
+        <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img">
+      </a>
+    </div>
+    <div class="language-switch">
+      <a href="/dev/index.html" title="Čeština">🇨🇿</a>
+      <a href="/dev/index_en.html" title="English">🇬🇧</a>
+      <a href="/dev/index_th.html" title="ไทย">🇹🇭</a>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+      <nav>
+        <div class="menu-divider"></div>
+        <a href="/dev/harmonizace_th.html">การปรับสมดุล</a>
+        <div class="menu-divider"></div>
+        <a href="/dev/texts_th.html">บทความ</a>
+        <div class="menu-divider"></div>
+        <a href="/dev/contact_th.html">ติดต่อ</a>
+        <div class="menu-divider"></div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <header class="homepage-banner">
+    <img src="/assets/bannermain.PNG" alt="rikishivava.org banner" class="banner-img">
+    <div class="banner-text">
+      <h1>ยินดีต้อนรับสู่ rikishivava.org</h1>
+      <p>เว็บไซต์นี้อุทิศให้กับวิธีการปรับสมดุล และการสำรวจการดำรงอยู่ผ่านการใคร่ครวญ</p>
+    </div>
+  </header>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 rikishivava.org · <strong>เวอร์ชันทดลอง</strong>
+  </footer>
+
+  <!-- Sidebar logic -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      sidebar.classList.toggle("open");
+      overlay.classList.toggle("show");
+    }
+
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("open");
+      document.getElementById("overlay").classList.remove("show");
+    }
+  </script>
+
+</body>
+</html>
