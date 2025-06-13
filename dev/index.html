@@ -6,34 +6,46 @@
   <title>rikishivava.org</title>
   <link rel="stylesheet" href="/style.css">
   <style>
-    .banner-container {
+    .hero {
       position: relative;
       width: 100%;
+      height: 100vh;
+      background-image: url('/assets/bannermain.PNG');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
     }
 
-    .banner-img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
     .intro-text {
-      position: absolute;
-      bottom: -100px;
-      width: 100%;
       text-align: center;
-      font-size: 1.2em;
-      background: rgba(255, 255, 255, 0.7);
+      background-color: rgba(255, 255, 255, 0.65);
       color: #222;
-      padding: 1.5em 1em;
+      padding: 2em 1.5em;
+      border-radius: 10px;
+      max-width: 90%;
       animation: slideUp 2s ease-out forwards;
+      position: relative;
+      top: 100px;
     }
 
     @keyframes slideUp {
       to {
-        bottom: 0;
+        top: 0;
       }
+    }
+
+    .intro-text h2 {
+      margin-bottom: 0.5em;
+    }
+
+    .wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2em 1em;
     }
   </style>
 
@@ -83,14 +95,14 @@
     </div>
   </div>
 
-  <!-- Banner s animovaným textem -->
-  <header class="banner-container">
-    <img src="/assets/bannermain.PNG" alt="rikishivava.org banner" class="banner-img">
+  <!-- Obrázek na pozadí s animovaným textem -->
+  <section class="hero">
     <div class="intro-text">
       <h2>Vítejte na rikishivava.org</h2>
-      <p>Prostor věnovaný Metodě harmonizace a kontemplativnímu zkoumání bytí. Najdete zde texty, vhledy a nástroje pro klidný, hluboký a vědomý život.</p>
+      <p>Prostor věnovaný Metodě harmonizace a kontemplativnímu zkoumání bytí.  
+      Najdete zde texty, vhledy a nástroje pro klidný, hluboký a vědomý život.</p>
     </div>
-  </header>
+  </section>
 
   <!-- Obsah -->
   <div class="wrapper">
