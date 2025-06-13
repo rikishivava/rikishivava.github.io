@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Metoda harmonizace | rikishivava.org</title>
+  <title>Harmonizace | rikishivava.org</title>
   <link rel="stylesheet" href="/style.css" />
-
-  <!-- Symbolická ochrana -->
   <script>
     const správnéHeslo = "rikitest";
     if (localStorage.getItem("pristup_dev") !== "ok") {
@@ -20,12 +18,13 @@
   </script>
 </head>
 <body>
+
   <!-- Horní lišta -->
   <div class="topbar">
     <div class="left-group">
       <button class="menu-button" onclick="toggleSidebar()">☰</button>
       <a href="/" class="logo">
-        <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+        <img src="/assets/logo.png" alt="rikishivava.org logo" class="logo-img" />
       </a>
     </div>
     <div class="language-switch">
@@ -35,13 +34,13 @@
     </div>
   </div>
 
-  <!-- Overlay a výsuvné menu -->
+  <!-- Levé menu -->
   <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
   <div id="sidebar" class="sidebar">
     <div class="sidebar-inner">
       <nav>
         <div class="menu-divider"></div>
-        <a href="/dev/harmonizace.html">Harmonizace</a>
+        <a href="/dev/harmonizace.html" class="active">Harmonizace</a>
         <div class="menu-divider"></div>
         <a href="/dev/texty.html">Texty</a>
         <div class="menu-divider"></div>
@@ -51,66 +50,90 @@
     </div>
   </div>
 
+  <!-- Obsah -->
   <div class="wrapper">
-    <main>
-      <h1>Metoda harmonizace</h1>
+    <h2>I. Úvod a představení metody</h2>
 
-      <h2>Proč vůbec hledáme rovnováhu</h2>
-      <p>
-        Každý z nás to zná. Ráno vstát s pocitem, že už jste unavení. Cestou do práce doháníte maily, odpoledne přecházíte z jednoho úkolu na druhý, večer se snažíte ještě trochu vypnout – a pak usnete s mobilem v ruce. Spánek nic moc. Ráno nanovo.
-      </p>
-      <p>
-        Tělo si pomalu zvyká fungovat v nouzovém režimu. Káva místo odpočinku, rychlé jídlo místo skutečného oběda, přetížení místo klidu. Člověk často ani neví, že už dlouho funguje mimo svou přirozenou rovnováhu – dokud se to někde nezačne ozývat. Bolestí. Úzkostí. Únavou. Nemocí. Výbušností. Prázdnem.
-      </p>
-      <p>
-        Není to selhání. Je to výsledek prostředí a způsobu života, který nepočítá s tím, co doopravdy potřebujeme – pravidelný rytmus, klid, prostor pro zklidnění, skutečné jídlo, světlo, ticho, hluboký spánek. A především: návrat k sobě.
-      </p>
+    <h3>Proč vůbec hledáme rovnováhu</h3>
+    <p>
+      Každý z nás to zná. Ráno vstát s pocitem, že už jste unavení. Cestou do práce doháníte maily,
+      odpoledne přecházíte z jednoho úkolu na druhý, večer se snažíte ještě trochu vypnout –
+      a pak usnete s mobilem v ruce. Spánek nic moc. Ráno nanovo.
+    </p>
+    <p>
+      Tělo si pomalu zvyká fungovat v nouzovém režimu. Káva místo odpočinku, rychlé jídlo místo
+      skutečného oběda, přetížení místo klidu. Člověk často ani neví, že už dlouho funguje mimo svou
+      přirozenou rovnováhu – dokud se to někde nezačne ozývat. Bolestí. Úzkostí. Únavou. Nemocí.
+      Výbušností. Prázdnem.
+    </p>
+    <p>
+      Není to selhání. Je to výsledek prostředí a způsobu života, který nepočítá s tím, co doopravdy
+      potřebujeme – pravidelný rytmus, klid, prostor pro zklidnění, skutečné jídlo, světlo, ticho,
+      hluboký spánek. A především: návrat k sobě.
+    </p>
 
-      <h2>Co je Metoda harmonizace</h2>
-      <p>
-        Metoda harmonizace vznikla jako odpověď na tuto realitu. Ne jako další „zázračný návod“, jak být efektivnější nebo výkonnější. Naopak. Je to návrh návratu k jednoduchosti. Je to způsob, jak znovu nalézt rovnováhu tam, kde jsme ji ztratili – ve vlastním rytmu, ve vztahu k sobě, k tělu i k okolí.
-      </p>
-      <p>
-        Metoda vychází z pozorování, že lidské tělo a mysl mají obrovskou schopnost regenerace, pokud jim přestaneme překážet. Harmonizace neznamená dělat víc, ale méně. Přesněji: dělat to, co skutečně obnovuje.
-      </p>
-
-      <h2>Čtyři pilíře</h2>
-      <p>
-        Metoda stojí na čtyřech základních pilířích, které se vzájemně propojují:
-      </p>
-      <ol>
-        <li>Odpočinek</li>
-        <li>Duševní rovnováha</li>
-        <li>Strava a pitný režim</li>
-        <li>Prostředí</li>
-      </ol>
-
-      <p>
-        Tři kruhy, vzájemně propojené, zasazené do prostředí. Tato čtveřice tvoří základní síť, díky které se život znovu stává životem. V těle, v mysli, v domově. Bez dogmat, bez komplikovaných pravidel, bez potřeby „být dokonalý“.
-      </p>
-      <p>
-        V následujících kapitolách si každý z těchto pilířů podrobně představíme. Nejprve se podíváme na to, co o nich říká věda. Pak si krok za krokem ukážeme, jak je přirozeně zavést do běžného života.
-      </p>
-    </main>
-
-    <footer>
-      &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
-    </footer>
+    <h3>Co je Metoda harmonizace</h3>
+    <p>
+      Metoda harmonizace vznikla jako odpověď na tuto realitu. Ne jako další „zázračný návod“, jak být
+      efektivnější nebo výkonnější. Naopak. Je to návrh návratu k jednoduchosti. Je to způsob, jak znovu
+      nalézt rovnováhu tam, kde jsme ji ztratili – ve vlastním rytmu, ve vztahu k sobě, k tělu i k okolí.
+    </p>
+    <p>
+      Metoda vychází z pozorování, že lidské tělo a mysl mají obrovskou schopnost regenerace,
+      pokud jim přestaneme překážet. Harmonizace neznamená dělat víc, ale méně.
+      Přesněji: dělat to, co skutečně obnovuje.
+    </p>
+    <p>
+      Metoda stojí na čtyřech základních pilířích, které se vzájemně propojují:
+    </p>
+    <ul>
+      <li>Odpočinek</li>
+      <li>Duševní rovnováha</li>
+      <li>Strava a pitný režim</li>
+      <li>Prostředí</li>
+    </ul>
+    <p>
+      Tři kruhy, vzájemně propojené, zasazené do prostředí. Tato čtveřice tvoří základní síť, díky které se
+      život znovu stává životem. V těle, v mysli, v domově. Bez dogmat, bez komplikovaných pravidel,
+      bez potřeby „být dokonalý“.
+    </p>
+    <p>
+      V následujících kapitolách si každý z těchto pilířů podrobně představíme. Nejprve se podíváme
+      na to, co o nich říká věda. Pak si krok za krokem ukážeme, jak je přirozeně zavést do běžného života.
+    </p>
   </div>
 
-  <!-- JS ovládání menu -->
+  <!-- Patička -->
+  <footer>
+    &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+    <div style="margin-top: 1em;">
+      <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M95 50a45 45 0 1 1-21.7-38.6"
+              stroke="#b03a2e"
+              stroke-width="6"
+              stroke-linecap="round"
+              stroke-dasharray="282"
+              stroke-dashoffset="282">
+          <animate attributeName="stroke-dashoffset"
+                   from="282" to="0"
+                   dur="3s"
+                   fill="freeze" />
+        </path>
+      </svg>
+    </div>
+  </footer>
+
+  <!-- Sidebar ovládání -->
   <script>
     function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      const overlay = document.getElementById("overlay");
-      sidebar.classList.toggle("open");
-      overlay.classList.toggle("show");
+      document.getElementById("sidebar").classList.toggle("open");
+      document.getElementById("overlay").classList.toggle("show");
     }
-
     function closeSidebar() {
       document.getElementById("sidebar").classList.remove("open");
       document.getElementById("overlay").classList.remove("show");
     }
   </script>
+
 </body>
 </html>
