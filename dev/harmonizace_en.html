@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harmonization – rikishivava.org</title>
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Symbolic dev protection -->
+  <script>
+    const correctPassword = "rikitest";
+    if (localStorage.getItem("pristup_dev") !== "ok") {
+      const input = prompt("Enter access password:");
+      if (input === correctPassword) {
+        localStorage.setItem("pristup_dev", "ok");
+      } else {
+        document.body.innerHTML = "<h2>Access denied.</h2>";
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="left-group">
+      <button class="menu-button" onclick="toggleSidebar()">☰</button>
+      <a href="/" class="logo">
+        <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img">
+      </a>
+    </div>
+    <div class="language-switch">
+      <a href="/dev/harmonizace.html" title="Čeština">🇨🇿</a>
+      <a href="/dev/harmonizace_en.html" title="English">🇬🇧</a>
+      <a href="/dev/harmonizace_th.html" title="ไทย">🇹🇭</a>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+      <nav>
+        <div class="menu-divider"></div>
+        <a href="/dev/harmonizace_en.html">Harmonization</a>
+        <div class="menu-divider"></div>
+        <a href="/dev/texts_en.html">Texts</a>
+        <div class="menu-divider"></div>
+        <a href="/dev/contact_en.html">Contact</a>
+        <div class="menu-divider"></div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <h2>1. Introduction and Overview of the Method</h2>
+
+    <h3>Why we seek balance at all</h3>
+    <p>
+      We all know the feeling. Waking up already tired. Checking emails on your way to work, switching from one task to another all afternoon, trying to unwind in the evening – and falling asleep with your phone in your hand. Sleep is poor. Morning starts again.
+    </p>
+    <p>
+      The body slowly adapts to survival mode. Coffee instead of rest, fast food instead of a real meal, stress instead of calm. Most people don't even realize they’ve been out of balance for a long time – until something starts to call attention. Pain. Anxiety. Exhaustion. Illness. Irritability. Emptiness.
+    </p>
+    <p>
+      It’s not failure. It’s a consequence of the environment and a lifestyle that doesn’t consider what we truly need – regular rhythm, calm, space to slow down, real food, light, silence, deep sleep. And above all: return to self.
+    </p>
+
+    <h3>What is the Method of Harmonization</h3>
+    <p>
+      The Method of Harmonization arose as a response to this reality. Not as yet another “miraculous guide” on how to be more productive or efficient. Quite the opposite. It is a suggestion for a return to simplicity. A way to rediscover balance where it has been lost – in one’s own rhythm, in the relationship to the self, the body, and the world.
+    </p>
+    <p>
+      The method is based on the observation that the human body and mind have an incredible capacity for regeneration – if we stop interfering. Harmonization does not mean doing more, but less. More precisely: doing what truly restores.
+    </p>
+
+    <p>The method rests on four foundational pillars that work together:</p>
+    <ol>
+      <li>Rest</li>
+      <li>Mental Balance</li>
+      <li>Nutrition and Hydration</li>
+      <li>Environment</li>
+    </ol>
+
+    <p>
+      Three interconnected circles, embedded in environment. This quartet forms the basic framework through which life becomes life again. In the body, in the mind, in the home. Without dogma, without complicated rules, without the need to be “perfect”.
+    </p>
+    <p>
+      In the next chapters, we will explore each of these pillars in detail. First, we’ll look at what science says about them. Then we’ll walk through how to integrate them naturally into daily life.
+    </p>
+
+    <footer>
+      &copy; 2025 rikishivava.org · <strong>development version</strong>
+    </footer>
+  </div>
+
+  <!-- Sidebar functions -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      sidebar.classList.toggle("open");
+      overlay.classList.toggle("show");
+    }
+
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("open");
+      document.getElementById("overlay").classList.remove("show");
+    }
+  </script>
+
+</body>
+</html>
