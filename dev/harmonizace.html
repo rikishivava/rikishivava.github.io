@@ -1,132 +1,116 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Metoda harmonizace – Úvod</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      line-height: 1.6;
-      margin: 2em;
-      background-color: #fffdf9;
-      color: #222;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metoda harmonizace | rikishivava.org</title>
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Symbolická ochrana -->
+  <script>
+    const správnéHeslo = "rikitest";
+    if (localStorage.getItem("pristup_dev") !== "ok") {
+      const zadané = prompt("Zadej přístupové heslo:");
+      if (zadané === správnéHeslo) {
+        localStorage.setItem("pristup_dev", "ok");
+      } else {
+        document.body.innerHTML = "<h2>Přístup zamítnut.</h2>";
+      }
     }
-    h1, h2, h3 {
-      color: #444;
-    }
-    ul {
-      padding-left: 1.5em;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1em;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 0.6em;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background-color: #f4f4f4;
-    }
-    section {
-      max-width: 1000px;
-      margin: auto;
-    }
-  </style>
+  </script>
 </head>
 <body>
-  <section id="harmonizace-uvod">
-    <h1>🧘‍♂️ Metoda harmonizace</h1>
-    <p><strong>Metoda harmonizace</strong> je otevřený rámec pro vědomý život v rovnováze s přirozenými rytmy. Vznikla syntézou ověřených přístupů napříč časem a kulturami, přeložených do jazyka dnešního člověka.</p>
+  <!-- Horní lišta -->
+  <div class="topbar">
+    <div class="left-group">
+      <button class="menu-button" onclick="toggleSidebar()">☰</button>
+      <a href="/" class="logo">
+        <img src="/assets/logo.png" alt="rikishivava.org logo" class="logo-img" />
+      </a>
+    </div>
+    <div class="language-switch">
+      <a href="?lang=cs" title="Čeština">🇨🇿</a>
+      <a href="?lang=en" title="English">🇬🇧</a>
+      <a href="?lang=th" title="ไทย">🇹🇭</a>
+    </div>
+  </div>
 
-    <h2>1. Definice problému</h2>
-    <p>Moderní svět oddělil člověka od přirozeného rytmu života. Stres, únava, špatné trávení, nespavost – to vše jsou projevy hlubší nerovnováhy. Metoda harmonizace nabízí praktický způsob, jak znovu nalézt rovnováhu těla, mysli a prostředí.</p>
+  <!-- Overlay a výsuvné menu -->
+  <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+      <nav>
+        <div class="menu-divider"></div>
+        <a href="/dev/harmonizace.html">Harmonizace</a>
+        <div class="menu-divider"></div>
+        <a href="/dev/texty.html">Texty</a>
+        <div class="menu-divider"></div>
+        <a href="/dev/kontakt.html">Kontakt</a>
+        <div class="menu-divider"></div>
+      </nav>
+    </div>
+  </div>
 
-    <h2>2. Inspirace z ověřených systémů</h2>
-    <ul>
-      <li><strong>Ajurvéda</strong> – práce s tělesnými typy, rytmy dne a ročních období. <em>(Vasant Lad, Robert Svoboda)</em></li>
-      <li><strong>Tradiční čínská medicína</strong> – rovnováha jin/jang, orgánové hodiny, pět elementů. <em>(Giovanni Maciocia, Ted Kaptchuk)</em></li>
-      <li><strong>Kalendář alternativní medicíny</strong> – detoxikace a byliny dle přírodních cyklů. <em>(Janča, Jonáš, Zentrich)</em></li>
-      <li><strong>Biohacking</strong> – optimalizace výkonu, spánku, metabolismu. <em>(Dave Asprey, Ben Greenfield)</em></li>
-      <li><strong>Křesťanský rytmus</strong> – duchovní cykly postů a svátků. <em>(Tomáš Halík)</em></li>
-    </ul>
+  <div class="wrapper">
+    <main>
+      <h1>Metoda harmonizace</h1>
 
-    <h2>3. Kritické zhodnocení</h2>
-    <p>Každý z výše uvedených systémů přináší cenné poznatky, ale málokterý nabízí současnému člověku jednoduchou a přístupnou celostní metodu. Metoda harmonizace integruje to nejlepší a odstraňuje jazykové, kulturní či náboženské bariéry.</p>
+      <h2>Proč vůbec hledáme rovnováhu</h2>
+      <p>
+        Každý z nás to zná. Ráno vstát s pocitem, že už jste unavení. Cestou do práce doháníte maily, odpoledne přecházíte z jednoho úkolu na druhý, večer se snažíte ještě trochu vypnout – a pak usnete s mobilem v ruce. Spánek nic moc. Ráno nanovo.
+      </p>
+      <p>
+        Tělo si pomalu zvyká fungovat v nouzovém režimu. Káva místo odpočinku, rychlé jídlo místo skutečného oběda, přetížení místo klidu. Člověk často ani neví, že už dlouho funguje mimo svou přirozenou rovnováhu – dokud se to někde nezačne ozývat. Bolestí. Úzkostí. Únavou. Nemocí. Výbušností. Prázdnem.
+      </p>
+      <p>
+        Není to selhání. Je to výsledek prostředí a způsobu života, který nepočítá s tím, co doopravdy potřebujeme – pravidelný rytmus, klid, prostor pro zklidnění, skutečné jídlo, světlo, ticho, hluboký spánek. A především: návrat k sobě.
+      </p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Přístup</th>
-          <th>Silné stránky</th>
-          <th>Slabiny</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Ajurvéda</td>
-          <td>Celostní systém s rytmy dne a roku, tělesné typy</td>
-          <td>Náročnost na pochopení, vyžaduje odborné vedení</td>
-        </tr>
-        <tr>
-          <td>Tradiční čínská medicína</td>
-          <td>Prevence, cykličnost, propojení emocí a orgánů</td>
-          <td>Komplexní jazyk a kulturní bariéra</td>
-        </tr>
-        <tr>
-          <td>Jonáš–Janča</td>
-          <td>Praktické, českému prostředí blízké, přírodní cykly</td>
-          <td>Nesystematičnost, méně filozofické ukotvení</td>
-        </tr>
-        <tr>
-          <td>Biohacking</td>
-          <td>Přesná data, měřitelné výsledky, motivující</td>
-          <td>Redukcionismus, ignoruje duchovní a přirozenou stránku</td>
-        </tr>
-        <tr>
-          <td>Křesťanský rytmus</td>
-          <td>Duchovní rozměr, rytmus postů a svátků</td>
-          <td>Vazba na víru, méně univerzální použití</td>
-        </tr>
-      </tbody>
-    </table>
+      <h2>Co je Metoda harmonizace</h2>
+      <p>
+        Metoda harmonizace vznikla jako odpověď na tuto realitu. Ne jako další „zázračný návod“, jak být efektivnější nebo výkonnější. Naopak. Je to návrh návratu k jednoduchosti. Je to způsob, jak znovu nalézt rovnováhu tam, kde jsme ji ztratili – ve vlastním rytmu, ve vztahu k sobě, k tělu i k okolí.
+      </p>
+      <p>
+        Metoda vychází z pozorování, že lidské tělo a mysl mají obrovskou schopnost regenerace, pokud jim přestaneme překážet. Harmonizace neznamená dělat víc, ale méně. Přesněji: dělat to, co skutečně obnovuje.
+      </p>
 
-    <h2>4. Čtyři pilíře Metody harmonizace</h2>
+      <h2>Čtyři pilíře</h2>
+      <p>
+        Metoda stojí na čtyřech základních pilířích, které se vzájemně propojují:
+      </p>
+      <ol>
+        <li>Odpočinek</li>
+        <li>Duševní rovnováha</li>
+        <li>Strava a pitný režim</li>
+        <li>Prostředí</li>
+      </ol>
 
-    <h3>🔵 1. Kruh odpočinku</h3>
-    <ul>
-      <li>Obnova přirozeného spánkového rytmu</li>
-      <li>Vědomé vypínání smyslů: ticho, tma, klid</li>
-      <li>Digitální hygiena, temné pobyty, cyklický režim</li>
-    </ul>
+      <p>
+        Tři kruhy, vzájemně propojené, zasazené do prostředí. Tato čtveřice tvoří základní síť, díky které se život znovu stává životem. V těle, v mysli, v domově. Bez dogmat, bez komplikovaných pravidel, bez potřeby „být dokonalý“.
+      </p>
+      <p>
+        V následujících kapitolách si každý z těchto pilířů podrobně představíme. Nejprve se podíváme na to, co o nich říká věda. Pak si krok za krokem ukážeme, jak je přirozeně zavést do běžného života.
+      </p>
+    </main>
 
-    <h3>🟡 2. Kruh duševní rovnováhy</h3>
-    <ul>
-      <li>Meditace, kontemplace, vděčnost</li>
-      <li>Poznání ega a kultivace vnitřního klidu</li>
-      <li>Dechová cvičení, vědomá přítomnost</li>
-    </ul>
+    <footer>
+      &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+    </footer>
+  </div>
 
-    <h3>🟢 3. Kruh stravy a hydratace</h3>
-    <ul>
-      <li>Přirozená, sezónní a šetrně připravená strava</li>
-      <li>Čistá hydratace, omezení stimulantů</li>
-      <li>Jídlo jako informace – ne jen kalorie</li>
-    </ul>
+  <!-- JS ovládání menu -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      sidebar.classList.toggle("open");
+      overlay.classList.toggle("show");
+    }
 
-    <h3>⚫ 4. Prostředí (Rámec)</h3>
-    <ul>
-      <li>Kvalita vzduchu, světla, hluku, teploty</li>
-      <li>Vztahy, přírodní kontakt, domácí ekosystém</li>
-      <li><strong>Cyklus dne a roku:</strong> zimní klid, letní aktivita, lunární vlivy</li>
-    </ul>
-
-    <h2>📌 Shrnutí</h2>
-    <p>Metoda harmonizace není náboženský systém ani dogma. Je to praktická cesta zpět k rovnováze. Poskytuje každodenní mapu, jak být přítomný, klidný a v souladu s přirozeným rytmem života – ve spánku, stravě, myšlení i prostoru, ve kterém žijeme.</p>
-  </section>
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("open");
+      document.getElementById("overlay").classList.remove("show");
+    }
+  </script>
 </body>
 </html>
