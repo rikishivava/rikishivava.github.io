@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rikishivava.org</title>
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Symbolic dev protection -->
+  <script>
+    const correctPassword = "rikitest";
+    if (localStorage.getItem("pristup_dev") !== "ok") {
+      const input = prompt("Enter access password:");
+      if (input === correctPassword) {
+        localStorage.setItem("pristup_dev", "ok");
+      } else {
+        document.body.innerHTML = "<h2>Access denied.</h2>";
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="left-group">
+      <button class="menu-button" onclick="toggleSidebar()">☰</button>
+      <a href="/" class="logo">
+        <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img">
+      </a>
+    </div>
+    <div class="language-switch">
+      <a href="/dev/index.html" title="Čeština">🇨🇿</a>
+      <a href="/dev/index_en.html" title="English">🇬🇧</a>
+      <a href="/dev/index_th.html" title="ไทย">🇹🇭</a>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+      <nav>
+        <div class="menu-divider"></div>
+        <a href="/dev/harmonization.html">Harmonization</a>
+        <div class="menu-divider"></div>
+        <a href="/dev/texts.html">Texts</a>
+        <div class="menu-divider"></div>
+        <a href="/dev/contact.html">Contact</a>
+        <div class="menu-divider"></div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Banner with animated text -->
+  <header class="homepage-banner">
+    <img src="/assets/bannermain.PNG" alt="rikishivava.org banner" class="banner-img">
+    <div class="banner-text">
+      <h1>Welcome to rikishivava.org</h1>
+      <p>A space dedicated to the Method of Harmonization and contemplative inquiry into being. You will find texts, insights, and tools for a calm, deep, and mindful life.</p>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <footer>
+      &copy; 2025 rikishivava.org · <strong>development version</strong>
+      <div style="margin-top: 1em;">
+        <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M95 50a45 45 0 1 1-21.7-38.6"
+                stroke="#b03a2e"
+                stroke-width="6"
+                stroke-linecap="round"
+                stroke-dasharray="282"
+                stroke-dashoffset="282">
+            <animate attributeName="stroke-dashoffset"
+                     from="282" to="0"
+                     dur="3s"
+                     fill="freeze" />
+          </path>
+        </svg>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Sidebar functions -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      sidebar.classList.toggle("open");
+      overlay.classList.toggle("show");
+    }
+
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("open");
+      document.getElementById("overlay").classList.remove("show");
+    }
+  </script>
+
+</body>
+</html>
