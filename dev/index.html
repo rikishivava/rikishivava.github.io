@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>rikishivava.org</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css" />
 
   <!-- Symbolická ochrana -->
   <script>
@@ -26,8 +26,8 @@
     <div class="left-group">
       <button class="menu-button" onclick="toggleSidebar()">☰</button>
       <a href="/" class="logo">
-  <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img">
-</a>
+        <img src="/assets/logo.png" alt="rikishivava.org logo" class="logo-img">
+      </a>
     </div>
     <div class="language-switch">
       <a href="?lang=cs" title="Čeština">🇨🇿</a>
@@ -38,27 +38,36 @@
 
   <!-- Výsuvné menu -->
   <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
-<div id="sidebar" class="sidebar">
-  <div class="sidebar-inner">
-    <nav>
-      <div class="menu-divider"></div>
-      <a href="/dev/harmonizace.html">Harmonizace</a>
-      <div class="menu-divider"></div>
-      <a href="/dev/texty.html">Texty</a>
-      <div class="menu-divider"></div>
-      <a href="/dev/kontakt.html">Kontakt</a>
-      <div class="menu-divider"></div>
-    </nav>
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+      <nav>
+        <div class="menu-divider"></div>
+        <a href="/dev/harmonizace.html">Harmonizace</a>
+        <div class="menu-divider"></div>
+        <a href="/dev/texty.html">Texty</a>
+        <div class="menu-divider"></div>
+        <a href="/dev/kontakt.html">Kontakt</a>
+        <div class="menu-divider"></div>
+      </nav>
+    </div>
   </div>
-</div>
-<header class="homepage-banner">
-  <img src="/assets/bannermain.PNG" alt="rikishivava.org banner" class="banner-img">
-</header>
 
-<div class="wrapper">
+  <!-- Banner s animací textu -->
+  <header class="homepage-banner">
+    <img src="/assets/bannermain.PNG" alt="rikishivava.org banner" class="banner-img" />
+    <div class="banner-text">
+      <h1>rikishivava.org</h1>
+      <p>Cesta k harmonii, tichu a poznání</p>
+    </div>
+  </header>
+
+  <!-- Obsah -->
+  <div class="wrapper">
     <main>
       <h2>Vítejte na rikishivava.org</h2>
-      <p>Tento web je věnovaný Metodě harmonizace a kontemplativnímu zkoumání bytí. Najdete zde texty, vhledy a nástroje pro klidný, hluboký a vědomý život.</p>
+      <p>
+        Tento web je věnovaný Metodě harmonizace a kontemplativnímu zkoumání bytí. Najdete zde texty, vhledy a nástroje pro klidný, hluboký a vědomý život.
+      </p>
     </main>
 
     <footer>
@@ -81,7 +90,7 @@
     </footer>
   </div>
 
-  <!-- Ovládání sidebaru -->
+  <!-- JavaScript pro ovládání menu -->
   <script>
     function toggleSidebar() {
       const sidebar = document.getElementById("sidebar");
