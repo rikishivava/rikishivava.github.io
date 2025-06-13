@@ -205,3 +205,44 @@ footer {
   height: auto;
   display: block;
 }
+.homepage-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Text nad bannerem s animací */
+.banner-text {
+  position: absolute;
+  bottom: -100px; /* výchozí pozice mimo banner */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+  animation: riseUp 2s ease-out forwards;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.banner-text h1 {
+  font-size: 2em;
+  font-weight: normal;
+  margin: 0.3em 0 0;
+}
+
+.banner-text p {
+  font-size: 1.1em;
+  margin: 0.2em 0 0;
+}
+
+@keyframes riseUp {
+  to {
+    bottom: 25%;
+    opacity: 1;
+  }
+}
