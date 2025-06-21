@@ -283,10 +283,13 @@ footer {
 .refmark:hover {
   color: #004999; /* tmavší modrá při přejetí */
 }
+
 .wrapper {
   position: relative;
+  z-index: 1;
 }
 
+/* Styl pro obě linky */
 .zen-line {
   position: absolute;
   pointer-events: none;
@@ -295,21 +298,23 @@ footer {
   stroke-width: 1.5;
   stroke-linecap: round;
   fill: none;
-  z-index: 0;
-  transition: opacity 1s ease-in;
+  z-index: -1;
 }
 
+/* Levý horní roh */
 .zen-line.top-left {
   top: 0;
   left: 0;
+  transform: translate(-100%, 0); /* vytáhne linku mimo wrapper doleva */
   width: 20px;
   height: 80px;
 }
 
+/* Pravý dolní roh */
 .zen-line.bottom-right {
   bottom: 0;
   right: 0;
+  transform: translate(100%, 0) scaleX(-1) scaleY(-1); /* vytáhne ji doprava + zrcadlí */
   width: 20px;
   height: 80px;
-  transform: scaleX(-1) scaleY(-1); /* zrcadlení rohové linky */
 }
