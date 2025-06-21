@@ -271,3 +271,15 @@ footer {
     opacity: 1;
   }
 }
+.refmark {
+  display: inline-block;
+  vertical-align: super;
+  margin-left: 0.2em;
+  width: 14px;
+  height: 14px;
+  color: #0066cc; /* typická modrá pro odkazy */
+  text-decoration: none;
+}
+.refmark:hover {
+  color: #004999; /* tmavší modrá při přejetí */
+}
