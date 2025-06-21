@@ -283,20 +283,31 @@ footer {
 .refmark:hover {
   color: #004999; /* tmavší modrá při přejetí */
 }
+.wrapper {
+  position: relative;
+}
+
 .zen-line {
   position: absolute;
-  width: 60px;
-  height: 60px;
   pointer-events: none;
-  z-index: 1;
+  stroke: #cc4b4b;
+  stroke-opacity: 0.4;
+  stroke-width: 2;
+  fill: none;
+  z-index: 0;
 }
 
-.top-left {
-  top: 20px;
-  left: 20px;
+.zen-line.top-left {
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 80px;
 }
 
-.bottom-right {
-  bottom: 20px;
-  right: 20px;
+.zen-line.bottom-right {
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 80px;
+  transform: scaleX(-1) scaleY(-1); /* zrcadlení rohové linky */
 }
