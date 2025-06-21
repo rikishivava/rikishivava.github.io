@@ -292,9 +292,11 @@ footer {
   pointer-events: none;
   stroke: #cc4b4b;
   stroke-opacity: 0.4;
-  stroke-width: 2;
+  stroke-width: 1.5;
+  stroke-linecap: round;
   fill: none;
   z-index: 0;
+  transition: opacity 1s ease-in;
 }
 
 .zen-line.top-left {
