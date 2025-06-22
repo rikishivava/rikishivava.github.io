@@ -287,31 +287,18 @@ footer {
 .wrapper {
   position: relative;
   z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2em 1em;
 }
 
-.zen-line {
-  position: absolute;
-  width: 20px;
-  height: 80px;
-  fill: none;
-  stroke: #cc4b4b;
-  stroke-opacity: 0.3;
-  stroke-width: 2;
-  stroke-linecap: round;
-  z-index: 0;
-  pointer-events: none;
+@media (min-width: 1024px) {
+  .wrapper {
+    padding: 2em 2em;
+  }
 }
 
-.zen-line.top-left {
-  top: 0;
-  left: 0;
-}
-
-.zen-line.bottom-right {
-  bottom: 0;
-  right: 0;
-  transform: scaleX(-1) scaleY(-1);
-}
+/* Dekorativní SVG rohy */
 .zen-corner {
   position: absolute;
   width: 20px;
@@ -330,13 +317,15 @@ footer {
   stroke-linecap: round;
 }
 
+/* Umístění podle wrapperu – přizpůsobeno šířce */
 .zen-corner.top-left {
   top: 2.5rem;
-  left: calc(50% - 400px - 30px); /* přizpůsob podle šířky textového bloku */
+  left: 0;
+  transform: translateX(-120%);
 }
 
 .zen-corner.bottom-right {
   bottom: 2rem;
-  right: calc(50% - 400px - 30px);
-  transform: scaleX(-1) scaleY(-1);
+  right: 0;
+  transform: translateX(120%) scaleX(-1) scaleY(-1);
 }
