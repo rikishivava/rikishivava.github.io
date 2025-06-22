@@ -289,32 +289,26 @@ footer {
   z-index: 1;
 }
 
-/* Styl pro obě linky */
 .zen-line {
   position: absolute;
-  pointer-events: none;
-  stroke: #cc4b4b;
-  stroke-opacity: 0.4;
-  stroke-width: 1.5;
-  stroke-linecap: round;
+  width: 20px;
+  height: 80px;
   fill: none;
-  z-index: -1;
+  stroke: #cc4b4b;
+  stroke-opacity: 0.3;
+  stroke-width: 2;
+  stroke-linecap: round;
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* Levý horní roh */
 .zen-line.top-left {
   top: 0;
   left: 0;
-  transform: translate(-100%, 0); /* vytáhne linku mimo wrapper doleva */
-  width: 20px;
-  height: 80px;
 }
 
-/* Pravý dolní roh */
 .zen-line.bottom-right {
   bottom: 0;
   right: 0;
-  transform: translate(100%, 0) scaleX(-1) scaleY(-1); /* vytáhne ji doprava + zrcadlí */
-  width: 20px;
-  height: 80px;
+  transform: scaleX(-1) scaleY(-1);
 }
