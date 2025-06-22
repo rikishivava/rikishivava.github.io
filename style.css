@@ -15,11 +15,18 @@ body {
   padding-top: 0;
 }
 
+/* Hlavní kontejner pro dekorace */
+.main-container {
+  position: relative;
+}
+
 /* Wrapper s adaptivní šířkou */
 .wrapper {
   max-width: 720px;
   margin: 0 auto;
   padding: 2em 1em;
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 1024px) {
   .wrapper {
@@ -75,7 +82,7 @@ body {
   font-size: 1.2em;
 }
 
-/* Hlavička (v těle stránky) */
+/* Hlavička */
 header {
   text-align: center;
   margin-bottom: 2em;
@@ -209,7 +216,6 @@ footer {
   margin: 0.5em 0;
 }
 
-/* Aktivní položka menu */
 .sidebar nav a.active {
   text-decoration: underline;
 }
@@ -242,7 +248,7 @@ footer {
   display: block;
 }
 
-/* Text nad bannerem s animací */
+/* Text nad bannerem */
 .banner-text {
   position: absolute;
   bottom: -100px;
@@ -271,34 +277,22 @@ footer {
     opacity: 1;
   }
 }
+
+/* Ref značka */
 .refmark {
   display: inline-block;
   vertical-align: super;
   margin-left: 0.2em;
   width: 14px;
   height: 14px;
-  color: #0066cc; /* typická modrá pro odkazy */
+  color: #0066cc;
   text-decoration: none;
 }
 .refmark:hover {
-  color: #004999; /* tmavší modrá při přejetí */
+  color: #004999;
 }
 
-.wrapper {
-  position: relative;
-  z-index: 1;
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 2em 1em;
-}
-
-@media (min-width: 1024px) {
-  .wrapper {
-    padding: 2em 2em;
-  }
-}
-
-/* Dekorativní SVG rohy */
+/* SVG rohové linky */
 .zen-corner {
   position: absolute;
   width: 40px;
@@ -319,12 +313,11 @@ footer {
 
 .zen-corner.top-left {
   top: 2rem;
-  left: 0;
-  transform: translateX(-120%);
+  left: calc(50% - 400px - 40px); /* 400px wrapper + 40px roh */
 }
 
 .zen-corner.bottom-right {
   bottom: 2rem;
-  right: 0;
-  transform: translateX(120%) scaleX(-1) scaleY(-1);
+  right: calc(50% - 400px - 40px);
+  transform: scaleX(-1) scaleY(-1);
 }
