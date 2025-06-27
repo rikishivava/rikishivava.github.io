@@ -292,32 +292,21 @@ footer {
   color: #004999;
 }
 
-/* SVG rohové linky */
 .zen-corner {
   position: absolute;
-  width: 40px;
-  height: 100px;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.zen-corner svg {
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: #cc4b4b;
-  stroke-opacity: 0.5;
-  stroke-width: 2;
-  stroke-linecap: round;
+  width: 160px;   /* 8× výška */
+  height: 20px;
+  opacity: 0.4;
+  z-index: 1;
 }
 
 .zen-corner.top-left {
-  top: 2rem;
-  left: calc(50% - 400px - 40px); /* 400px wrapper + 40px roh */
+  top: 2em;
+  left: 0;
 }
 
 .zen-corner.bottom-right {
-  bottom: 2rem;
-  right: calc(50% - 400px - 40px);
-  transform: scaleX(-1) scaleY(-1);
+  bottom: 2em;
+  right: 0;
+  transform: rotate(180deg);
 }
