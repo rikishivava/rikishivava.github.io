@@ -317,3 +317,25 @@ footer {
   right: 0;
   transform: rotate(180deg);
 }
+
+.zen-corner.left-vertical {
+  position: absolute;
+  top: 2em;
+  bottom: 2em;
+  left: -10px;  /* jemné odsazení od textu */
+  width: 10px;
+  height: calc(100% - 4em);
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.zen-corner.right-vertical {
+  position: absolute;
+  top: 2em;
+  bottom: 2em;
+  right: -10px;
+  width: 10px;
+  height: calc(100% - 4em);
+  opacity: 0.4;
+  z-index: 1;
+}
