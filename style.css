@@ -340,3 +340,36 @@ footer {
   right: 0;
   width: 10px;
 }
+
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.intro-text {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 1.5em;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.intro-text p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto;
+  animation: blurIn 2s ease-out forwards;
+  opacity: 0;
+}
