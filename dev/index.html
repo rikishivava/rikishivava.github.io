@@ -46,19 +46,6 @@
       padding: 2em 1em;
     }
   </style>
-
-  <!-- Symbolická ochrana -->
-  <script>
-    const správnéHeslo = "rikitest";
-    if (localStorage.getItem("pristup_dev") !== "ok") {
-      const zadané = prompt("Zadej přístupové heslo:");
-      if (zadané === správnéHeslo) {
-        localStorage.setItem("pristup_dev", "ok");
-      } else {
-        document.body.innerHTML = "<h2>Přístup zamítnut.</h2>";
-      }
-    }
-  </script>
 </head>
 <body>
 
@@ -71,11 +58,11 @@
       </a>
     </div>
     <!-- Horní jazykový přepínač -->
-<div class="language-switch">
-  <a href="/dev/index.html" title="Čeština">🇨🇿</a>
-  <a href="/dev/index_en.html" title="English">🇬🇧</a>
-  <a href="/dev/index_th.html" title="ไทย">🇹🇭</a>
-</div>
+    <div class="language-switch">
+      <a href="/dev/index.html" title="Čeština">🇨🇿</a>
+      <a href="/dev/index_en.html" title="English">🇬🇧</a>
+      <a href="/dev/index_th.html" title="ไทย">🇹🇭</a>
+    </div>
   </div>
 
   <!-- Výsuvné menu -->
@@ -97,9 +84,9 @@
   <!-- Obrázek na pozadí s animovaným textem -->
   <section class="hero">
     <div class="intro-text">
-      <h2>Vítejte na rikishivava.org</h2>
-      <p>Prostor věnovaný Metodě harmonizace a kontemplativnímu zkoumání bytí.  
-      Najdete zde texty, vhledy a nástroje pro klidný, hluboký a vědomý život.</p>
+      <p>
+        Věci nejde pochopit, když se na ně díváš zvenku. Musíš vstoupit dovnitř, trochu se v tom zamotat a třeba se i zasmát vlastní nedokonalosti. Teprve pak začne dávat smysl i to, co se předtím zdálo jako chaos. Jsme prostor pro ty, kdo chtějí žít a vnímat vědoměji.
+      </p>
     </div>
   </section>
 
