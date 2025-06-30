@@ -35,20 +35,41 @@
   </div>
 
   <!-- Levé menu -->
-  <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
-  <div id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-      <nav>
-        <div class="menu-divider"></div>
-        <a href="/dev/harmonizace.html" class="active">Harmonizace</a>
-        <div class="menu-divider"></div>
-        <a href="/dev/texty.html">Texty</a>
-        <div class="menu-divider"></div>
-        <a href="/dev/kontakt.html">Kontakt</a>
-        <div class="menu-divider"></div>
-      </nav>
-    </div>
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+
+      <div class="menu-item expandable">
+        <a href="#" class="menu-link">Harmonizace</a>
+        <div class="submenu">
+          <a href="/dev/harmonizace.html" class="submenu-link">Přehled metody</a>
+          <!-- Další kapitoly můžeš přidat později -->
+        </div>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <div class="menu-item expandable">
+        <a href="#" class="menu-link">Zbožštění</a>
+        <div class="submenu">
+          <a href="/dev/zbozsteni_uvod.html" class="submenu-link">Úvod</a>
+          <a href="/dev/zbozsteni_buh.html" class="submenu-link">Co je Bůh</a>
+          <a href="/dev/zbozsteni_kdo.html" class="submenu-link">Kdo stvořil Boha</a>
+          <a href="/dev/zbozsteni_vedomi.html" class="submenu-link">Vědomí</a>
+          <a href="/dev/zbozsteni_praxe.html" class="submenu-link">Praxe Zbožštění</a>
+        </div>
+      </div>
+
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
   </div>
+</div>
   
   <!-- Dekorace + obsah -->
 <div class="main-container">
@@ -389,17 +410,26 @@
     </div>
   </footer>
 
-  <!-- Sidebar ovládání -->
-  <script>
-    function toggleSidebar() {
-      document.getElementById("sidebar").classList.toggle("open");
-      document.getElementById("overlay").classList.toggle("show");
-    }
-    function closeSidebar() {
-      document.getElementById("sidebar").classList.remove("open");
-      document.getElementById("overlay").classList.remove("show");
-    }
-  </script>
+<script>
+  // Sidebar ovládání
+  function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("open");
+    document.getElementById("overlay").classList.toggle("show");
+  }
+  function closeSidebar() {
+    document.getElementById("sidebar").classList.remove("open");
+    document.getElementById("overlay").classList.remove("show");
+  }
+
+  // Rozbalovací podmenu
+  document.querySelectorAll('.menu-item.expandable > .menu-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const parent = this.parentElement;
+      parent.classList.toggle('open');
+    });
+  });
+</script>
 
 </body>
 </html>
