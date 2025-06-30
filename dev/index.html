@@ -71,21 +71,43 @@
     </div>
   </div>
 
-  <!-- Výsuvné menu -->
-  <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
-  <div id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-      <nav>
-        <div class="menu-divider"></div>
-        <a href="/dev/harmonizace.html">Harmonizace</a>
-        <div class="menu-divider"></div>
-        <a href="/dev/texty.html">Texty</a>
-        <div class="menu-divider"></div>
-        <a href="/dev/kontakt.html">Kontakt</a>
-        <div class="menu-divider"></div>
-      </nav>
-    </div>
+  <!-- Levé menu -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+
+      <!-- Harmonizace s podmenu -->
+      <div class="menu-item expandable">
+        <a href="/dev/harmonizace.html" class="menu-link active">Harmonizace</a>
+        <div class="submenu">
+          <!-- Zde lze v budoucnu přidat podkapitoly harmonizace -->
+        </div>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <!-- Zbožštění s podmenu -->
+      <div class="menu-item expandable">
+        <a href="#" class="menu-link">Zbožštění</a>
+        <div class="submenu">
+          <a href="/dev/zbozsteni_uvod.html">Úvod</a>
+          <a href="/dev/zbozsteni_coje.html">Co je Bůh</a>
+          <a href="/dev/zbozsteni_kdo.html">Kdo stvořil Boha</a>
+          <a href="/dev/zbozsteni_vedomi.html">Vědomí</a>
+          <a href="/dev/zbozsteni_praxe.html">Praxe Zbožštění</a>
+        </div>
+      </div>
+
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
   </div>
+</div>
 
   <!-- Obrázek na pozadí s animovaným textem -->
   <section class="hero">
@@ -131,6 +153,14 @@
       document.getElementById("sidebar").classList.remove("open");
       document.getElementById("overlay").classList.remove("show");
     }
+
+    document.querySelectorAll('.menu-item.expandable > .menu-link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const parent = this.parentElement;
+    parent.classList.toggle('open');
+  });
+});
   </script>
 
 </body>
