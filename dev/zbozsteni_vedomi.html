@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zbožštění – Vědomí | rikishivava.org</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- Horní lišta -->
+<div class="topbar">
+  <div class="left-group">
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    <a href="/" class="logo">
+      <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+    </a>
+  </div>
+  <div class="language-switch">
+    <a href="/dev/zbozsteni_vedomi.html" title="Čeština">🇨🇿</a>
+    <a href="/dev/zbozsteni_vedomi_en.html" title="English">🇬🇧</a>
+    <a href="/dev/zbozsteni_vedomi_th.html" title="ไทย">🇹🇭</a>
+  </div>
+</div>
+
+<!-- Levé menu -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Harmonizace</a>
+      </div>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Zbožštění</a>
+        <div class="submenu">
+          <a href="/dev/zbozsteni_uvod.html" class="submenu-link">Úvod</a>
+          <a href="/dev/zbozsteni_buh.html" class="submenu-link">Co je Bůh</a>
+          <a href="/dev/zbozsteni_stvoritel.html" class="submenu-link">Kdo stvořil Boha</a>
+          <a href="/dev/zbozsteni_vedomi.html" class="submenu-link active">Vědomí</a>
+          <a href="/dev/zbozsteni_praxe.html" class="submenu-link">Praxe Zbožštění</a>
+        </div>
+      </div>
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
+  </div>
+</div>
+
+<!-- Dekorace a obsah -->
+<div class="main-container">
+  <div class="wrapper">
+
+    <!-- Dekorativní linky -->
+    <div class="zen-corner top-horizontal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+        <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+    <div class="zen-corner left-vertical">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+        <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+    <div class="zen-corner right-vertical">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+        <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+    <div class="zen-corner bottom-horizontal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+        <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+
+    <!-- Obsah -->
+    <h2>Vědomí</h2>
+
+    <p>Vše, co kdy zažijeme, probíhá uvnitř vědomí. Barvy, zvuky, myšlenky, emoce, bolest i láska – všechno to je obsaženo v jakémsi neměřitelném poli prožívání. A přesto tento fenomén zůstává jedním z největších tajemství vědy, filosofie i spirituality. Co je to vědomí? Kde se bere? Má ho jen člověk, nebo i zvíře? Je to produkt mozku, nebo jeho podklad? A je svět „tam venku“ vůbec skutečný, když o něm víme jen skrze vědomí?</p>
+
+    <blockquote>„Nemohu dokázat, že existuje něco mimo moje vědomí. A přesto vím, že pokud bych nevnímal nic, pak by pro mě nic neexistovalo.“</blockquote>
+
+    <h3>1. Vědomí jako podmínka reality</h3>
+    <p>Základní tvrzení, které zde rozvineme a podpoříme, zní:<br />
+    <strong>Bez vědomí není realita. Realita je konstrukt vědomí.</strong></p>
+
+    <p>...</p> <!-- Vlož zbytek obsahu stejným způsobem, rozděl ho do logických bloků podle předchozího vzoru -->
+
+  </div>
+</div>
+
+<!-- Patička -->
+<footer>
+  &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+</footer>
+
+<!-- Ovládání sidebaru -->
+<script>
+  function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("open");
+    document.getElementById("overlay").classList.toggle("show");
+  }
+  function closeSidebar() {
+    document.getElementById("sidebar").classList.remove("open");
+    document.getElementById("overlay").classList.remove("show");
+  }
+
+  document.querySelectorAll('.menu-item.expandable > .menu-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const parent = this.parentElement;
+      parent.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
