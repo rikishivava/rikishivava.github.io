@@ -373,3 +373,27 @@ footer {
   animation: blurIn 2s ease-out forwards;
   opacity: 0;
 }
+
+.menu-item.expandable > .submenu {
+  display: none;
+  padding-left: 1em;
+  flex-direction: column;
+}
+.menu-item.expandable.open > .submenu {
+  display: flex;
+}
+.menu-link {
+  display: block;
+  padding: 0.6em 0;
+  text-decoration: none;
+  color: inherit;
+}
+.submenu a {
+  font-size: 0.95em;
+  padding: 0.4em 0;
+  text-decoration: none;
+  color: #666;
+}
+.submenu a:hover {
+  color: #b03a2e;
+}
