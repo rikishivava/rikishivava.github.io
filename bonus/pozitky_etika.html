@@ -1,1 +1,188 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harmonizace | rikishivava.org</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script>
+    const správnéHeslo = "rikitest";
+    if (localStorage.getItem("pristup_dev") !== "ok") {
+      const zadané = prompt("Zadej přístupové heslo:");
+      if (zadané === správnéHeslo) {
+        localStorage.setItem("pristup_dev", "ok");
+      } else {
+        document.body.innerHTML = "<h2>Přístup zamítnut.</h2>";
+      }
+    }
+  </script>
+</head>
+<body>
 
+  <!-- Horní lišta -->
+  <div class="topbar">
+    <div class="left-group">
+      <button class="menu-button" onclick="toggleSidebar()">☰</button>
+      <a href="/" class="logo">
+        <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+      </a>
+    </div>
+    <div class="language-switch">
+  <a href="/dev/harmonizace.html" title="Čeština">🇨🇿</a>
+  <a href="/dev/harmonizace_en.html" title="English">🇬🇧</a>
+  <a href="/dev/harmonizace_th.html" title="ไทย">🇹🇭</a>
+</div>
+  </div>
+
+  <!-- Levé menu -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+
+      <div class="menu-item expandable">
+        <a href="#" class="menu-link">Harmonizace</a>
+        <div class="submenu">
+          <a href="/dev/harmonizace.html" class="submenu-link">Přehled metody</a>
+          <!-- Další kapitoly můžeš přidat později -->
+        </div>
+      </div>
+
+      <div class="menu-divider"></div>
+
+      <div class="menu-item expandable">
+        <a href="#" class="menu-link">Zbožštění</a>
+        <div class="submenu">
+          <a href="/dev/zbozsteni_uvod.html" class="submenu-link">Úvod</a>
+          <a href="/dev/zbozsteni_buh.html" class="submenu-link">Co je Bůh</a>
+          <a href="/dev/zbozsteni_kdo.html" class="submenu-link">Kdo stvořil Boha</a>
+          <a href="/dev/zbozsteni_vedomi.html" class="submenu-link">Vědomí</a>
+          <a href="/dev/zbozsteni_praxe.html" class="submenu-link">Praxe Zbožštění</a>
+        </div>
+      </div>
+
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
+  </div>
+</div>
+  
+  <!-- Dekorace + obsah -->
+<div class="main-container">
+
+  <!-- Obsah -->
+  <div class="wrapper">
+
+  <!-- Horní vodorovná linka -->
+  <div class="zen-corner top-horizontal">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+      <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+            stroke-linecap="round" stroke-opacity="0.4" />
+    </svg>
+  </div>
+
+  <!-- Levá svislá linka -->
+  <div class="zen-corner left-vertical">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+      <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+            stroke-linecap="round" stroke-opacity="0.4" />
+    </svg>
+  </div>
+
+  <!-- Pravá svislá linka -->
+  <div class="zen-corner right-vertical">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+      <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+            stroke-linecap="round" stroke-opacity="0.4" />
+    </svg>
+  </div>
+
+  <!-- Dolní vodorovná linka -->
+  <div class="zen-corner bottom-horizontal">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+      <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+            stroke-linecap="round" stroke-opacity="0.4" />
+    </svg>
+  </div>
+
+  <h1>Etický úpadek v době požitku: historicko-filozofická reflexe civilizačního zlomu</h1>
+
+  <h2>Úvod</h2>
+  <p>Současná společnost se nachází v civilizační fázi, která se vyznačuje bezprecedentní mírou dostupnosti požitků a zároveň hlubokým úpadkem etických a duchovních hodnot. Zatímco vědeckotechnický pokrok a globalizace umožnily obrovský komfort a přístup k informacím, dochází paralelně k erozi lidskosti: empatie je oslabena, chamtivost glorifikována, stáří ignorováno a závislosti normalizovány. Místo otázky po smyslu života převládá otázka po dalším stimulu. Cílem této eseje je kriticky zhodnotit tento jev z pohledu historie, psychologie i filosofie a nabídnout hlubší výklad toho, co tento trend skutečně znamená.</p>
+
+  <h2>1. Symptomy rozkladu: normalizace zla</h2>
+  <p>Ve veřejném prostoru i soukromém životě se stále častěji setkáváme s tím, že je akceptováno to, co bylo dříve považováno za morálně zhoubné. Závislosti na látkách, technologiích či emocích se nejen tolerují, ale někdy i estetizují. Nepoctivost a chamtivost jsou u elit prezentovány jako obratnost a schopnost. Stáří je vnímáno jako přítěž, nikoli jako zdroj moudrosti. Tyto symptomy poukazují na hlubokou deformaci hodnotového rámce.</p>
+  <p>Základním rysem této deformace je, že realita je redukována na povrch. Důležitější než pravdivost je dojem, důležitější než bytí jsou požitky, důležitější než soucit je efektivita. Vzniká tím společenské prostředí, ve kterém je zlo přítomno nikoli jako výjimka, ale jako systémová norma.</p>
+
+  <h2>2. Psychologicko-kulturní vysvětlení: mozek ve světě nadbytku</h2>
+  <p>Z hlediska neuropsychologie je lidský mozek nastaven k vyhledávání potěšení a vyhýbání se bolesti. Tato evolučně výhodná strategie však v prostředí nepřetržité stimulace sladkostí, obrazů, notifikací, sexuálních podnětů, společenského uznání, vede k zahlcení. Původně přirozená touha po uspokojení je zneužita marketingem a technologií, které se stávají prodlouženou rukou lidských žádostí. Vzniká feedback loop závislosti, kde jediným měřítkem je intenzita prožitku.</p>
+  <p>Ztrácí se schopnost odkládat uspokojení, rozlišovat pravé potřeby a pěstovat vnitřní disciplínu. Etika se stává neužitečným zbytkem v systému, který funguje podle zákonů trhu, čím víc pozornosti, tím víc moci.</p>
+
+  <h2>3. Historická perspektiva: vítězství výbojných nad harmonickými</h2>
+  <p>Z historie známe opakující se vzorec: civilizace, které žily v harmonii s přírodou, v úctě k cyklům života a v míru, bývaly systematicky ničeny expanzivními a výbojnými společnostmi. Agresor bývá motivován chtíčem po zdrojích, moci a kontrole, tedy po vnějších projevech síly. Tím často dochází ke zničení kultur, které byly nositeli hlubšího porozumění světu.</p>
+  <p>Tento jev však odhaluje důležitý paradox: vítězství v dějinách nemusí znamenat přežití v hlubším smyslu. Mnohé výbojné civilizace sice dominovaly světu, ale jejich kultura se rozpadla do prachu. Naopak duchovní dědictví zničených národů často přežívá ve formě moudrosti, příběhů, vědění nebo vnitřního odkazu, který se znovu a znovu vynořuje.</p>
+
+  <h2>4. Filozofická syntéza: vítězství nebo rozklad?</h2>
+  <p>Lze tedy říci, že “nemocné”, chamtivé a destruktivní systémy dočasně vítězí, ale jejich vítězství má charakter přepětí, vychýlení kyvadla. Z filosofického hlediska je každé extrémní vychýlení předzvěstí návratu do rovnováhy. Výbojná moc je nestabilní. Její vnitřní hnací síla, chtíč, strach, kontrola, nakonec vede k sebedestrukci.</p>
+  <p>Naopak to, co je založené na rovnováze, soucitu a pravdě, může být z povrchu odstraněno, ale přetrvá jako semeno. V časech krize a rozkladu se lidstvo k těmto hodnotám znovu obrací. Historie tak připomíná cyklus: destrukce, utrpení, poznání, obnova.</p>
+
+  <h2>5. Vědomí jako pole dějin</h2>
+  <p>Pokud chápeme vědomí nikoli jako produkt mozku, ale jako základní pole reality, potom není hlavním měřítkem dějin ani vítězství, ani pokrok, ale zrání vědomí. Každý čin, každá kultura, každý výboj i každá harmonie zanechává stopu. Vědomí se učí skrze kontrasty. Skrze bolest i skrze radost. V tomto smyslu má i současný úpadek svůj význam: je zrcadlem, které nás konfrontuje s otázkou, čím chceme být.</p>
+  <p>Odpověď na tuto otázku nelze najít v ideologii, technice, ani ve starých náboženstvích. Nachází se v prožitku pravdy, která se nedá sdílet ani přikázat, jen objevit. A právě objevování pravdy, a její integrace do každodenního života, je cestou ven z labyrintu požitku a zapomnění.</p>
+
+  <h2>Závěr</h2>
+  <p>Zdánlivé vítězství požitkářské, chamtivé a egoistické kultury je jen povrchovým jevem v dlouhém dějinném procesu zrání vědomí. Skutečné hodnoty, úcta, rovnováha, soucit a pravda, mohou být dočasně potlačeny, ale nelze je zničit. Jsou zakódovány v samotné struktuře reality. Kdo je v sobě znovu objeví, přestává být pouhou součástí systému, stává se nositelem nové éry, která nemusí přijít zvenčí, ale může začít uvnitř každého člověka.</p>
+</div>
+    
+
+  </div>
+</div>
+</div> <!-- konec .main-container -->
+  
+  <!-- Patička -->
+  <footer>
+    &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+    <div style="margin-top: 1em;">
+      <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M95 50a45 45 0 1 1-21.7-38.6"
+              stroke="#b03a2e"
+              stroke-width="6"
+              stroke-linecap="round"
+              stroke-dasharray="282"
+              stroke-dashoffset="282">
+          <animate attributeName="stroke-dashoffset"
+                   from="282" to="0"
+                   dur="3s"
+                   fill="freeze" />
+        </path>
+      </svg>
+    </div>
+  </footer>
+
+<script>
+  // Sidebar ovládání
+  function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("open");
+    document.getElementById("overlay").classList.toggle("show");
+  }
+  function closeSidebar() {
+    document.getElementById("sidebar").classList.remove("open");
+    document.getElementById("overlay").classList.remove("show");
+  }
+
+  // Rozbalovací podmenu
+  document.querySelectorAll('.menu-item.expandable > .menu-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const parent = this.parentElement;
+      parent.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
