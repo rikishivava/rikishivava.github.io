@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- 🔧 ZDE ZMĚŇ NÁZEV STRÁNKY -->
+  <title>Název eseje | rikishivava.org</title>
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- Horní lišta -->
+<div class="topbar">
+  <div class="left-group">
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    <a href="/" class="logo">
+      <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+    </a>
+  </div>
+  <div class="language-switch">
+    <!-- 🔧 ZDE ZMĚŇ ODKAZY NA JAZYKOVÉ VERZE STRÁNKY -->
+    <a href="/dev/nazev_stranky.html" title="Čeština">🇨🇿</a>
+    <a href="/dev/nazev_stranky_en.html" title="English">🇬🇧</a>
+    <a href="/dev/nazev_stranky_th.html" title="ไทย">🇹🇭</a>
+  </div>
+</div>
+
+<!-- Levé menu -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Harmonizace</a>
+      </div>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Zbožštění</a>
+        <div class="submenu">
+          <!-- 🔧 ZDE UPRAV SUBMENU PODLE TOHO, KDE NOVÁ STRÁNKA PATŘÍ -->
+          <a href="/dev/zbozsteni_uvod.html" class="submenu-link">Úvod</a>
+          <a href="/dev/zbozsteni_buh.html" class="submenu-link">Co je Bůh</a>
+          <a href="/dev/zbozsteni_nova_esej.html" class="submenu-link active">Název nové eseje</a>
+        </div>
+      </div>
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
+  </div>
+</div>
+
+<!-- Dekorace a obsah -->
+<div class="main-container">
+  <div class="wrapper">
+
+    <!-- Dekorativní zen linky (beze změn) -->
+    <div class="zen-corner top-horizontal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+        <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+
+    <div class="zen-corner left-vertical">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+        <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+
+    <div class="zen-corner right-vertical">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+        <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+
+    <div class="zen-corner bottom-horizontal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+        <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+
+    <!-- 🔧 ZDE VLOŽ TEXT ESEJE -->
+    <div class="text-block">
+      <h1>Název eseje</h1>
+
+      <h2>Úvod</h2>
+      <p>První odstavec eseje...</p>
+
+      <h2>Další kapitola</h2>
+      <p>Text další kapitoly...</p>
+
+      <!-- Další části podle potřeby -->
+    </div>
+
+  </div>
+</div>
+
+<!-- Patička -->
+<footer>
+  &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+</footer>
+
+<!-- Ovládání sidebaru -->
+<script>
+  function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("open");
+    document.getElementById("overlay").classList.toggle("show");
+  }
+  function closeSidebar() {
+    document.getElementById("sidebar").classList.remove("open");
+    document.getElementById("overlay").classList.remove("show");
+  }
+
+  document.querySelectorAll('.menu-item.expandable > .menu-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const parent = this.parentElement;
+      parent.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
