@@ -3,19 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harmonizace | rikishivava.org</title>
+  <title>Požitky a etika | rikishivava.org</title>
   <link rel="stylesheet" href="/style.css" />
-  <script>
-    const správnéHeslo = "rikitest";
-    if (localStorage.getItem("pristup_dev") !== "ok") {
-      const zadané = prompt("Zadej přístupové heslo:");
-      if (zadané === správnéHeslo) {
-        localStorage.setItem("pristup_dev", "ok");
-      } else {
-        document.body.innerHTML = "<h2>Přístup zamítnut.</h2>";
-      }
-    }
-  </script>
+
 </head>
 <body>
 
