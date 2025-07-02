@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- 🔧 ZDE ZMĚŇ NÁZEV STRÁNKY -->
+  <title>Formalismus versus intuice | rikishivava.org</title>
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- Horní lišta -->
+<div class="topbar">
+  <div class="left-group">
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    <a href="/" class="logo">
+      <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+    </a>
+  </div>
+  <div class="language-switch">
+    <!-- 🔧 ZDE ZMĚŇ ODKAZY NA JAZYKOVÉ VERZE STRÁNKY -->
+    <a href="/bonus/formalismus_intuice.html" title="Čeština">🇨🇿</a>
+    <a href="/bonus/formalismus_intuice_en.html" title="English">🇬🇧</a>
+    <a href="/bonus/formalismus_intuice_th.html" title="ไทย">🇹🇭</a>
+  </div>
+</div>
+
+<!-- Levé menu -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Harmonizace</a>
+      </div>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Zbožštění</a>
+        <div class="submenu">
+          <!-- 🔧 ZDE UPRAV SUBMENU PODLE TOHO, KDE NOVÁ STRÁNKA PATŘÍ -->
+          <a href="/dev/zbozsteni_uvod.html" class="submenu-link">Úvod</a>
+          <a href="/dev/zbozsteni_buh.html" class="submenu-link">Co je Bůh</a>
+          <a href="/dev/zbozsteni_nova_esej.html" class="submenu-link active">Název nové eseje</a>
+        </div>
+      </div>
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
+  </div>
+</div>
+
+<!-- Dekorace a obsah -->
+<div class="main-container">
+  <div class="wrapper">
+
+    <!-- Dekorativní zen linky (beze změn) -->
+    <div class="zen-corner top-horizontal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+        <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+
+    <div class="zen-corner left-vertical">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+        <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+
+    <div class="zen-corner right-vertical">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+        <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+
+    <div class="zen-corner bottom-horizontal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+        <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+
+    <!-- 🔧 ZDE VLOŽ TEXT ESEJE -->
+    <div class="text-block">
+  <h1>Pravděpodobnost, opakování a vědomí: paradox v zrcadle reality</h1>
+
+  <h2>Úvod</h2>
+  <p>
+    Na první pohled se může zdát, že matematika a vědomí patří do zcela odlišných světů. Matematika je přesná, formální, stojí na axiomatech a důkazech. Vědomí naopak uniká popisu, je subjektivní, proměnlivé, a přesto je tím, co matematické pojmy vnímá, vytváří a nakonec i interpretuje. Když se však podíváme hlouběji na oblast pravděpodobnosti, objevíme prostor, kde se tyto dva světy nečekaně setkávají. Zvlášť nápadné je to v situacích, které se opakují a vyvolávají v nás dojem, že minulost by měla ovlivnit budoucnost, ačkoliv podle klasického matematického modelu tomu tak není. Probere tento paradox v kontextu vědomí a reality jako hry s nulovým součtem.
+  </p>
+
+  <h2>Pravděpodobnost a její formalismus</h2>
+  <p>
+    Matematická pravděpodobnost je disciplína založená na přesném definování výchozího prostoru jevů a frekvenčního či subjektivního chápání náhody. Již Pierre-Simon Laplace ve své <i>Teorii pravděpodobnosti</i> tvrdil, že pravděpodobnost určitého výsledku je dána poměrem příznivých možností ku všem možnostem, za předpokladu rovnoměrného rozdělení. Tento formální přístup se v moderní teorii pravděpodobnosti, rozvíjené mimo jiné Andrejem Kolmogorovem, přetavil do axiomatického systému, kde pravděpodobnost není vázaná na konkrétní pozorování, ale na předem stanovenou strukturu.
+  </p>
+  <p>
+    Podívejme se na jednoduchý příklad. Představme si ideální ruletu bez zelené nuly. Máme tedy jen dvě barvy, červenou a černou, každou se stejnou šancí výskytu. Pravděpodobnost, že padne červená, je 50 procent. Padne-li desetkrát po sobě červená, matematika nám stále říká, že v jedenáctém pokusu je pravděpodobnost černé opět jen 50 procent. Pro mnohé je to překvapivé. Vždyť se zdá, že černá už „musí“ přijít. Právě zde se rodí paradox.
+  </p>
+
+  <h2>Paradox opakování a hazardní klam</h2>
+  <p>
+    Tento jev bývá označován jako „hazardní klam“ (gambler’s fallacy). Lidé se intuitivně domnívají, že po delší sérii jednoho výsledku musí zákonitě přijít opak, protože vnímají pravděpodobnost jako proces, který se vyrovnává v čase. Tento klam se opírá o hluboký psychologický mechanismus: věříme v rovnováhu, ve spravedlnost dění, v návrat k průměru. Ale matematika mluví jinak. Každý jednotlivý pokus je statisticky nezávislý na těch předchozích. Neexistuje žádná paměť rulety, žádné narůstající šance na změnu.
+  </p>
+  <p>
+    Tento rozpor mezi matematickým formalismem a lidskou intuicí není pouze otázkou chybného úsudku. Ukazuje nám něco hlubšího. Ukazuje mezeru mezi tím, co lze modelovat pomocí vzorců, a tím, co skutečně vnímáme jako realitu. Tato mezera je právě prostorem, kde se uplatňuje vědomí.
+  </p>
+
+  <h2>Vědomí jako činitel reality</h2>
+  <p>
+    V naší teorii chápeme realitu jako výsledek vědomé hry s nulovým součtem. Každý jev, každý pohyb kyvadla na jednu stranu, je vyváženo jevem opačným. Nejde o to, že by svět mechanicky vyvažoval výskyty červené a černé. Jde o to, že vědomí má tendenci vytvářet napětí a zároveň vnímat i jeho uvolnění. Pokud desetkrát padla červená, vzniká v pozorovateli napětí. Toto napětí není jen subjektivní dojem, ale tvoří součást samotného dění. Vědomí očekává změnu, a tím tuto změnu implikuje jako součást vývoje děje.
+  </p>
+  <p>
+    Z hlediska čisté matematiky se takový přístup může zdát absurdní. Ale připomeňme si, že i významní matematici jako Kurt Gödel nebo Georg Cantor si byli vědomi meze formálního systému. Gödelovy věty o neúplnosti ukázaly, že v každém dostatečně silném formálním systému existují axiomy, které nelze dokázat v rámci daného systému. Podobně se v pravděpodobnostním modelu objevují hranice, za které nelze jít bez zapojení kontextu – tedy bez vědomí pozorovatele.
+  </p>
+
+  <h2>Pravděpodobnost jako zrcadlo vztahu</h2>
+  <p>
+    Jestliže připustíme, že každá matematická struktura je pouze model reality a nikoli realita sama, potom musíme připustit i to, že pravděpodobnost je výkladovým rámcem, ne objektivní silou. Vědomí, které model interpretuje, se stává rozhodujícím činitelem. Opakování jednoho jevu v čase může být náhoda, nebo to může být zrcadlo nerovnováhy ve vztahu mezi pozorovatelem a děním. Matematika nám řekne: padesát procent. Ale vědomí nám řekne: už je čas na změnu. A protože svět není od vědomí oddělen, ale jím je tvořen, tato změna skutečně přichází.
+  </p>
+  <p>
+    To neznamená, že matematika je chybná. Znamená to, že sama o sobě není úplná. Model bez pozorovatele není realitou, ale jen abstrakcí. Hra pravděpodobnosti bez vztahu k napětí a očekávání není skutečnou hrou, ale jen statickým obrazem.
+  </p>
+
+  <h2>Závěr</h2>
+  <p>
+    Z pohledu teorie vědomí a rovnováhy je pravděpodobnost nejen nástrojem predikce, ale i výrazem hlubšího zákona vyrovnávání. Každé opakování, každé zdánlivé „náhodné“ dění, se odehrává nejen v prostoru matematiky, ale i v prostoru mysli. Vědomí není pasivní pozorovatel, ale hybatel reality. A proto může paradox pravděpodobnosti po opakování být ve skutečnosti klíčem ke vhledu do povahy skutečnosti samotné. Nejsme odděleni od jevů, které pozorujeme. Jsme jejich součástí. A tak, i když matematika trvá na tom, že po deseti červených je pravděpodobnost černé stále 50 procent, realita může říci: teď nastal okamžik rovnováhy.
+  </p>
+</div>
+
+      <!-- Další části podle potřeby -->
+    </div>
+
+  </div>
+</div>
+
+<!-- Patička -->
+<footer>
+  &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+</footer>
+
+<!-- Ovládání sidebaru -->
+<script>
+  function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("open");
+    document.getElementById("overlay").classList.toggle("show");
+  }
+  function closeSidebar() {
+    document.getElementById("sidebar").classList.remove("open");
+    document.getElementById("overlay").classList.remove("show");
+  }
+
+  document.querySelectorAll('.menu-item.expandable > .menu-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const parent = this.parentElement;
+      parent.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
