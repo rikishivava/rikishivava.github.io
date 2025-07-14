@@ -420,3 +420,28 @@ footer {
   width: 33%;
   border-bottom: 1px solid #ccc;
 }
+
+.toc ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 2rem 0;
+  line-height: 1.4;
+}
+
+.toc li {
+  margin: 0.3rem 0;
+}
+
+.toc li li {
+  font-style: italic;
+  color: #555;
+  margin-left: 1rem;
+  position: relative;
+}
+
+.toc li li::before {
+  content: "› ";
+  position: absolute;
+  left: -1rem;
+  color: #aaa;
+}
