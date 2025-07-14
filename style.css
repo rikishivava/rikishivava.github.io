@@ -414,3 +414,9 @@ footer {
 .zen-link a:hover {
   color: #a93226;
 }
+
+.divider-thin {
+  margin: 4rem auto 2rem auto;
+  width: 33%;
+  border-bottom: 1px solid #ccc;
+}
