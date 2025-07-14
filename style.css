@@ -445,3 +445,13 @@ footer {
   left: -1rem;
   color: #aaa;
 }
+
+.up-arrow {
+  font-size: 0.8em;
+  text-decoration: none;
+  margin-left: 8px;
+  color: #888;
+}
+.up-arrow:hover {
+  color: #000;
+}
