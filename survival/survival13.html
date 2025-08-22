@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osmý den, přebytky | rikishivava.org</title>
+
+  <!-- OG -->
+  <meta property="og:title" content="Osmý den, přebytky" />
+  <meta property="og:description" content="Survival, Thajsko 2008 – pokračování série." />
+  <meta property="og:image" content="https://rikishivava.org/assets/og_survival.jpg" />
+  <meta property="og:url" content="https://rikishivava.org/survival/survival13.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- Horní lišta -->
+<div class="topbar">
+  <div class="left-group">
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    <a href="/" class="logo">
+      <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+    </a>
+  </div>
+  <div class="language-switch">
+    <a href="/survival/survival13.html">🇨🇿</a>
+    <a href="/survival/survival13_en.html">🇬🇧</a>
+    <a href="/survival/survival13_th.html">🇹🇭</a>
+  </div>
+</div>
+
+<!-- Sidebar (menu položky teď neřešíme) -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Survival</a>
+        <div class="submenu">
+          <a href="/survival/survival.html" class="submenu-link">Úvodní stránka</a>
+          <a href="/survival/survival13.html" class="submenu-link active">Osmý den</a>
+        </div>
+      </div>
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
+  </div>
+</div>
+
+<!-- Obsah kapitoly -->
+<div class="main-container">
+  <div class="wrapper">
+    <div class="frame">
+      
+      <!-- Vegetace – LEVÁ -->
+      <div class="vegetation left" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gStroke" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
+            </linearGradient>
+            <linearGradient id="gLeaf" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 0
+                   C 55 80, 75 160, 60 240
+                   C 40 320, 80 400, 58 480
+                   C 35 560, 85 640, 62 720
+                   C 45 800, 70 880, 60 1000"
+                fill="none" stroke="url(#gStroke)" stroke-width="3.2" stroke-linecap="round" />
+          <g fill="url(#gLeaf)">
+            <ellipse cx="40" cy="90"  rx="18" ry="8" />
+            <ellipse cx="82" cy="150" rx="14" ry="7" transform="rotate(-12 82 150)"/>
+            <ellipse cx="35" cy="220" rx="16" ry="8" transform="rotate(8 35 220)"/>
+            <ellipse cx="88" cy="300" rx="20" ry="9" transform="rotate(-6 88 300)"/>
+            <ellipse cx="28" cy="360" rx="13" ry="6"/>
+            <ellipse cx="90" cy="430" rx="16" ry="7" transform="rotate(10 90 430)"/>
+            <ellipse cx="33" cy="515" rx="19" ry="9" transform="rotate(-8 33 515)"/>
+            <ellipse cx="92" cy="585" rx="15" ry="7"/>
+            <ellipse cx="30" cy="660" rx="18" ry="8" transform="rotate(6 30 660)"/>
+            <ellipse cx="86" cy="740" rx="20" ry="9" transform="rotate(-10 86 740)"/>
+            <ellipse cx="36" cy="820" rx="14" ry="7"/>
+            <ellipse cx="92" cy="900" rx="18" ry="8" transform="rotate(7 92 900)"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Vegetace – PRAVÁ (zrcadlená) -->
+      <div class="vegetation right" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gStrokeR" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
+            </linearGradient>
+            <linearGradient id="gLeafR" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 0
+                   C 55 80, 75 160, 60 240
+                   C 40 320, 80 400, 58 480
+                   C 35 560, 85 640, 62 720
+                   C 45 800, 70 880, 60 1000"
+                fill="none" stroke="url(#gStrokeR)" stroke-width="3.2" stroke-linecap="round" />
+          <g fill="url(#gLeafR)">
+            <ellipse cx="40" cy="80"  rx="17" ry="8" />
+            <ellipse cx="82" cy="165" rx="14" ry="7" transform="rotate(10 82 165)"/>
+            <ellipse cx="35" cy="245" rx="16" ry="8" transform="rotate(-6 35 245)"/>
+            <ellipse cx="88" cy="315" rx="19" ry="9" transform="rotate(5 88 315)"/>
+            <ellipse cx="28" cy="380" rx="13" ry="6"/>
+            <ellipse cx="90" cy="450" rx="16" ry="7" transform="rotate(-9 90 450)"/>
+            <ellipse cx="33" cy="530" rx="19" ry="9" transform="rotate(7 33 530)"/>
+            <ellipse cx="92" cy="600" rx="15" ry="7"/>
+            <ellipse cx="30" cy="685" rx="18" ry="8" transform="rotate(-7 30 685)"/>
+            <ellipse cx="86" cy="755" rx="20" ry="9" transform="rotate(9 86 755)"/>
+            <ellipse cx="36" cy="835" rx="14" ry="7"/>
+            <ellipse cx="92" cy="915" rx="18" ry="8" transform="rotate(-5 92 915)"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Text kapitoly -->
+      <article class="text-block">
+        <h2>Osmý den, přebytky</h2>
+
+        <p>Noc začala klidně. Zvykám si na zvuky džungle, které mi dříve připadaly chaotické, ale teď už v nich rozpoznávám vzorce: šumění listí, vzdálené volání gekonů, škrábání drobných tvorů po kamenech. Krátce po půlnoci mě však probudilo těžké funění a šustění suchého listí. U vchodu do jeskyně se zjevil obrys menšího prasete, hrabajícího v zemi po koříncích. Prudším pohybem ho vyplaším, prase se dává na útěk a v zmatku šlápne na většího gekona, který se už nedokáže hýbat. Je to tvrdý obraz přírody, ale i příležitost. Vytahuji nůž, zvíře rychle kuchám, stahuji kůži a očištěné maso pomalu peču na ohni. Je tuhé, ale po dnech ryb a rostlin vítaná změna. První skutečné maso od začátku testu.</p>
+
+        <p>Ráno pokračuji sběrem. Nacházím snítky byliny s vůní podobnou citronové trávě a využívám ji k ochucení ryb balených do banánových listů. Objevuji také několik zelených plodů vhodných k tepelné úpravě. Na zpáteční cestě nacházím skupinu rostlin taro – velké listy a hlízy, které se po důkladném povaření dají jíst. Vytahuji pár menších hlíz a večer je dlouze vařím, abych odstranil škodliviny. Mají sytící chuť a doplňují ryby i byliny.</p>
+
+        <p>Jeskyni postupně vylepšuji. Na zem kladu silnější vrstvu suchého listí pro izolaci od chladu a vlhkosti. U vchodu stavím kameny tak, aby zmírnily proudění větru, ale umožnily cirkulaci vzduchu. Vytvářím i improvizované místo pro uskladnění dřeva a pár zásob ryb a taro zabalených v banánových listech. Myslím si, že jsem vyzrál na budoucí dny, ale večer přichází lekce. Mravenci zásoby objeví rychleji, než jsem čekal. I přes provizorní zavěšení a popelové bariéry se dostávají k jídlu. Připravená potrava mizí během pár hodin. Chápu, že džungle zásoby nepovoluje. Všechno, co tu získám, je určeno k okamžité spotřebě, jinak se o to postará jiný tvor.</p>
+
+        <p>Odpoledne, když je vedro největší, zůstávám v chladu jeskyně. Ticho mezi úkony má vlastní sílu. Sedím a jen naslouchám, jakoby se svět zpomalil a já vnímal jasněji. Večer znovu zapaluji oheň, kolem lůžka rozhazuji popel a rozdrcené listy. Džungle mě učí svým vlastním tempem. Tentokrát, že přebytek je iluze. Stačí mi jídlo na dnešek. Zítřek už má v džungli jiné pány.</p>
+
+        <!-- Odkaz na pokračování – khaki -->
+        <div class="next-link">
+          <a href="/survival/survival14.html">Pokračovat &gt;</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+</footer>
+
+<script src="/scripts/sidebar.js"></script>
+</body>
+</html>
