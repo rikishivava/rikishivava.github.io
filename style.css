@@ -506,3 +506,71 @@ footer {
 @media (max-width: 1023px) {
   .vegetation { display: none; }
 }
+/* ===== Survival kapitola (bez hero pozadí) ===== */
+:root{
+  --content-max: 820px;     /* cílová max. šířka textu */
+  --frame-pad: 24px;        /* vnitřní okraj rámečku kolem textu */
+  --veg-gap: 20px;          /* mezera mezi rámečkem a vegetací */
+  --veg-width: 120px;       /* šířka pruhu vegetace */
+  --veg-alpha: 0.28;        /* průhlednost vegetace (lze doladit) */
+
+  --veg-stroke: #6fbf8a;    /* barvy vegetace */
+  --veg-leaf:   #8bd3a4;
+}
+
+/* Kontejner celé stránky s vegetací – rozšířený o boky pro vegetaci */
+.wrapper {
+  max-width: calc(var(--content-max) + 2 * (var(--frame-pad) + var(--veg-gap) + var(--veg-width)));
+  margin: 0 auto;
+  padding: 2em 1em;
+  position: relative;
+  z-index: 1;
+}
+
+/* Rámec zarovnávající vegetaci k textu */
+.frame {
+  position: relative;
+  max-width: calc(var(--content-max) + 2 * var(--frame-pad));
+  margin: 0 auto;
+  padding: var(--frame-pad);
+}
+
+/* Vlastní text – nezávislý na vegetaci */
+.text-block {
+  position: relative;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  z-index: 2;
+}
+
+/* Vegetace – stojí MIMO text, ukotvená k rámu */
+.vegetation {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--veg-width);
+  pointer-events: none;
+  opacity: var(--veg-alpha);
+  z-index: 1;
+}
+.vegetation svg { width: 100%; height: 100%; display: block; }
+
+.vegetation.left  { left:  calc(-1 * (var(--veg-gap) + var(--veg-width))); }
+.vegetation.right { right: calc(-1 * (var(--veg-gap) + var(--veg-width))); transform: scaleX(-1); }
+
+/* Odkaz na pokračování (khaki) */
+.next-link { margin-top: 3em; text-align: right; }
+.next-link a{
+  color: khaki;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+.next-link a:hover { text-decoration: underline; }
+
+/* Responsivita – na užších displejích vegetaci skryj a vrať standardní šířku */
+@media (max-width: 1023px) {
+  .vegetation { display: none; }
+  .wrapper    { max-width: calc(var(--content-max) + 2 * var(--frame-pad)); }
+}
