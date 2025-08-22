@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Třináctý den, mimo obvyklý okruh | rikishivava.org</title>
+
+  <!-- OG -->
+  <meta property="og:title" content="Třináctý den, mimo obvyklý okruh" />
+  <meta property="og:description" content="Survival, Thajsko 2008 – pokračování série." />
+  <meta property="og:image" content="https://rikishivava.org/assets/og_survival.jpg" />
+  <meta property="og:url" content="https://rikishivava.org/survival/survival18.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- Horní lišta -->
+<div class="topbar">
+  <div class="left-group">
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    <a href="/" class="logo">
+      <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+    </a>
+  </div>
+  <div class="language-switch">
+    <a href="/survival/survival18.html">🇨🇿</a>
+    <a href="/survival/survival18_en.html">🇬🇧</a>
+    <a href="/survival/survival18_th.html">🇹🇭</a>
+  </div>
+</div>
+
+<!-- Sidebar (menu položky teď neřešíme) -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Survival</a>
+        <div class="submenu">
+          <a href="/survival/survival.html" class="submenu-link">Úvodní stránka</a>
+          <a href="/survival/survival18.html" class="submenu-link active">Třináctý den</a>
+        </div>
+      </div>
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
+  </div>
+</div>
+
+<!-- Obsah kapitoly -->
+<div class="main-container">
+  <div class="wrapper">
+    <div class="frame">
+      
+      <!-- Vegetace – LEVÁ -->
+      <div class="vegetation left" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gStroke" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
+            </linearGradient>
+            <linearGradient id="gLeaf" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 0
+                   C 55 80, 75 160, 60 240
+                   C 40 320, 80 400, 58 480
+                   C 35 560, 85 640, 62 720
+                   C 45 800, 70 880, 60 1000"
+                fill="none" stroke="url(#gStroke)" stroke-width="3.2" stroke-linecap="round" />
+          <g fill="url(#gLeaf)">
+            <ellipse cx="40" cy="90"  rx="18" ry="8" />
+            <ellipse cx="82" cy="150" rx="14" ry="7" transform="rotate(-12 82 150)"/>
+            <ellipse cx="35" cy="220" rx="16" ry="8" transform="rotate(8 35 220)"/>
+            <ellipse cx="88" cy="300" rx="20" ry="9" transform="rotate(-6 88 300)"/>
+            <ellipse cx="28" cy="360" rx="13" ry="6"/>
+            <ellipse cx="90" cy="430" rx="16" ry="7" transform="rotate(10 90 430)"/>
+            <ellipse cx="33" cy="515" rx="19" ry="9" transform="rotate(-8 33 515)"/>
+            <ellipse cx="92" cy="585" rx="15" ry="7"/>
+            <ellipse cx="30" cy="660" rx="18" ry="8" transform="rotate(6 30 660)"/>
+            <ellipse cx="86" cy="740" rx="20" ry="9" transform="rotate(-10 86 740)"/>
+            <ellipse cx="36" cy="820" rx="14" ry="7"/>
+            <ellipse cx="92" cy="900" rx="18" ry="8" transform="rotate(7 92 900)"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Vegetace – PRAVÁ (zrcadlená) -->
+      <div class="vegetation right" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gStrokeR" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
+            </linearGradient>
+            <linearGradient id="gLeafR" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 0
+                   C 55 80, 75 160, 60 240
+                   C 40 320, 80 400, 58 480
+                   C 35 560, 85 640, 62 720
+                   C 45 800, 70 880, 60 1000"
+                fill="none" stroke="url(#gStrokeR)" stroke-width="3.2" stroke-linecap="round" />
+          <g fill="url(#gLeafR)">
+            <ellipse cx="40" cy="80"  rx="17" ry="8" />
+            <ellipse cx="82" cy="165" rx="14" ry="7" transform="rotate(10 82 165)"/>
+            <ellipse cx="35" cy="245" rx="16" ry="8" transform="rotate(-6 35 245)"/>
+            <ellipse cx="88" cy="315" rx="19" ry="9" transform="rotate(5 88 315)"/>
+            <ellipse cx="28" cy="380" rx="13" ry="6"/>
+            <ellipse cx="90" cy="450" rx="16" ry="7" transform="rotate(-9 90 450)"/>
+            <ellipse cx="33" cy="530" rx="19" ry="9" transform="rotate(7 33 530)"/>
+            <ellipse cx="92" cy="600" rx="15" ry="7"/>
+            <ellipse cx="30" cy="685" rx="18" ry="8" transform="rotate(-7 30 685)"/>
+            <ellipse cx="86" cy="755" rx="20" ry="9" transform="rotate(9 86 755)"/>
+            <ellipse cx="36" cy="835" rx="14" ry="7"/>
+            <ellipse cx="92" cy="915" rx="18" ry="8" transform="rotate(-5 92 915)"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Text kapitoly -->
+      <article class="text-block">
+        <h2>Třináctý den, mimo obvyklý okruh</h2>
+
+        <p>Noc byla klidná, nebo o žádném vyrušení nevím. Možná moje opatření proti opicím zabraly. Možná jsem jen ty zvědavé makaky přestal bavit. Každopádně po snídani z několika banánů a praženého hmyzu upevňuji vstup do jeskyně a přidávám provizorní zátaras z tlustších kusů dřeva a pletiva z lián.</p>
+
+        <p>Poté se rozhoduji vyrazit dál, mimo obvyklý okruh. Připravuji si malý balíček potravy, plochý bambusový zásobník na vodu a ověřuji, že mám pevně připevněný nůž. Pohyb v džungli má svá pravidla – držet se v přítmí, dávat pozor na křehké větve, které mohou při přidržení prasknout, a neustále hlídat terén pod nohama kvůli hadům či skrytým děrám.</p>
+
+        <p>Cesta vede hustším porostem, kde se teplý vzduch drží mezi stromy a každý krok doprovází cinknutí kapek padajících z listů. Moskyti jsou všude, takže už po pár minutách vytahuji směs přírodního repelentu a jemného popela, kterou nanáším na odkrytou kůži.</p>
+
+        <p>Kolem poledne nacházím zajímavé místo – otevřenější prostor s vyšší trávou, kde se ve vlhkém podkladu zřetelně rýsují drobné stopy ještěra. Mohlo by jít o menšího varana. Krátce oblast prozkoumám, ale nevidím nic, co by naznačovalo přítomnost hnízda. Přesto poblíž nacházím několik trsů zvláštní rostliny – divoký jamun, malé tmavě fialové plody s nakyslou chutí. Opatrně je ochutnám, jsou svíravé na jazyku, ale rozhodně jedlé a vhodné k doplnění energie. Sbírám hrst plodů do bambusové nádoby a beru je s sebou jako nečekaný objev dne.</p>
+
+        <p>Odpoledne se vracím k jeskyni, doplňuji vodu a připravuji jednoduché jídlo. Ke kouskům vařeného taro přidávám několik jamunových plodů, které překvapivě dobře ladí s jejich jemnou chutí. Večer, při ukládání k odpočinku, znovu poslouchám zvuky džungle. Tentokrát se opice neozývá. Jen vzdálené volání nočních ptáků a neustálý, monotónní hukot hmyzu. Už jsem si vlastně zvyknul. A moc už takových chvil nebude. V mysli se mi vybavuje první noc – plná nejistoty, strachu a hluku, který jsem nedokázal roztřídit. Teď slyším totéž, ale vnímám to jinak. Jako kdyby se džungle stala přirozenou součástí mého rytmu a já se stal její tichou součástí. Vědomí, že zkouška se blíží ke konci, přináší zvláštní směs úlevy a lítosti.</p>
+
+        <!-- Odkaz na pokračování – khaki -->
+        <div class="next-link">
+          <a href="/survival/survival19.html">Pokračovat &gt;</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+</footer>
+
+<script src="/scripts/sidebar.js"></script>
+</body>
+</html>
