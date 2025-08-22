@@ -3,80 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Zkouška z dospělosti | rikishivava.org</title>
+
   <!-- OG -->
-  <meta property="og:title" content="Survival: Úvod" />
-  <meta property="og:description" content="Praktický průvodce pro přežití v terénu." />
-  <meta property="og:image" content="https://rikishivava.org/assets/og_survival.jpg" />
-  <meta property="og:url" content="https://rikishivava.org/dev/survival_uvod.html" />
-  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Zkouška z dospělosti" />
+  <meta property="og:description" content="Survival, Thajsko 2008" />
+  <meta property="og:image" content="https://rikishivava.org/assets/og_survival.PNG" />
+  <meta property="og:url" content="https://rikishivava.org/survival/survival.html" />
+  <meta property="og:type" content="website" />
 
-  <title>Survival: Úvod | rikishivava.org</title>
-
-  <!-- Globální styl -->
+  <!-- Globální styly -->
   <link rel="stylesheet" href="/style.css" />
-
-  <!-- Doplňkové CSS pro vegetaci a rozvržení -->
-  <style>
-    :root{
-      --veg-stroke: #6fbf8a;
-      --veg-leaf: #8bd3a4;
-      --veg-alpha: 0.22;
-
-      --frame-pad: 24px;        /* vnitřní okraj kolem textu */
-      --veg-gap: 20px;          /* mezera mezi textovým blokem a vegetací */
-      --veg-width: 120px;       /* šířka pruhu vegetace */
-      --content-max: 820px;     /* max šířka textu */
-    }
-
-    .main-container { padding: 16px; }
-    /* Rezerva po stranách pro vegetaci, aby nezasahovala do stránky/scrollu */
-    .wrapper {
-      max-width: calc(var(--content-max) + 2 * (var(--frame-pad) + var(--veg-gap) + var(--veg-width)));
-      margin: 0 auto;
-    }
-
-    /* Kontejner, ke kterému se zarovnává vegetace i text */
-    .frame {
-      position: relative;
-      max-width: calc(var(--content-max) + 2 * var(--frame-pad));
-      margin: 0 auto;
-      padding: var(--frame-pad);
-    }
-
-    .text-block {
-      position: relative;
-      max-width: var(--content-max);
-      margin: 0 auto;
-      z-index: 2;
-    }
-
-    /* Vegetace – zarovnaná k levému/pravému okraji .frame, mimo text */
-    .vegetation {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: var(--veg-width);
-      pointer-events: none;
-      opacity: var(--veg-alpha);
-      z-index: 1;
-    }
-    .vegetation svg { width: 100%; height: 100%; display: block; }
-
-    .vegetation.left  { left:  calc(-1 * (var(--veg-gap) + var(--veg-width))); }
-    .vegetation.right { right: calc(-1 * (var(--veg-gap) + var(--veg-width))); transform: scaleX(-1); }
-
-    /* Responsivita – na užších displejích vegetaci skryj */
-    @media (max-width: 1023px) {
-      .vegetation { display: none; }
-      .wrapper { max-width: calc(var(--content-max) + 2 * var(--frame-pad)); }
-    }
-
-    /* Tisk bez dekorací a UI */
-    @media print {
-      .vegetation, .sidebar, .topbar, #overlay { display: none !important; }
-      .frame { padding: 0; }
-    }
-  </style>
 </head>
 <body>
 
@@ -89,46 +27,27 @@
     </a>
   </div>
   <div class="language-switch">
-    <a href="/dev/survival_uvod.html" title="Čeština">🇨🇿</a>
-    <a href="/dev/survival_uvod_en.html" title="English">🇬🇧</a>
-    <a href="/dev/survival_uvod_th.html" title="ไทย">🇹🇭</a>
+    <a href="/survival/survival.html">🇨🇿</a>
+    <a href="/survival/survival_en.html">🇬🇧</a>
+    <a href="/survival/survival_th.html">🇹🇭</a>
   </div>
 </div>
 
-<!-- Levé menu -->
+<!-- Sidebar -->
 <div id="overlay" class="overlay" onclick="closeSidebar()"></div>
 <div id="sidebar" class="sidebar">
   <div class="sidebar-inner">
     <nav>
       <div class="menu-divider"></div>
-
-      <div class="menu-item expandable">
-        <a href="#" class="menu-link">Harmonizace</a>
-      </div>
-
-      <div class="menu-divider"></div>
-      <div class="menu-item expandable">
-        <a href="#" class="menu-link">Zbožštění</a>
-        <div class="submenu">
-          <a href="/dev/zbozsteni_uvod.html" class="submenu-link">Úvod</a>
-          <a href="/dev/zbozsteni_buh.html" class="submenu-link">Co je Bůh</a>
-          <a href="/dev/zbozsteni_nova_esej.html" class="submenu-link">Název nové eseje</a>
-        </div>
-      </div>
-
-      <div class="menu-divider"></div>
-
-      <!-- Sekce Survival -->
       <div class="menu-item expandable open">
         <a href="#" class="menu-link active">Survival</a>
         <div class="submenu">
-          <a href="/dev/survival_uvod.html" class="submenu-link active">Úvod</a>
+          <a href="/survival/survival.html" class="submenu-link active">Úvodní stránka</a>
+          <a href="/dev/survival_uvod.html" class="submenu-link">První část</a>
           <a href="/dev/survival_vystroj.html" class="submenu-link">Výstroj</a>
           <a href="/dev/survival_techniky.html" class="submenu-link">Techniky</a>
-          <a href="/dev/survival_bezpecnost.html" class="submenu-link">Bezpečnost</a>
         </div>
       </div>
-
       <div class="menu-divider"></div>
       <a href="/dev/texty.html">Texty</a>
       <div class="menu-divider"></div>
@@ -138,109 +57,18 @@
   </div>
 </div>
 
-<!-- Obsah s vegetací -->
-<div class="main-container">
-  <div class="wrapper">
-    <div class="frame">
+<!-- Hero blok -->
+<div class="hero" style="background-image:url('/assets/survival_bg.PNG')">
+  <!-- Vegetace -->
+  <div class="vegetation left"><!-- SVG kód ve style.css jako background-image --></div>
+  <div class="vegetation right"></div>
 
-      <!-- Vegetace – levý okraj -->
-      <div class="vegetation left" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="gStroke" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
-              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
-            </linearGradient>
-            <linearGradient id="gLeaf" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
-              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
-            </linearGradient>
-          </defs>
+  <!-- Obrázek s nadpisem -->
+  <img src="/assets/survival_title.PNG" alt="Zkouška z dospělosti – Survival Thajsko 2008" />
 
-          <path d="M60 0
-                   C 55 80, 75 160, 60 240
-                   C 40 320, 80 400, 58 480
-                   C 35 560, 85 640, 62 720
-                   C 45 800, 70 880, 60 1000"
-                fill="none" stroke="url(#gStroke)" stroke-width="3.2" stroke-linecap="round" />
-
-          <g fill="url(#gLeaf)">
-            <ellipse cx="40" cy="90"  rx="18" ry="8" />
-            <ellipse cx="82" cy="150" rx="14" ry="7" transform="rotate(-12 82 150)"/>
-            <ellipse cx="35" cy="220" rx="16" ry="8" transform="rotate(8 35 220)"/>
-            <ellipse cx="88" cy="300" rx="20" ry="9" transform="rotate(-6 88 300)"/>
-            <ellipse cx="28" cy="360" rx="13" ry="6"/>
-            <ellipse cx="90" cy="430" rx="16" ry="7" transform="rotate(10 90 430)"/>
-            <ellipse cx="33" cy="515" rx="19" ry="9" transform="rotate(-8 33 515)"/>
-            <ellipse cx="92" cy="585" rx="15" ry="7"/>
-            <ellipse cx="30" cy="660" rx="18" ry="8" transform="rotate(6 30 660)"/>
-            <ellipse cx="86" cy="740" rx="20" ry="9" transform="rotate(-10 86 740)"/>
-            <ellipse cx="36" cy="820" rx="14" ry="7"/>
-            <ellipse cx="92" cy="900" rx="18" ry="8" transform="rotate(7 92 900)"/>
-          </g>
-        </svg>
-      </div>
-
-      <!-- Vegetace – pravý okraj (zrcadleno) -->
-      <div class="vegetation right" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="gStrokeR" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
-              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
-            </linearGradient>
-            <linearGradient id="gLeafR" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
-              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
-            </linearGradient>
-          </defs>
-
-          <path d="M60 0
-                   C 55 80, 75 160, 60 240
-                   C 40 320, 80 400, 58 480
-                   C 35 560, 85 640, 62 720
-                   C 45 800, 70 880, 60 1000"
-                fill="none" stroke="url(#gStrokeR)" stroke-width="3.2" stroke-linecap="round" />
-
-          <g fill="url(#gLeafR)">
-            <ellipse cx="40" cy="80"  rx="17" ry="8" />
-            <ellipse cx="82" cy="165" rx="14" ry="7" transform="rotate(10 82 165)"/>
-            <ellipse cx="35" cy="245" rx="16" ry="8" transform="rotate(-6 35 245)"/>
-            <ellipse cx="88" cy="315" rx="19" ry="9" transform="rotate(5 88 315)"/>
-            <ellipse cx="28" cy="380" rx="13" ry="6"/>
-            <ellipse cx="90" cy="450" rx="16" ry="7" transform="rotate(-9 90 450)"/>
-            <ellipse cx="33" cy="530" rx="19" ry="9" transform="rotate(7 33 530)"/>
-            <ellipse cx="92" cy="600" rx="15" ry="7"/>
-            <ellipse cx="30" cy="685" rx="18" ry="8" transform="rotate(-7 30 685)"/>
-            <ellipse cx="86" cy="755" rx="20" ry="9" transform="rotate(9 86 755)"/>
-            <ellipse cx="36" cy="835" rx="14" ry="7"/>
-            <ellipse cx="92" cy="915" rx="18" ry="8" transform="rotate(-5 92 915)"/>
-          </g>
-        </svg>
-      </div>
-
-      <!-- Text -->
-      <div class="text-block">
-        <h1>Survival: Úvod</h1>
-
-        <h2>Záměr</h2>
-        <p>Tato série textů prakticky popisuje přípravu na pobyt v terénu, základní dovednosti,
-        minimalizaci rizik a respekt k prostředí. Cílem je funkční a střízlivé know-how, které lze
-        rovnou použít.</p>
-
-        <h2>Bezpečnost a etika</h2>
-        <p>Bezpečí je prioritou. Při každé aktivitě platí zásada minimálního zásahu do prostředí,
-        ohleduplnost k živým organismům a jasná odpovědnost za sebe i ostatní členy skupiny.</p>
-
-        <h2>Co bude následovat</h2>
-        <p>V navazujících kapitolách budou konkrétní sestavy výstroje, postupy
-        pro orientaci, vodu, oheň, přístřeší a stravu, včetně místních specifik.</p>
-        <div class="zen-link">
-  <a href="https://rikishivava.org/bonus/prestimul.html">Přestimulace &gt;</a>
-</div>
-      </div>
-
-    </div>
+  <!-- Odkaz na první část -->
+  <div class="zen-link">
+    <a href="/survival/survival1.html">Pokračovat &gt;</a>
   </div>
 </div>
 
@@ -249,24 +77,6 @@
   &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
 </footer>
 
-<!-- Ovládání sidebaru -->
-<script>
-  function toggleSidebar() {
-    document.getElementById("sidebar").classList.toggle("open");
-    document.getElementById("overlay").classList.toggle("show");
-  }
-  function closeSidebar() {
-    document.getElementById("sidebar").classList.remove("open");
-    document.getElementById("overlay").classList.remove("show");
-  }
-  document.querySelectorAll('.menu-item.expandable > .menu-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const parent = this.parentElement;
-      parent.classList.toggle('open');
-    });
-  });
-</script>
-
+<script src="/scripts/sidebar.js"></script>
 </body>
 </html>
