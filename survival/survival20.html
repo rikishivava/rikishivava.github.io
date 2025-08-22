@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patnáctý den, návrat | rikishivava.org</title>
+
+  <!-- OG -->
+  <meta property="og:title" content="Patnáctý den, návrat" />
+  <meta property="og:description" content="Survival, Thajsko 2008 – pokračování série." />
+  <meta property="og:image" content="https://rikishivava.org/assets/og_survival.jpg" />
+  <meta property="og:url" content="https://rikishivava.org/survival/survival20.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- Horní lišta -->
+<div class="topbar">
+  <div class="left-group">
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    <a href="/" class="logo">
+      <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+    </a>
+  </div>
+  <div class="language-switch">
+    <a href="/survival/survival20.html">🇨🇿</a>
+    <a href="/survival/survival20_en.html">🇬🇧</a>
+    <a href="/survival/survival20_th.html">🇹🇭</a>
+  </div>
+</div>
+
+<!-- Sidebar (menu položky teď neřešíme) -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Survival</a>
+        <div class="submenu">
+          <a href="/survival/survival.html" class="submenu-link">Úvodní stránka</a>
+          <a href="/survival/survival20.html" class="submenu-link active">Patnáctý den</a>
+        </div>
+      </div>
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
+  </div>
+</div>
+
+<!-- Obsah kapitoly -->
+<div class="main-container">
+  <div class="wrapper">
+    <div class="frame">
+      
+      <!-- Vegetace – LEVÁ -->
+      <div class="vegetation left" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gStroke" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
+            </linearGradient>
+            <linearGradient id="gLeaf" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 0
+                   C 55 80, 75 160, 60 240
+                   C 40 320, 80 400, 58 480
+                   C 35 560, 85 640, 62 720
+                   C 45 800, 70 880, 60 1000"
+                fill="none" stroke="url(#gStroke)" stroke-width="3.2" stroke-linecap="round" />
+          <g fill="url(#gLeaf)">
+            <ellipse cx="40" cy="90"  rx="18" ry="8" />
+            <ellipse cx="82" cy="150" rx="14" ry="7" transform="rotate(-12 82 150)"/>
+            <ellipse cx="35" cy="220" rx="16" ry="8" transform="rotate(8 35 220)"/>
+            <ellipse cx="88" cy="300" rx="20" ry="9" transform="rotate(-6 88 300)"/>
+            <ellipse cx="28" cy="360" rx="13" ry="6"/>
+            <ellipse cx="90" cy="430" rx="16" ry="7" transform="rotate(10 90 430)"/>
+            <ellipse cx="33" cy="515" rx="19" ry="9" transform="rotate(-8 33 515)"/>
+            <ellipse cx="92" cy="585" rx="15" ry="7"/>
+            <ellipse cx="30" cy="660" rx="18" ry="8" transform="rotate(6 30 660)"/>
+            <ellipse cx="86" cy="740" rx="20" ry="9" transform="rotate(-10 86 740)"/>
+            <ellipse cx="36" cy="820" rx="14" ry="7"/>
+            <ellipse cx="92" cy="900" rx="18" ry="8" transform="rotate(7 92 900)"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Vegetace – PRAVÁ (zrcadlená) -->
+      <div class="vegetation right" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gStrokeR" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
+            </linearGradient>
+            <linearGradient id="gLeafR" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 0
+                   C 55 80, 75 160, 60 240
+                   C 40 320, 80 400, 58 480
+                   C 35 560, 85 640, 62 720
+                   C 45 800, 70 880, 60 1000"
+                fill="none" stroke="url(#gStrokeR)" stroke-width="3.2" stroke-linecap="round" />
+          <g fill="url(#gLeafR)">
+            <ellipse cx="40" cy="80"  rx="17" ry="8" />
+            <ellipse cx="82" cy="165" rx="14" ry="7" transform="rotate(10 82 165)"/>
+            <ellipse cx="35" cy="245" rx="16" ry="8" transform="rotate(-6 35 245)"/>
+            <ellipse cx="88" cy="315" rx="19" ry="9" transform="rotate(5 88 315)"/>
+            <ellipse cx="28" cy="380" rx="13" ry="6"/>
+            <ellipse cx="90" cy="450" rx="16" ry="7" transform="rotate(-9 90 450)"/>
+            <ellipse cx="33" cy="530" rx="19" ry="9" transform="rotate(7 33 530)"/>
+            <ellipse cx="92" cy="600" rx="15" ry="7"/>
+            <ellipse cx="30" cy="685" rx="18" ry="8" transform="rotate(-7 30 685)"/>
+            <ellipse cx="86" cy="755" rx="20" ry="9" transform="rotate(9 86 755)"/>
+            <ellipse cx="36" cy="835" rx="14" ry="7"/>
+            <ellipse cx="92" cy="915" rx="18" ry="8" transform="rotate(-5 92 915)"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Text kapitoly -->
+      <article class="text-block">
+        <h2>Patnáctý den, návrat</h2>
+
+        <p>Noc je klidná. V jeskyni sedím chvíli před usnutím a poslouchám zvuky, které se staly mým stálým společníkem. Už je nevnímám jako rušivé, ale jako přirozený rámec, i když v nich stále čtu případné známky nebezpečí. Spím lehce a budím se ještě před svítáním.</p>
+
+        <p>Nemám co balit. Přišel jsem jen v oblečení a s nožem. Přesto chci odejít jako někdo, kdo si váží místa, které mu dalo asi největší životní zkušenost. Pečlivě uklízím ohniště, rozházím popel a zametu stopu po své přítomnosti. Poté si sednu na kámen před jeskyní. Tentokrát neplánuji meditaci, jen v klidu procházím v mysli poslední dny. Je to rychlá, ale intenzivní retrospektiva. V duchu znovu džungli poděkuji. Nejen za přežití, ale i za to, co mi ukázala.</p>
+
+        <p>Když vyrážím k mýtině, držím se stále ve stínu, známými trasami. Na okraji zkontroluji nápis a dekoraci z listů. Pak čekám. Rotor vrtulníku je slyšet dřív, než ho vidím. Vítr, který přináší, zvedá prach a třese větvemi. V ten okamžik není čas pro pocity. Reaguji čistě automaticky. Připnu se na lano, dám znamení a během okamžiku stoupám nad koruny stromů. Uvítá mě posádka, vrtulník se nakloní a džungle mizí za námi.</p>
+
+        <p>Návrat do vojenského objektu je rychlý. Sprcha, zběžná lékařská prohlídka, jednoduché jídlo. Izolace na ubikaci. Ležím na posteli a nechávám tělo odpočívat, bez kontaktu s okolím. Večer přichází ticho, ve kterém se teprve naplno rozvine to, co bylo přes den potlačeno. Uvědomění, co všechno se stalo. A s ním i slzy z intenzity zážitku i z vděčnosti.</p>
+
+        <!-- Odkaz na pokračování – khaki (epilog / shrnutí) -->
+        <div class="next-link">
+          <a href="/survival/survival21.html">Pokračovat &gt;</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+</footer>
+
+<script src="/scripts/sidebar.js"></script>
+</body>
+</html>
