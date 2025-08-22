@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cesta k rozhodnutí | rikishivava.org</title>
+
+  <!-- OG -->
+  <meta property="og:title" content="Cesta k rozhodnutí" />
+  <meta property="og:description" content="Survival, Thajsko 2008 – pokračování série." />
+  <meta property="og:image" content="https://rikishivava.org/assets/og_survival.jpg" />
+  <meta property="og:url" content="https://rikishivava.org/survival/survival1.html" />
+  <meta property="og:type" content="article" />
+
+  <!-- Globální styly -->
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- Horní lišta -->
+<div class="topbar">
+  <div class="left-group">
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    <a href="/" class="logo">
+      <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+    </a>
+  </div>
+  <div class="language-switch">
+    <!-- uprav dle konkrétního souboru/jazyka -->
+    <a href="/survival/survival1.html">🇨🇿</a>
+    <a href="/survival/survival1_en.html">🇬🇧</a>
+    <a href="/survival/survival1_th.html">🇹🇭</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Survival</a>
+        <div class="submenu">
+          <a href="/survival/survival.html" class="submenu-link">Úvodní stránka</a>
+          <a href="/survival/survival1.html" class="submenu-link active">První část</a>
+          <a href="/survival/survival_vystroj.html" class="submenu-link">Výstroj</a>
+          <a href="/survival/survival_techniky.html" class="submenu-link">Techniky</a>
+        </div>
+      </div>
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
+  </div>
+</div>
+
+<!-- Obsah kapitoly s vegetací po stranách -->
+<div class="main-container">
+  <!-- Shell drží vegetaci i text. Padding zajistí mezeru pro vegetaci,
+       hodnoty 140px = ~120px šířka vegetace + rezerva. Případně uprav. -->
+  <div class="wrapper" style="position:relative; padding-left:140px; padding-right:140px;">
+
+    <!-- Vegetace – bere obrázky ze style.css (.vegetation.left/right) -->
+    <div class="vegetation left" aria-hidden="true"></div>
+    <div class="vegetation right" aria-hidden="true"></div>
+
+    <!-- Text kapitoly -->
+    <article class="text-block">
+      <h1>Název kapitoly</h1>
+
+      <h2>Úvod</h2>
+      <p>Sem přijde text kapitoly. Dlouhé přirozené odstavce, žádné grafické značky.</p>
+
+      <h2>Další část</h2>
+      <p>Pokračování textu kapitoly. Obsah podle dohody pro survival sérii.</p>
+
+      <!-- Odkaz na pokračování – khaki -->
+      <div class="zen-link" style="text-align:right; margin-top:3em;">
+        <a href="/survival/survival2.html" style="color:khaki; font-size:1.2rem; font-weight:600; letter-spacing:0.5px; text-decoration:none;">Pokračovat &gt;</a>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+<!-- Patička -->
+<footer>
+  &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+</footer>
+
+<script src="/scripts/sidebar.js"></script>
+</body>
+</html>
