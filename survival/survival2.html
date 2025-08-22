@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Příprava a výcvik | rikishivava.org</title>
+
+  <!-- OG -->
+  <meta property="og:title" content="Příprava a výcvik" />
+  <meta property="og:description" content="Survival, Thajsko 2008 – pokračování série." />
+  <meta property="og:image" content="https://rikishivava.org/assets/og_survival.jpg" />
+  <meta property="og:url" content="https://rikishivava.org/survival/survival2.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- Horní lišta -->
+<div class="topbar">
+  <div class="left-group">
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    <a href="/" class="logo">
+      <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+    </a>
+  </div>
+  <div class="language-switch">
+    <a href="/survival/survival2.html">🇨🇿</a>
+    <a href="/survival/survival2_en.html">🇬🇧</a>
+    <a href="/survival/survival2_th.html">🇹🇭</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Survival</a>
+        <div class="submenu">
+          <a href="/survival/survival.html" class="submenu-link">Úvodní stránka</a>
+          <a href="/survival/survival1.html" class="submenu-link active">První část</a>
+          <a href="/survival/survival_vystroj.html" class="submenu-link">Výstroj</a>
+          <a href="/survival/survival_techniky.html" class="submenu-link">Techniky</a>
+        </div>
+      </div>
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
+  </div>
+</div>
+
+<!-- Obsah kapitoly -->
+<div class="main-container">
+  <!-- wrapper drží i vegetaci, šířka se dopočítá v CSS -->
+  <div class="wrapper">
+    <!-- rám zarovnává vegetaci k textu -->
+    <div class="frame">
+      
+      <!-- Vegetace – LEVÁ (inline SVG kvůli 100% shodě vzhledu) -->
+      <div class="vegetation left" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gStroke" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
+            </linearGradient>
+            <linearGradient id="gLeaf" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 0
+                   C 55 80, 75 160, 60 240
+                   C 40 320, 80 400, 58 480
+                   C 35 560, 85 640, 62 720
+                   C 45 800, 70 880, 60 1000"
+                fill="none" stroke="url(#gStroke)" stroke-width="3.2" stroke-linecap="round" />
+          <g fill="url(#gLeaf)">
+            <ellipse cx="40" cy="90"  rx="18" ry="8" />
+            <ellipse cx="82" cy="150" rx="14" ry="7" transform="rotate(-12 82 150)"/>
+            <ellipse cx="35" cy="220" rx="16" ry="8" transform="rotate(8 35 220)"/>
+            <ellipse cx="88" cy="300" rx="20" ry="9" transform="rotate(-6 88 300)"/>
+            <ellipse cx="28" cy="360" rx="13" ry="6"/>
+            <ellipse cx="90" cy="430" rx="16" ry="7" transform="rotate(10 90 430)"/>
+            <ellipse cx="33" cy="515" rx="19" ry="9" transform="rotate(-8 33 515)"/>
+            <ellipse cx="92" cy="585" rx="15" ry="7"/>
+            <ellipse cx="30" cy="660" rx="18" ry="8" transform="rotate(6 30 660)"/>
+            <ellipse cx="86" cy="740" rx="20" ry="9" transform="rotate(-10 86 740)"/>
+            <ellipse cx="36" cy="820" rx="14" ry="7"/>
+            <ellipse cx="92" cy="900" rx="18" ry="8" transform="rotate(7 92 900)"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Vegetace – PRAVÁ (zrcadlená) -->
+      <div class="vegetation right" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gStrokeR" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
+            </linearGradient>
+            <linearGradient id="gLeafR" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 0
+                   C 55 80, 75 160, 60 240
+                   C 40 320, 80 400, 58 480
+                   C 35 560, 85 640, 62 720
+                   C 45 800, 70 880, 60 1000"
+                fill="none" stroke="url(#gStrokeR)" stroke-width="3.2" stroke-linecap="round" />
+          <g fill="url(#gLeafR)">
+            <ellipse cx="40" cy="80"  rx="17" ry="8" />
+            <ellipse cx="82" cy="165" rx="14" ry="7" transform="rotate(10 82 165)"/>
+            <ellipse cx="35" cy="245" rx="16" ry="8" transform="rotate(-6 35 245)"/>
+            <ellipse cx="88" cy="315" rx="19" ry="9" transform="rotate(5 88 315)"/>
+            <ellipse cx="28" cy="380" rx="13" ry="6"/>
+            <ellipse cx="90" cy="450" rx="16" ry="7" transform="rotate(-9 90 450)"/>
+            <ellipse cx="33" cy="530" rx="19" ry="9" transform="rotate(7 33 530)"/>
+            <ellipse cx="92" cy="600" rx="15" ry="7"/>
+            <ellipse cx="30" cy="685" rx="18" ry="8" transform="rotate(-7 30 685)"/>
+            <ellipse cx="86" cy="755" rx="20" ry="9" transform="rotate(9 86 755)"/>
+            <ellipse cx="36" cy="835" rx="14" ry="7"/>
+            <ellipse cx="92" cy="915" rx="18" ry="8" transform="rotate(-5 92 915)"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Text kapitoly -->
+      <article class="text-block">
+        <div class="content">
+  <h2>Příprava a výcvik</h2>
+
+  <p>
+    Rozhodnutí podstoupit dvoutýdenní test přežití v tropické džungli na pomezí Thajska a Kambodže vycházelo z postupného zrání zkušeností a poznání. V dlouholeté praxi řízení výrobních provozů jsem si ověřil, že každý systém funguje pouze do té míry, do jaké jsou připraveny jeho jednotlivé části. Tento princip jsem chtěl vztáhnout i na sebe a prověřit, zda dokážu obstát jako samostatná a plně soběstačná jednotka.
+  </p>
+
+  <p>
+    Přípravy začaly dávno před stanovením konkrétního termínu. Nejdříve jsem se věnoval studiu prostředí, kam směřovala má cesta. Zajímal jsem se o geografii, klima, biologii i etnografii. Tropická džungle na hranicích Thajska a Kambodže je živý a proměnlivý organismus, ve kterém každý druh rostliny i živočicha sleduje svůj rytmus a zapadá do širší rovnováhy. Porozumění tomuto rytmu je nezbytné pro to, aby člověk do prostředí vstupoval s respektem a přizpůsobil se jeho zákonitostem.
+  </p>
+
+  <p>
+    Zkušenosti z dřívějších cest do odlehlejších oblastí Thajska a z kontaktu s místními komunitami mi poskytly pevný základ. Čas strávený v jednoduchých příbytcích a při přirozeném způsobu života mne učil obstarávat si potravu sběrem i lovem, číst krajinu a naslouchat jejím stopám. Místní obyvatelé mi předávali znalosti o rozpoznávání bezpečných a jedovatých rostlin, o hledání vody i o vnímání pohybu zvířat. Další část výcviku probíhala v armádním prostoru, kde jsem cvičil rychlou orientaci v terénu, stavbu přístřešků a rozdělávání ohně v prostředí s vysokou vlhkostí.
+  </p>
+
+  <p>
+    Významnou součástí přípravy byla také odolnost těla. Nešlo jen o celkovou kondici, ale i o schopnost přizpůsobit se horku a vlhkosti, které vyčerpávají organismus rychleji než jiné podmínky. Zařadil jsem proto tréninky v nejteplejších hodinách dne, s omezeným přístupem k vodě, abych poznal reakce svého těla na dehydrataci a naučil se sledovat jeho hranice.
+  </p>
+
+  <p>
+    Stejnou váhu jsem věnoval psychické přípravě. Samota, neznámé zvuky a nepředvídatelnost prostředí kladou velké nároky na nervovou soustavu. Do přípravy jsem proto zařadil meditační praxi a dechová cvičení, která pomáhají udržet mysl v přítomném okamžiku i ve chvílích, kdy tělo pracuje na hranici možností.
+  </p>
+
+  <p>
+    K celému záměru patřila i pečlivá logistika. Spolupráce s místní armádní jednotkou umožnila přepravu vrtulníkem do vybrané oblasti a následné vyzvednutí po čtrnácti dnech. Vybavení jsem záměrně omezil na minimum: vhodné oblečení, pevnou obuv a taktický nůž. Nepočítal jsem se zásobami potravin, moderními pomůckami ani s komunikační technikou. Šlo o prověření vlastní soběstačnosti.
+  </p>
+
+  <p>
+    Jak se přibližoval den odletu, narůstala směs klidu a napětí. Vědomí, že příprava proběhla po všech stránkách, se mísilo s respektem k prostředí, které neposkytuje prostor pro chyby. Každý krok, každý pohyb a každé rozhodnutí mělo svůj význam a váhu. Právě tato jednoznačnost pravidel přírody představovala hlavní motivaci, proč jsem se na cestu vydal.
+  </p>
+</div>
+
+        <!-- Odkaz na pokračování – khaki -->
+        <div class="next-link">
+          <a href="/survival/survival3.html">Pokračovat &gt;</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+</footer>
+
+<script src="/scripts/sidebar.js"></script>
+</body>
+</html>
