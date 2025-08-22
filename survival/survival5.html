@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zajištění perimetru a orientace v terénu | rikishivava.org</title>
+
+  <!-- OG -->
+  <meta property="og:title" content="Zajištění perimetru a orientace v terénu" />
+  <meta property="og:description" content="Survival, Thajsko 2008 – pokračování série." />
+  <meta property="og:image" content="https://rikishivava.org/assets/og_survival.jpg" />
+  <meta property="og:url" content="https://rikishivava.org/survival/survival5.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- Horní lišta -->
+<div class="topbar">
+  <div class="left-group">
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    <a href="/" class="logo">
+      <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+    </a>
+  </div>
+  <div class="language-switch">
+    <a href="/survival/survival5.html">🇨🇿</a>
+    <a href="/survival/survival5_en.html">🇬🇧</a>
+    <a href="/survival/survival5_th.html">🇹🇭</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Survival</a>
+        <div class="submenu">
+          <a href="/survival/survival.html" class="submenu-link">Úvodní stránka</a>
+          <a href="/survival/survival1.html" class="submenu-link">První část</a>
+          <a href="/survival/survival2.html" class="submenu-link">Druhá část</a>
+          <a href="/survival/survival3.html" class="submenu-link">Třetí část</a>
+          <a href="/survival/survival4.html" class="submenu-link active">Čtvrtá část</a>
+          <a href="/survival/survival_vystroj.html" class="submenu-link">Výstroj</a>
+          <a href="/survival/survival_techniky.html" class="submenu-link">Techniky</a>
+        </div>
+      </div>
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
+  </div>
+</div>
+
+<!-- Obsah kapitoly -->
+<div class="main-container">
+  <div class="wrapper">
+    <div class="frame">
+      
+      <!-- Vegetace – LEVÁ -->
+      <div class="vegetation left" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gStroke" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
+            </linearGradient>
+            <linearGradient id="gLeaf" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 0
+                   C 55 80, 75 160, 60 240
+                   C 40 320, 80 400, 58 480
+                   C 35 560, 85 640, 62 720
+                   C 45 800, 70 880, 60 1000"
+                fill="none" stroke="url(#gStroke)" stroke-width="3.2" stroke-linecap="round" />
+          <g fill="url(#gLeaf)">
+            <ellipse cx="40" cy="90"  rx="18" ry="8" />
+            <ellipse cx="82" cy="150" rx="14" ry="7" transform="rotate(-12 82 150)"/>
+            <ellipse cx="35" cy="220" rx="16" ry="8" transform="rotate(8 35 220)"/>
+            <ellipse cx="88" cy="300" rx="20" ry="9" transform="rotate(-6 88 300)"/>
+            <ellipse cx="28" cy="360" rx="13" ry="6"/>
+            <ellipse cx="90" cy="430" rx="16" ry="7" transform="rotate(10 90 430)"/>
+            <ellipse cx="33" cy="515" rx="19" ry="9" transform="rotate(-8 33 515)"/>
+            <ellipse cx="92" cy="585" rx="15" ry="7"/>
+            <ellipse cx="30" cy="660" rx="18" ry="8" transform="rotate(6 30 660)"/>
+            <ellipse cx="86" cy="740" rx="20" ry="9" transform="rotate(-10 86 740)"/>
+            <ellipse cx="36" cy="820" rx="14" ry="7"/>
+            <ellipse cx="92" cy="900" rx="18" ry="8" transform="rotate(7 92 900)"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Vegetace – PRAVÁ (zrcadlená) -->
+      <div class="vegetation right" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gStrokeR" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
+            </linearGradient>
+            <linearGradient id="gLeafR" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 0
+                   C 55 80, 75 160, 60 240
+                   C 40 320, 80 400, 58 480
+                   C 35 560, 85 640, 62 720
+                   C 45 800, 70 880, 60 1000"
+                fill="none" stroke="url(#gStrokeR)" stroke-width="3.2" stroke-linecap="round" />
+          <g fill="url(#gLeafR)">
+            <ellipse cx="40" cy="80"  rx="17" ry="8" />
+            <ellipse cx="82" cy="165" rx="14" ry="7" transform="rotate(10 82 165)"/>
+            <ellipse cx="35" cy="245" rx="16" ry="8" transform="rotate(-6 35 245)"/>
+            <ellipse cx="88" cy="315" rx="19" ry="9" transform="rotate(5 88 315)"/>
+            <ellipse cx="28" cy="380" rx="13" ry="6"/>
+            <ellipse cx="90" cy="450" rx="16" ry="7" transform="rotate(-9 90 450)"/>
+            <ellipse cx="33" cy="530" rx="19" ry="9" transform="rotate(7 33 530)"/>
+            <ellipse cx="92" cy="600" rx="15" ry="7"/>
+            <ellipse cx="30" cy="685" rx="18" ry="8" transform="rotate(-7 30 685)"/>
+            <ellipse cx="86" cy="755" rx="20" ry="9" transform="rotate(9 86 755)"/>
+            <ellipse cx="36" cy="835" rx="14" ry="7"/>
+            <ellipse cx="92" cy="915" rx="18" ry="8" transform="rotate(-5 92 915)"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Text kapitoly -->
+      <article class="text-block">
+        <h2>Zajištění perimetru a orientace v terénu</h2>
+
+        <p>Po krátkém průzkumu okolí si určuji základní prostor, ve kterém se budu bezpečně pohybovat. Perimetr tvoří nepravidelný okruh asi třiceti metrů, navázaný na přirozené překážky terénu, kořeny, spadlé kmeny a hustší porost. Tento okruh se stává mým operačním prostorem, ze kterého první den nevystupuji. Mýtina zůstává jen přistávací a odletovou zónou pro vrtulník, přes den vystavenou přímému tropickému slunci, proto se v ní zdržím jen nezbytně dlouho. Hlavní pohyb vedu pod korunami stromů, kde je přítmí a snesitelnější teplota.</p>
+
+        <p>Orientační body si ukládám do paměti pomocí jednoduchých vizuálních asociací. Každý výrazný strom, kámen či ohyb stezky dostane v mé mysli krátký obraz nebo příběh, aby se mi snadno vybavil při návratu. Některé body označuji nenápadnými zářezy na kůře, vždy v minimálním rozsahu, abych stromu neublížil. Na okraji perimetru pak umisťuji jednoduché signální prvky: suché větvičky a uzly z provázků z rostlinných vláken. Při dotyku vydávají slyšitelný zvuk, což mi poskytuje základní představu o pohybu v okolí. Nejde o skutečnou bariéru, ale o psychologickou jistotu.</p>
+
+        <p>Ochranu těla zajišťuje oblečení dodané thajskou armádou pro pobyt v pralese. Lehké, rychleschnoucí kalhoty chrání nohy před hmyzem i ostrou vegetací, triko s dlouhým rukávem a lehká bunda z prodyšného materiálu snižují riziko kousnutí a zároveň brání spálení. Čepice s kšiltem stíní oči a zachytává drobné spadané listí, pevné boty s vysokým svrškem a hrubou podrážkou dávají jistotu na kluzkém povrchu. Nejbližším pomocníkem pro následující období je survival nůž s čepelí dlouhou patnáct centimetrů. Univerzální tvar zvládá zpracování dřeva, přípravu potravy i rychlou úpravu prostředí. Rukojeť pevně sedí v dlani i za mokra a pouzdro na opasku umožňuje mít nůž vždy po ruce.</p>
+
+        <p>Perimetr mám tedy zajištěný a zafixovaný v paměti. Vím, odkud a kam se mohu bezpečně pohybovat. Tato fáze vytváří základní rámec, na který bude navazovat další krok, vybudování úkrytu, zajištění zdrojů vody a rozdělání ohně.</p>
+
+        <!-- Odkaz na pokračování – khaki -->
+        <div class="next-link">
+          <a href="/survival/survival6.html">Pokračovat &gt;</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+</footer>
+
+<script src="/scripts/sidebar.js"></script>
+</body>
+</html>
