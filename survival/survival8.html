@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Třetí den, konečně voda i jídlo | rikishivava.org</title>
+
+  <!-- OG -->
+  <meta property="og:title" content="Třetí den, konečně voda i jídlo" />
+  <meta property="og:description" content="Survival, Thajsko 2008 – pokračování série." />
+  <meta property="og:image" content="https://rikishivava.org/assets/og_survival.jpg" />
+  <meta property="og:url" content="https://rikishivava.org/survival/survival8.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<!-- Horní lišta -->
+<div class="topbar">
+  <div class="left-group">
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    <a href="/" class="logo">
+      <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+    </a>
+  </div>
+  <div class="language-switch">
+    <a href="/survival/survival8.html">🇨🇿</a>
+    <a href="/survival/survival8_en.html">🇬🇧</a>
+    <a href="/survival/survival8_th.html">🇹🇭</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Survival</a>
+        <div class="submenu">
+          <a href="/survival/survival.html" class="submenu-link">Úvodní stránka</a>
+          <a href="/survival/survival1.html" class="submenu-link">První část</a>
+          <a href="/survival/survival2.html" class="submenu-link">Druhá část</a>
+          <a href="/survival/survival3.html" class="submenu-link">Třetí část</a>
+          <a href="/survival/survival4.html" class="submenu-link">Čtvrtá část</a>
+          <a href="/survival/survival5.html" class="submenu-link">Pátá část</a>
+          <a href="/survival/survival6.html" class="submenu-link">Šestá část</a>
+          <a href="/survival/survival7.html" class="submenu-link">Sedmá část</a>
+          <a href="/survival/survival8.html" class="submenu-link active">Osmá část</a>
+          <a href="/survival/survival_vystroj.html" class="submenu-link">Výstroj</a>
+          <a href="/survival/survival_techniky.html" class="submenu-link">Techniky</a>
+        </div>
+      </div>
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
+  </div>
+</div>
+
+<!-- Obsah kapitoly -->
+<div class="main-container">
+  <div class="wrapper">
+    <div class="frame">
+      
+      <!-- Vegetace – LEVÁ -->
+      <div class="vegetation left" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gStroke" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
+            </linearGradient>
+            <linearGradient id="gLeaf" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 0
+                   C 55 80, 75 160, 60 240
+                   C 40 320, 80 400, 58 480
+                   C 35 560, 85 640, 62 720
+                   C 45 800, 70 880, 60 1000"
+                fill="none" stroke="url(#gStroke)" stroke-width="3.2" stroke-linecap="round" />
+          <g fill="url(#gLeaf)">
+            <ellipse cx="40" cy="90"  rx="18" ry="8" />
+            <ellipse cx="82" cy="150" rx="14" ry="7" transform="rotate(-12 82 150)"/>
+            <ellipse cx="35" cy="220" rx="16" ry="8" transform="rotate(8 35 220)"/>
+            <ellipse cx="88" cy="300" rx="20" ry="9" transform="rotate(-6 88 300)"/>
+            <ellipse cx="28" cy="360" rx="13" ry="6"/>
+            <ellipse cx="90" cy="430" rx="16" ry="7" transform="rotate(10 90 430)"/>
+            <ellipse cx="33" cy="515" rx="19" ry="9" transform="rotate(-8 33 515)"/>
+            <ellipse cx="92" cy="585" rx="15" ry="7"/>
+            <ellipse cx="30" cy="660" rx="18" ry="8" transform="rotate(6 30 660)"/>
+            <ellipse cx="86" cy="740" rx="20" ry="9" transform="rotate(-10 86 740)"/>
+            <ellipse cx="36" cy="820" rx="14" ry="7"/>
+            <ellipse cx="92" cy="900" rx="18" ry="8" transform="rotate(7 92 900)"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Vegetace – PRAVÁ (zrcadlená) -->
+      <div class="vegetation right" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gStrokeR" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-stroke)" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="var(--veg-stroke)" stop-opacity="0.35"/>
+            </linearGradient>
+            <linearGradient id="gLeafR" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="var(--veg-leaf)" stop-opacity="0.55"/>
+              <stop offset="100%" stop-color="var(--veg-leaf)" stop-opacity="0.25"/>
+            </linearGradient>
+          </defs>
+          <path d="M60 0
+                   C 55 80, 75 160, 60 240
+                   C 40 320, 80 400, 58 480
+                   C 35 560, 85 640, 62 720
+                   C 45 800, 70 880, 60 1000"
+                fill="none" stroke="url(#gStrokeR)" stroke-width="3.2" stroke-linecap="round" />
+          <g fill="url(#gLeafR)">
+            <ellipse cx="40" cy="80"  rx="17" ry="8" />
+            <ellipse cx="82" cy="165" rx="14" ry="7" transform="rotate(10 82 165)"/>
+            <ellipse cx="35" cy="245" rx="16" ry="8" transform="rotate(-6 35 245)"/>
+            <ellipse cx="88" cy="315" rx="19" ry="9" transform="rotate(5 88 315)"/>
+            <ellipse cx="28" cy="380" rx="13" ry="6"/>
+            <ellipse cx="90" cy="450" rx="16" ry="7" transform="rotate(-9 90 450)"/>
+            <ellipse cx="33" cy="530" rx="19" ry="9" transform="rotate(7 33 530)"/>
+            <ellipse cx="92" cy="600" rx="15" ry="7"/>
+            <ellipse cx="30" cy="685" rx="18" ry="8" transform="rotate(-7 30 685)"/>
+            <ellipse cx="86" cy="755" rx="20" ry="9" transform="rotate(9 86 755)"/>
+            <ellipse cx="36" cy="835" rx="14" ry="7"/>
+            <ellipse cx="92" cy="915" rx="18" ry="8" transform="rotate(-5 92 915)"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Text kapitoly -->
+      <article class="text-block">
+        <h2>Třetí den, konečně voda i jídlo</h2>
+
+        <p>Třetí den začíná jasným vědomím základních pravidel, která v prostředí, jako je toto, rozhodují, zda má člověk šanci vydržet déle než pár dní. Nejdříve je nutné mít bezpečný úkryt. Bez něj není kvalitní odpočinek a spánek a bez spánku se tělo rychle vyčerpá. Druhým bodem je pitná voda a základní hygiena, protože nemoc z kontaminované vody dokáže člověka vyřadit z boje během jediného dne. Teprve třetím bodem je potrava.</p>
+
+        <p>Úkryt upravuji tak, aby poskytoval lepší ochranu před hmyzem a případným deštěm. Silnější větve zapojuji do konstrukce a na ně vrstvím široké listy banánovníku, které tvoří základní střechu. Proti bočním poryvům a vlhkosti skládám kolem stěn ploché kameny a menší větve, čímž vzniká částečná ochrana i z boku. Vstup zatím nechávám otevřený, jen naznačený úzkým průchodem, který v budoucnu uzavřu větvemi svázanými liánou. Celé místo tak začíná připomínat malý bunkr, dost pevný na to, aby odolal krátkému dešti a zároveň dost nízký, abych uvnitř mohl sedět a ležet. Spím vždy s nožem po ruce a kolem úkrytu ponechávám volný okruh, aby mi nepřekážely větve či listí a měl jsem přehled o případném pohybu.</p>
+
+        <p>Při práci si stále uvědomuji, že i když útok nebezpečných zvířat není v této oblasti každodenní hrozbou, existuje. Větší hadi, jako krajta mřížkovaná, se mohou přiblížit, pokud cítí kořist. Divočáci mohou v noci přijít hledat potravu, a i když většinou utečou, zaskočený kus může zaútočit. Na okrajích vody by se mohl objevit menší krokodýl siamský, a ve větvích výše nad hlavou se může pohybovat varan skvrnitý, který umí rychle slézt dolů, pokud ho něco zaujme.</p>
+
+        <p>Druhý bod – pitnou vodu – řeším návštěvou místa, kde se daří zachytávat dešťovou vodu z předchozí noci. Proplachuji nádobu z bambusu a opatrně nalévám čistou vodu. Přidávám i filtraci přes tkaninu z oblečení a převařený písek. Hygiena je jednoduchá, ale nezbytná: oplach rukou a obličeje, očištění nohou od bláta.</p>
+
+        <p>Třetí bod, potrava, začíná být naléhavější. Po několika neúspěšných pokusech s improvizovaným oštěpem si připravuji malou past z pružných prutů a lián u okraje potoka. Není jisté, že chytí rybu, ale šance tu je. Na jiném místě hledám spadlé plody. Několik banánů je už na zemi, zralých a sladkých. Chutnají skvěle. Část jich schovávám do závěsu z větví, aby se k nim nedostali mravenci. Kromě toho nacházím i několik kobylek, které opékám krátce nad žhavými uhlíky. Jejich chuť je zemitá a křupavá, poskytují cenné bílkoviny. Našel jsem i mladé výhonky bambusu, ale rychle se stmívá a na jejich přípravu už není čas.</p>
+
+        <p>Noc přichází s pocitem větší jistoty. Úkryt drží, voda je zajištěna a potrava se postupně daří získávat. Zvuky džungle jsou stále intenzivní, ale už je neberu jako chaos, spíš jako rytmus, podle kterého se učím rozpoznávat, co je běžné a co stojí za pozornost. Spánek bude konečně kvalitnější.</p>
+
+        <!-- Odkaz na pokračování – khaki -->
+        <div class="next-link">
+          <a href="/survival/survival9.html">Pokračovat &gt;</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+</footer>
+
+<script src="/scripts/sidebar.js"></script>
+</body>
+</html>
