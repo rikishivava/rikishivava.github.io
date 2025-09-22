@@ -176,21 +176,14 @@
 <!-- Skrytý audio prvek pro VoiceRSS fallback -->
 <audio id="tts-audio" preload="none"></audio>
 
-<!-- Skripty -->
+<!-- [SCRIPT] Nahraď jen TTS část tak, aby měla prioritu VoiceRSS a Web Speech byla fallback: -->
 <script>
-  // Sidebar
-  function toggleSidebar(){document.getElementById("sidebar").classList.toggle("open");document.getElementById("overlay").classList.toggle("show")}
-  function closeSidebar(){document.getElementById("sidebar").classList.remove("open");document.getElementById("overlay").classList.remove("show")}
-  document.querySelectorAll('.menu-item.expandable > .menu-link').forEach(link=>{
-    link.addEventListener('click',e=>{e.preventDefault();link.parentElement.classList.toggle('open')})
-  });
-
-  // --- TTS logika: Web Speech (priorita) -> VoiceRSS (fallback) ---
-  const VOICE_RSS_KEY = 'be55c98280ea426f8bd8e5b471651642'; // volitelně ponecháme pro fallback
+  // --- TTS logika: VoiceRSS (priorita) -> Web Speech (fallback) ---
+  const VOICE_RSS_KEY = 'be55c98280ea426f8bd8e5b471651642'; // ponech tvůj klíč
   const ttsBtn = document.getElementById('tts-btn');
   const audioEl = document.getElementById('tts-audio');
   let isReading = false;
-  let wsQueue = [];     // fronta vět pro Web Speech
+  let wsQueue = [];
   let wsCancelled = false;
 
   function speakOrStop(){
@@ -201,26 +194,19 @@
   function startReading(){
     const text = (document.getElementById('text-block')?.innerText || '').trim();
     if (!text) return;
-
     isReading = true;
     setBtnState('⏹ Stop', true);
 
-    if ('speechSynthesis' in window) {
-      tryWebSpeech(text);
-    } else {
-      tryVoiceRSS(text);
-    }
+    // PRIORITA: VoiceRSS, při chybě fallback na Web Speech
+    tryVoiceRSS(text).catch(() => {
+      if ('speechSynthesis' in window) tryWebSpeech(text);
+      else finishReading();
+    });
   }
 
   function stopReading(){
-    // Stop Web Speech
-    if ('speechSynthesis' in window) {
-      wsCancelled = true;
-      window.speechSynthesis.cancel();
-    }
-    // Stop audio fallback
+    if ('speechSynthesis' in window) { wsCancelled = true; window.speechSynthesis.cancel(); }
     audioEl.pause(); audioEl.currentTime = 0;
-
     isReading = false;
     setBtnState('🔊 Číst', false);
   }
@@ -230,29 +216,48 @@
     ttsBtn.setAttribute('aria-busy', busy ? 'true' : 'false');
   }
 
-  // --- Web Speech ---
+  // --- VoiceRSS (PRIORITA) ---
+  async function tryVoiceRSS(text){
+    if (!VOICE_RSS_KEY) throw new Error('VOICE_RSS_KEY missing');
+
+    setBtnState('⏳ Připravuji…', true);
+    const params = new URLSearchParams({
+      key: VOICE_RSS_KEY,
+      hl: 'cs-cz',
+      v: 'Josef',
+      c: 'MP3',
+      f: '16khz_16bit_stereo',
+      src: text
+    });
+
+    const res = await fetch('https://api.voicerss.org/', { method: 'POST', body: params });
+    const blob = await res.blob();
+    if (!blob.type.startsWith('audio')) throw new Error('VoiceRSS non-audio');
+
+    audioEl.src = URL.createObjectURL(blob);
+    audioEl.onended = () => finishReading();
+
+    // může selhat kvůli autoplay politice – v tom případě vyhodíme chybu a spadne to do fallbacku
+    await audioEl.play().catch(() => { throw new Error('autoplay blocked'); });
+    setBtnState('⏹ Stop', true);
+  }
+
+  // --- Web Speech (FALLBACK) ---
   function splitToSentences(text, maxLen=1400){
-    // rozdělíme podle tečky/otazníku/vykřičníku, spojíme do bloků <= maxLen
     const raw = text.replace(/\s+/g,' ').trim();
     const parts = raw.split(/(?<=[\.\?\!])\s+/);
     const out = [];
     let buf = '';
     for (const p of parts){
-      if ((buf + ' ' + p).trim().length <= maxLen){
-        buf = (buf ? buf + ' ' : '') + p;
-      } else {
-        if (buf) out.push(buf);
-        buf = p;
-      }
+      if ((buf + ' ' + p).trim().length <= maxLen){ buf = (buf ? buf + ' ' : '') + p; }
+      else { if (buf) out.push(buf); buf = p; }
     }
     if (buf) out.push(buf);
     return out;
   }
 
   function pickCzechVoice(){
-    const synth = window.speechSynthesis;
-    const voices = synth.getVoices();
-    // Preferuj mužsky znějící hlasy, ale vezmi jakýkoli cs-CZ
+    const voices = window.speechSynthesis.getVoices();
     return voices.find(v => v.lang?.toLowerCase().startsWith('cs') && /male|pavel|josef|microsoft|google|cz/i.test(v.name))
         || voices.find(v => v.lang?.toLowerCase().startsWith('cs'))
         || null;
@@ -262,20 +267,12 @@
     const synth = window.speechSynthesis;
     wsCancelled = false;
 
-    // Některé prohlížeče načtou hlasy se zpožděním
     let voice = pickCzechVoice();
-    if (!voice){
-      await new Promise(r => setTimeout(r, 250));
-      voice = pickCzechVoice();
-    }
+    if (!voice){ await new Promise(r => setTimeout(r, 250)); voice = pickCzechVoice(); }
 
     wsQueue = splitToSentences(text, 1400);
-    if (wsQueue.length === 0){
-      finishReading();
-      return;
-    }
+    if (wsQueue.length === 0){ finishReading(); return; }
 
-    // Čti sekvenčně
     const speakNext = ()=>{
       if (wsCancelled || wsQueue.length === 0){ finishReading(); return; }
       const chunk = wsQueue.shift();
@@ -283,61 +280,14 @@
       ut.lang = 'cs-CZ';
       if (voice) ut.voice = voice;
       ut.onend = ()=> speakNext();
-      ut.onerror = ()=> speakNext(); // pokračuj i při chybě jedné věty
+      ut.onerror = ()=> speakNext();
       synth.speak(ut);
     };
 
-    // Pokud Web Speech nic neřekne do 2s (někdy na iOS), fallback na VoiceRSS
-    let started = false;
-    const watchdog = setTimeout(()=> {
-      if (!started && isReading){
-        synth.cancel();
-        tryVoiceRSS(text);
-      }
-    }, 2000);
-
-    const origSpeak = window.SpeechSynthesisUtterance;
-    // Hack: první utterance spustí "started"
+    // nastartuj sekvenci
     const test = new SpeechSynthesisUtterance(' ');
-    test.onstart = ()=>{ started = true; clearTimeout(watchdog); };
     test.onend = ()=>{ speakNext(); };
-    synth.speak(test);
-  }
-
-  // --- VoiceRSS fallback (jediný soubor – pro delší texty může trvat) ---
-  async function tryVoiceRSS(text){
-    if (!VOICE_RSS_KEY){
-      alert('Čtení nahlas není v tomto prohlížeči podporováno a chybí externí služba.');
-      finishReading(); return;
-    }
-    setBtnState('⏳ Připravuji…', true);
-    try{
-      const params = new URLSearchParams({
-        key: VOICE_RSS_KEY,
-        hl: 'cs-cz',
-        v: 'Josef',
-        c: 'MP3',
-        f: '16khz_16bit_stereo',
-        src: text
-      });
-      const res = await fetch('https://api.voicerss.org/', { method:'POST', body: params });
-      const blob = await res.blob();
-      if (!blob.type.startsWith('audio')){
-        alert('Služba TTS vrátila chybu. Zkuste to znovu.');
-        finishReading(); return;
-      }
-      audioEl.src = URL.createObjectURL(blob);
-      audioEl.onended = ()=> finishReading();
-      await audioEl.play().catch(()=> {
-        // některé prohlížeče chtějí další gesto
-        alert('Přehrávání bylo zablokováno prohlížečem. Klepni znovu.');
-        finishReading();
-      });
-      setBtnState('⏹ Stop', true);
-    }catch(e){
-      alert('Nepodařilo se získat audio ze služby TTS.');
-      finishReading();
-    }
+    synth.cancel(); synth.speak(test);
   }
 
   function finishReading(){
