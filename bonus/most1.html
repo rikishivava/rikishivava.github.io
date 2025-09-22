@@ -155,27 +155,81 @@
   &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
 </footer>
 
-<!-- Ovládání sidebaru -->
+<!-- Audio přehrávač (skrytý) -->
+<audio id="tts-audio" preload="none"></audio>
+
+<!-- Skripty -->
 <script>
-  function toggleSidebar() {
-    document.getElementById("sidebar").classList.toggle("open");
-    document.getElementById("overlay").classList.toggle("show");
-  }
-  function closeSidebar() {
-    document.getElementById("sidebar").classList.remove("open");
-    document.getElementById("overlay").classList.remove("show");
-  }
-
-  document.querySelectorAll('.menu-item.expandable > .menu-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const parent = this.parentElement;
-      parent.classList.toggle('open');
-    });
+  // Sidebar
+  function toggleSidebar(){document.getElementById("sidebar").classList.toggle("open");document.getElementById("overlay").classList.toggle("show")}
+  function closeSidebar(){document.getElementById("sidebar").classList.remove("open");document.getElementById("overlay").classList.remove("show")}
+  document.querySelectorAll('.menu-item.expandable > .menu-link').forEach(link=>{
+    link.addEventListener('click',e=>{e.preventDefault();link.parentElement.classList.toggle('open')})
   });
-</script>
 
+  // Čtení nahlas: VoiceRSS (priorita) + Web Speech (fallback)
+  const VOICE_RSS_KEY = ''; // ← vlož svůj API klíč z VoiceRSS
+  let ttsState = { playing:false, usingWebSpeech:false };
+
+  async function speakText(){
+    const btn = document.getElementById('tts-btn');
+    const audio = document.getElementById('tts-audio');
+
+    if (ttsState.playing){ stopSpeech(); btn.textContent='🔊 Číst'; return; }
+
+    const text = (document.getElementById('text-block')?.innerText||'').trim();
+    if (!text) return;
+
+    btn.textContent='⏳ Připravuji…';
+
+    // VoiceRSS
+    if (VOICE_RSS_KEY){
+      try{
+        const params = new URLSearchParams({ key:VOICE_RSS_KEY, hl:'cs-cz', v:'Josef', c:'MP3', f:'16khz_16bit_stereo', src:text });
+        const res = await fetch('https://api.voicerss.org/', { method:'POST', body:params });
+        const blob = await res.blob();
+        if (blob.type.startsWith('audio')){
+          audio.src = URL.createObjectURL(blob);
+          ttsState.playing = true; ttsState.usingWebSpeech = false;
+          btn.textContent='⏹ Stop';
+          audio.onended = ()=>{ ttsState.playing=false; btn.textContent='🔊 Číst'; };
+          await audio.play(); return;
+        }
+        console.warn('VoiceRSS: non-audio response, using Web Speech fallback.');
+      }catch(e){ console.warn('VoiceRSS error:', e); }
+    }
+
+    // Fallback Web Speech API
+    if ('speechSynthesis' in window){
+      const synth = window.speechSynthesis;
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang='cs-CZ';
+
+      const pick = ()=>{
+        const voices = synth.getVoices();
+        return voices.find(v=>v.lang.toLowerCase().startsWith('cs') && /pavel|josef|male|microsoft|google|cz/i.test(v.name))
+            || voices.find(v=>v.lang.toLowerCase().startsWith('cs'));
+      };
+      let voice = pick();
+      if(!voice){ await new Promise(r=>setTimeout(r,250)); voice = pick(); }
+      if(voice) utter.voice = voice;
+
+      synth.cancel(); synth.speak(utter);
+      ttsState.playing=true; ttsState.usingWebSpeech=true; btn.textContent='⏹ Stop';
+      utter.onend=()=>{ ttsState.playing=false; btn.textContent='🔊 Číst'; };
+      utter.onerror=()=>{ ttsState.playing=false; btn.textContent='🔊 Číst'; };
+    }else{
+      alert('Čtení nahlas není v tomto prohlížeči podporováno.');
+      btn.textContent='🔊 Číst';
+    }
+  }
+
+  function stopSpeech(){
+    const audio = document.getElementById('tts-audio');
+    if (ttsState.usingWebSpeech && 'speechSynthesis' in window){ window.speechSynthesis.cancel(); }
+    else { audio.pause(); audio.currentTime=0; }
+    ttsState.playing=false;
+  }
+</script>
 </body>
 </html>
-
-
