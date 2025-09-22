@@ -3,34 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- Titulek stránky pro sdílení -->
-<meta property="og:title" content="Most v mlze" />
-
-<!-- Popis stránky -->
-<meta property="og:description" content="Most v mlze: proč jistota začátečníků klame a pokora odborníků vede k hlubšímu poznání." />
-
-<!-- URL obrázku pro náhled -->
-<meta property="og:image" content="https://rikishivava.org/assets/most1.PNG" />
-
-<!-- (volitelně) Přesná URL stránky -->
-<meta property="og:url" content="https://rikishivava.org/bonus/most1.html" />
-
-<!-- Typ obsahu -->
-<meta property="og:type" content="article" />
+  <!-- Titulek stránky pro sdílení -->
+  <meta property="og:title" content="Most v mlze" />
+  <meta property="og:description" content="Most v mlze: proč jistota začátečníků klame a pokora odborníků vede k hlubšímu poznání." />
+  <meta property="og:image" content="https://rikishivava.org/assets/most1.PNG" />
+  <meta property="og:url" content="https://rikishivava.org/bonus/most1.html" />
+  <meta property="og:type" content="article" />
   
-  <!-- 🔧 ZDE ZMĚŇ NÁZEV STRÁNKY -->
   <title>Most v mlze | rikishivava.org</title>
 
   <link rel="stylesheet" href="/style.css" />
 
   <style>
-    /* Přehledně oddělené styly pro ovládání čtení */
+    /* Ovládání čtení – nad textovým blokem vpravo */
     .reader-toolbar{
       display:flex;
-      justify-content:flex-end;   /* vpravo */
+      justify-content:flex-end;
       align-items:center;
       gap:8px;
-      margin:8px 0 6px 0;         /* těsně nad textovým blokem */
+      margin:8px 0 6px 0;
+      position:relative;
+      z-index:3; /* nad dekoracemi */
     }
     .tts-button{
       font-size:14px;
@@ -40,7 +33,9 @@
       background:#eee;
       cursor:pointer;
       line-height:1.2;
+      color:#222;
     }
+    .tts-button:hover{ background:#e5e5e5; }
     .tts-button:active{ transform: translateY(1px); }
   </style>
 </head>
@@ -55,7 +50,6 @@
     </a>
   </div>
   <div class="language-switch">
-    <!-- 🔧 ZDE ZMĚŇ ODKAZY NA JAZYKOVÉ VERZE STRÁNKY -->
     <a href="/dev/bonus/most1.html" title="Čeština">🇨🇿</a>
     <a href="/dev/bonus/most1_en.html" title="English">🇬🇧</a>
     <a href="/dev/bonus/most1_th.html" title="ไทย">🇹🇭</a>
@@ -75,7 +69,6 @@
       <div class="menu-item expandable open">
         <a href="#" class="menu-link active">Zbožštění</a>
         <div class="submenu">
-          <!-- 🔧 ZDE UPRAV SUBMENU PODLE TOHO, KDE NOVÁ STRÁNKA PATŘÍ -->
           <a href="/dev/zbozsteni_uvod.html" class="submenu-link">Úvod</a>
           <a href="/dev/zbozsteni_buh.html" class="submenu-link">Co je Bůh</a>
           <a href="/dev/zbozsteni_nova_esej.html" class="submenu-link active">Název nové eseje</a>
@@ -94,7 +87,7 @@
 <div class="main-container">
   <div class="wrapper">
 
-    <!-- Dekorativní zen linky (beze změn) -->
+    <!-- Dekorativní zen linky -->
     <div class="zen-corner top-horizontal">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
         <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
@@ -122,6 +115,12 @@
               stroke-linecap="round" stroke-opacity="0.4" />
       </svg>
     </div>
+
+    <!-- Ovládání čtení nahlas -->
+    <div class="reader-toolbar">
+      <button id="tts-btn" class="tts-button" onclick="speakText()">🔊 Číst</button>
+    </div>
+
 
     <!-- 🔧 ZDE VLOŽ TEXT ESEJE -->
     <div class="text-block">
@@ -189,7 +188,7 @@
   });
 
   // Čtení nahlas: VoiceRSS (priorita) + Web Speech (fallback)
-  const VOICE_RSS_KEY = 'be55c98280ea426f8bd8e5b471651642'; // ← vlož svůj API klíč z VoiceRSS
+  const VOICE_RSS_KEY = 'be55c98280ea426f8bd8e5b471651642';
   let ttsState = { playing:false, usingWebSpeech:false };
 
   async function speakText(){
