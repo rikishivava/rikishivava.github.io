@@ -22,6 +22,27 @@
   <title>Most v mlze | rikishivava.org</title>
 
   <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    /* Přehledně oddělené styly pro ovládání čtení */
+    .reader-toolbar{
+      display:flex;
+      justify-content:flex-end;   /* vpravo */
+      align-items:center;
+      gap:8px;
+      margin:8px 0 6px 0;         /* těsně nad textovým blokem */
+    }
+    .tts-button{
+      font-size:14px;
+      padding:4px 10px;
+      border:1px solid #bbb;
+      border-radius:6px;
+      background:#eee;
+      cursor:pointer;
+      line-height:1.2;
+    }
+    .tts-button:active{ transform: translateY(1px); }
+  </style>
 </head>
 <body>
 
