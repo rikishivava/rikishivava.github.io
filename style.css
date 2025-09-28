@@ -137,6 +137,21 @@ ul li {
   margin-bottom: 0.5em;
 }
 
+dt {
+  margin-top: 1em;              /* odřádkování nad pojmem */
+  font-variant: small-caps;     /* decentní zvýraznění */
+  color: #444;                  /* jemně tmavší šedá než běžný text */
+  letter-spacing: 0.5px;        /* decentní rozestup písmen */
+}
+
+dd {
+  margin-left: 1em;           /* mírné odsazení od pojmu */
+  margin-bottom: 0.8em;       /* jemný odstup mezi definicemi */
+  line-height: 1.5;           /* lepší čitelnost delšího textu */
+  color: #555;                /* o něco světlejší šedá než <dt> */
+  font-style: italic;         /* jemné odlišení bez rušení */
+}
+
 /* Patička */
 footer {
   text-align: center;
