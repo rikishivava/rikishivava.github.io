@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- OG -->
+  <meta property="og:title" content="___" />
+  <meta property="og:description" content="___" />
+  <meta property="og:image" content="https://rikishivava.org/assets/___" />
+  <meta property="og:url" content="https://rikishivava.org/bonus/___" />
+  <meta property="og:type" content="article" />
+  <title>___ | rikishivava.org</title>
+
+  <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    /* Ovládání čtení – nad textovým blokem vpravo */
+    .reader-toolbar{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+      gap:8px;
+      margin:8px 0 6px 0;
+      position:relative;
+      z-index:3;
+    }
+    .tts-button{
+      font-size:14px;
+      padding:4px 10px;
+      border:1px solid #bbb;
+      border-radius:6px;
+      background:#eee;
+      cursor:pointer;
+      line-height:1.2;
+      color:#222;
+      user-select:none;
+    }
+    .tts-button[aria-busy="true"]{ opacity:0.8; cursor:progress; }
+    .tts-button:hover{ background:#e5e5e5; }
+    .tts-button:active{ transform: translateY(1px); }
+  </style>
+</head>
+<body>
+
+<!-- Horní lišta -->
+<div class="topbar">
+  <div class="left-group">
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    <a href="/" class="logo">
+      <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+    </a>
+  </div>
+  <div class="language-switch">
+    <a href="/dev/bonus/___.html" title="Čeština">🇨🇿</a>
+    <a href="/dev/bonus/____en.html" title="English">🇬🇧</a>
+    <a href="/dev/bonus/____th.html" title="ไทย">🇹🇭</a>
+  </div>
+</div>
+
+<!-- Levé menu -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Harmonizace</a>
+      </div>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Zbožštění</a>
+        <div class="submenu">
+          <a href="/dev/zbozsteni_uvod.html" class="submenu-link">Úvod</a>
+          <a href="/dev/zbozsteni_buh.html" class="submenu-link">Co je Bůh</a>
+          <a href="/dev/zbozsteni_nova_esej.html" class="submenu-link active">Název nové eseje</a>
+        </div>
+      </div>
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
+  </div>
+</div>
+
+<!-- Dekorace a obsah -->
+<div class="main-container">
+  <div class="wrapper">
+
+    <!-- Zen linky -->
+    <div class="zen-corner top-horizontal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+        <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+    <div class="zen-corner left-vertical">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+        <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+    <div class="zen-corner right-vertical">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+        <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+    <div class="zen-corner bottom-horizontal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+        <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+
+    <!-- Ovládání čtení nahlas -->
+    <div class="reader-toolbar">
+      <button id="tts-btn" class="tts-button" onclick="speakOrStop()" aria-busy="false">🔊 Číst</button>
+    </div>
+
+
+    <!-- 🔧 ZDE VLOŽ TEXT ESEJE -->
+    <div class="text-block" id="text-block">
+
+         
+      
+    </div>
+
+  </div>
+</div>
+
+<!-- Patička -->
+<footer>
+  &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+</footer>
+
+<!-- Skrytý audio prvek pro VoiceRSS fallback -->
+<audio id="tts-audio" preload="none"></audio>
+
+<!-- [SCRIPT] Nahraď jen TTS část tak, aby měla prioritu VoiceRSS a Web Speech byla fallback: -->
+<script>
+  // --- TTS logika: VoiceRSS (priorita) -> Web Speech (fallback) ---
+  const VOICE_RSS_KEY = 'be55c98280ea426f8bd8e5b471651642'; // ponech tvůj klíč
+  const ttsBtn = document.getElementById('tts-btn');
+  const audioEl = document.getElementById('tts-audio');
+  let isReading = false;
+  let wsQueue = [];
+  let wsCancelled = false;
+
+  function speakOrStop(){
+    if (isReading) { stopReading(); return; }
+    startReading();
+  }
+
+  function startReading(){
+    const text = (document.getElementById('text-block')?.innerText || '').trim();
+    if (!text) return;
+    isReading = true;
+    setBtnState('⏹ Stop', true);
+
+    // PRIORITA: VoiceRSS, při chybě fallback na Web Speech
+    tryVoiceRSS(text).catch(() => {
+      if ('speechSynthesis' in window) tryWebSpeech(text);
+      else finishReading();
+    });
+  }
+
+  function stopReading(){
+    if ('speechSynthesis' in window) { wsCancelled = true; window.speechSynthesis.cancel(); }
+    audioEl.pause(); audioEl.currentTime = 0;
+    isReading = false;
+    setBtnState('🔊 Číst', false);
+  }
+
+  function setBtnState(label, busy){
+    ttsBtn.textContent = label;
+    ttsBtn.setAttribute('aria-busy', busy ? 'true' : 'false');
+  }
+
+  // --- VoiceRSS (PRIORITA) ---
+  async function tryVoiceRSS(text){
+    if (!VOICE_RSS_KEY) throw new Error('VOICE_RSS_KEY missing');
+
+    setBtnState('⏳ Připravuji…', true);
+    const params = new URLSearchParams({
+      key: VOICE_RSS_KEY,
+      hl: 'cs-cz',
+      v: 'Josef',
+      c: 'MP3',
+      f: '16khz_16bit_stereo',
+      src: text
+    });
+
+    const res = await fetch('https://api.voicerss.org/', { method: 'POST', body: params });
+    const blob = await res.blob();
+    if (!blob.type.startsWith('audio')) throw new Error('VoiceRSS non-audio');
+
+    audioEl.src = URL.createObjectURL(blob);
+    audioEl.onended = () => finishReading();
+
+    // může selhat kvůli autoplay politice – v tom případě vyhodíme chybu a spadne to do fallbacku
+    await audioEl.play().catch(() => { throw new Error('autoplay blocked'); });
+    setBtnState('⏹ Stop', true);
+  }
+
+  // --- Web Speech (FALLBACK) ---
+  function splitToSentences(text, maxLen=1400){
+    const raw = text.replace(/\s+/g,' ').trim();
+    const parts = raw.split(/(?<=[\.\?\!])\s+/);
+    const out = [];
+    let buf = '';
+    for (const p of parts){
+      if ((buf + ' ' + p).trim().length <= maxLen){ buf = (buf ? buf + ' ' : '') + p; }
+      else { if (buf) out.push(buf); buf = p; }
+    }
+    if (buf) out.push(buf);
+    return out;
+  }
+
+  function pickCzechVoice(){
+    const voices = window.speechSynthesis.getVoices();
+    return voices.find(v => v.lang?.toLowerCase().startsWith('cs') && /male|pavel|josef|microsoft|google|cz/i.test(v.name))
+        || voices.find(v => v.lang?.toLowerCase().startsWith('cs'))
+        || null;
+  }
+
+  async function tryWebSpeech(text){
+    const synth = window.speechSynthesis;
+    wsCancelled = false;
+
+    let voice = pickCzechVoice();
+    if (!voice){ await new Promise(r => setTimeout(r, 250)); voice = pickCzechVoice(); }
+
+    wsQueue = splitToSentences(text, 1400);
+    if (wsQueue.length === 0){ finishReading(); return; }
+
+    const speakNext = ()=>{
+      if (wsCancelled || wsQueue.length === 0){ finishReading(); return; }
+      const chunk = wsQueue.shift();
+      const ut = new SpeechSynthesisUtterance(chunk);
+      ut.lang = 'cs-CZ';
+      if (voice) ut.voice = voice;
+      ut.onend = ()=> speakNext();
+      ut.onerror = ()=> speakNext();
+      synth.speak(ut);
+    };
+
+    // nastartuj sekvenci
+    const test = new SpeechSynthesisUtterance(' ');
+    test.onend = ()=>{ speakNext(); };
+    synth.cancel(); synth.speak(test);
+  }
+
+  function finishReading(){
+    isReading = false;
+    setBtnState('🔊 Číst', false);
+  }
+</script>
+</body>
+</html>
