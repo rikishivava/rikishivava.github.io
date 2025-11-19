@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- OG -->
+  <meta property="og:title" content="Hmota není prvotní" />
+  <meta property="og:description" content="Ukážeme si na příkladu fotonu, co je základem reality. Proč něco vzniká z ničeho, při zachování fyzikálních zákonů. Co je to prázdnota." />
+  <meta property="og:image" content="https://rikishivava.org/assets/___" />
+  <meta property="og:url" content="https://rikishivava.org/bonus/hmota1.html" />
+  <meta property="og:type" content="article" />
+  <title>Hmota není prvotní | rikishivava.org</title>
+
+  <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    /* Ovládání čtení – nad textovým blokem vpravo */
+    .reader-toolbar{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+      gap:8px;
+      margin:8px 0 6px 0;
+      position:relative;
+      z-index:3;
+    }
+    .tts-button{
+      font-size:14px;
+      padding:4px 10px;
+      border:1px solid #bbb;
+      border-radius:6px;
+      background:#eee;
+      cursor:pointer;
+      line-height:1.2;
+      color:#222;
+      user-select:none;
+    }
+    .tts-button[aria-busy="true"]{ opacity:0.8; cursor:progress; }
+    .tts-button:hover{ background:#e5e5e5; }
+    .tts-button:active{ transform: translateY(1px); }
+  </style>
+</head>
+<body>
+
+<!-- Horní lišta -->
+<div class="topbar">
+  <div class="left-group">
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    <a href="/" class="logo">
+      <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+    </a>
+  </div>
+  <div class="language-switch">
+    <a href="/dev/bonus/hmota1.html" title="Čeština">🇨🇿</a>
+    <a href="/dev/bonus/hmota1_en.html" title="English">🇬🇧</a>
+    <a href="/dev/bonus/hmota1_th.html" title="ไทย">🇹🇭</a>
+  </div>
+</div>
+
+<!-- Levé menu -->
+<div id="overlay" class="overlay" onclick="closeSidebar()"></div>
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <nav>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Harmonizace</a>
+      </div>
+      <div class="menu-divider"></div>
+      <div class="menu-item expandable open">
+        <a href="#" class="menu-link active">Zbožštění</a>
+        <div class="submenu">
+          <a href="/dev/zbozsteni_uvod.html" class="submenu-link">Úvod</a>
+          <a href="/dev/zbozsteni_buh.html" class="submenu-link">Co je Bůh</a>
+          <a href="/dev/zbozsteni_nova_esej.html" class="submenu-link active">Název nové eseje</a>
+        </div>
+      </div>
+      <div class="menu-divider"></div>
+      <a href="/dev/texty.html">Texty</a>
+      <div class="menu-divider"></div>
+      <a href="/dev/kontakt.html">Kontakt</a>
+      <div class="menu-divider"></div>
+    </nav>
+  </div>
+</div>
+
+<!-- Dekorace a obsah -->
+<div class="main-container">
+  <div class="wrapper">
+
+    <!-- Zen linky -->
+    <div class="zen-corner top-horizontal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+        <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+    <div class="zen-corner left-vertical">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+        <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+    <div class="zen-corner right-vertical">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+        <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+    <div class="zen-corner bottom-horizontal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+        <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+              stroke-linecap="round" stroke-opacity="0.4" />
+      </svg>
+    </div>
+
+    <!-- Ovládání čtení nahlas -->
+    <div class="reader-toolbar">
+      <button id="tts-btn" class="tts-button" onclick="speakOrStop()" aria-busy="false">🔊 Číst</button>
+    </div>
+
+
+    <!-- 🔧 ZDE VLOŽ TEXT ESEJE -->
+    <div class="text-block" id="text-block">
+
+  <h2>Hmota není prvotní</h2>
+
+  <p>
+    Když se sledují nejmenší měřítka reality, tedy mikrosvět z pohledu kvantové fyziky, začíná se objevovat svět bez pevných hranic. Místo hmotných objektů vstupují do popředí pole, vlnění a kvantové změny, které nesou energii a strukturu prostoru. Moderní fyzika ukazuje, že to, co běžně vnímáme jako pevné a trvalé, je stabilní konfigurace hlubších procesů. Vrstvy, které vytvářejí hmotu, se skládají z kmitajících polí, a tato pole určují vlastnosti všech věcí, se kterými se setkáváme. Hmota se tím nejeví jako základ skutečnosti, ale jako jedna z jejích forem.
+  </p>
+
+  <p>
+    Foton představuje přesný příklad takového obrazu. Je to kvantum elektromagnetického pole, nesené frekvencí svého kmitání. Nemá klidovou hmotnost, přesto přenáší energii a hybnost. Fotoelektrický jev, ohyb světla v gravitačním poli nebo tlak záření ukazují, jak intenzivně taková excitace působí na okolní svět. Frekvence se projevuje jako rytmus dění, který má konkrétní dopad. Vztah E = h·f vyjadřuje jednoduchý princip, podle něhož je energie spojená se stavem kmitání pole. Foton tím ukazuje, že základní jev není věc, ale proces.
+  </p>
+
+  <p>
+    Dá se tedy říct, že „něco“, co je nehmotné, ovlivňuje to, co vnímáme jako hmotné, pevné, hmatatelné. Frekvence lze totiž chápat jako formu informace, protože udává stav kmitání pole, který má konkrétní účinek a nese rozlišitelné vlastnosti. Každý typ kmitu představuje určitý význam, podobně jako digitální jedničky a nuly vyjadřují různé stavy, a kombinace mnoha frekvencí vytváří bohatší struktury, které lze interpretovat jako komplexní informaci. Základ tedy není hmota, ale informace. Hmota je pouze projevem informací.
+  </p>
+
+  <p>
+    Když se podobně prozkoumají další částice, objevuje se stejný vzorec. Elektron se popisuje jako rozprostřený stav pravděpodobnosti a jeho vlastnosti vznikají z interakce s okolními poli. Proton se skládá z kvarků, jejichž povaha vyplývá ze silných vazeb v poli, nikoli z pevné struktury. Každý jev získává svůj charakter z uspořádání procesů, které probíhají neustále a v hlubších vrstvách reality. Tím se objevuje obraz světa, který stojí na dynamice a na vztazích mezi poli, zatímco hmotné předměty vystupují jako dlouhodobé a dobře uspořádané projevy této dynamiky.
+  </p>
+
+  <p>
+    Podobný princip se objevuje i při pozorování vědomí. Každý vjem, myšlenka nebo pocit přichází jako strukturovaný proces, který se v čase rodí, mění a mizí. Nervová soustava pracuje s rytmy, synchronizacemi a impulzy, které vytvářejí celkový obraz prožívané skutečnosti. Vědomí tedy vystupuje jako schopnost registrovat a uspořádat dění, které se odehrává uvnitř těla i v prostoru kolem. Vnější i vnitřní svět se setkávají na jedné rovině: oba se tvoří z procesů, které se skládají do smysluplných forem.
+  </p>
+
+  <p>
+    Popíšeme si podle těchto principů i pojem prázdnoty. Prázdnota v moderní fyzice neznamená nepřítomnost ničeho, ale základní stav polí. I v úplném vakuu probíhají fluktuace, které se objevují ve formě virtuálních částic a náhlých excitací. Prázdnota tedy představuje potenciál, ze kterého mohou vznikat stabilní struktury. Když se pole dostane do určitého stavu kmitání, vzniká foton. Když se ustálí do jiného rytmu, objeví se částice hmoty. Celý vesmír lze pak chápat jako jednotný celek, který se projevuje různými formami podle toho, v jakém stavu se pole nacházejí.
+  </p>
+
+  <p>
+    Tento obraz je přístupný i běžnému vnímání lidí, pokud se přestanou soustředit jen na pevné objekty a začnou sledovat také proměny, které se odehrávají v prostoru i v jejich vlastním prožívání. Hmota se pak ukazuje jako výsledek organizovaného děje, který má konkrétní pravidla a udržuje stabilitu forem. Svět se tím stává dynamickým procesem, v němž každý jev nese svůj rytmus a každá stabilní struktura má svůj původ v hlubších vrstvách reality.
+  </p>
+
+  <p>
+    V meditačním stavu se mysl postupně ztiší natolik, že se začnou objevovat jemné vrstvy prožívání, ve kterých je možné sledovat vznikání a zanikání jednotlivých jevů v přímém prožitku. Tento pohled přivádí člověka k vnímání reality jako procesu, který se neustále proměňuje v Poli vědomí, a hmota se přitom ukazuje jako jeden z projevů tohoto dění. Zkušenost neduality vzniká přirozeně, protože mizí hranice mezi pozorovatelem a pozorovaným, a zůstává pouze proud jevů, který se vyvíjí podle svých podmínek. Tradiční učení o podmíněném vznikání popisuje tuto dynamiku tisíce let a ukazuje stejný princip, který moderní fyzika formuluje jazykem polí a frekvencí: realita je tvořena navazujícími procesy, které nesou informaci a vytvářejí svět prožívaný, který se jako pevný a trvalý pouze jeví.
+  </p>
+
+  <p>
+    Když se hmota v tomto pojetí přestává chápat jako prvotní, otevírá se prostor pro propojení fyziky, biologie i psychologie v jednom srozumitelném rámci. Realita se ukazuje jako souvislá síť procesů, které se mohou uspořádat do forem a vytvářet struktury známé z každodenního života. Tento pohled vede k větší srozumitelnosti světa i sebe sama, protože ukazuje, že všechny úrovně existence sdílejí společný základ v dění, které tvoří podstatu reality.
+  </p>
+</div>    
+      
+    </div>
+
+  </div>
+</div>
+
+<!-- Patička -->
+<footer>
+  &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+</footer>
+
+<!-- Skrytý audio prvek pro VoiceRSS fallback -->
+<audio id="tts-audio" preload="none"></audio>
+
+<!-- [SCRIPT] Nahraď jen TTS část tak, aby měla prioritu VoiceRSS a Web Speech byla fallback: -->
+<script>
+  // --- TTS logika: VoiceRSS (priorita) -> Web Speech (fallback) ---
+  const VOICE_RSS_KEY = 'be55c98280ea426f8bd8e5b471651642'; // ponech tvůj klíč
+  const ttsBtn = document.getElementById('tts-btn');
+  const audioEl = document.getElementById('tts-audio');
+  let isReading = false;
+  let wsQueue = [];
+  let wsCancelled = false;
+
+  function speakOrStop(){
+    if (isReading) { stopReading(); return; }
+    startReading();
+  }
+
+  function startReading(){
+    const text = (document.getElementById('text-block')?.innerText || '').trim();
+    if (!text) return;
+    isReading = true;
+    setBtnState('⏹ Stop', true);
+
+    // PRIORITA: VoiceRSS, při chybě fallback na Web Speech
+    tryVoiceRSS(text).catch(() => {
+      if ('speechSynthesis' in window) tryWebSpeech(text);
+      else finishReading();
+    });
+  }
+
+  function stopReading(){
+    if ('speechSynthesis' in window) { wsCancelled = true; window.speechSynthesis.cancel(); }
+    audioEl.pause(); audioEl.currentTime = 0;
+    isReading = false;
+    setBtnState('🔊 Číst', false);
+  }
+
+  function setBtnState(label, busy){
+    ttsBtn.textContent = label;
+    ttsBtn.setAttribute('aria-busy', busy ? 'true' : 'false');
+  }
+
+  // --- VoiceRSS (PRIORITA) ---
+  async function tryVoiceRSS(text){
+    if (!VOICE_RSS_KEY) throw new Error('VOICE_RSS_KEY missing');
+
+    setBtnState('⏳ Připravuji…', true);
+    const params = new URLSearchParams({
+      key: VOICE_RSS_KEY,
+      hl: 'cs-cz',
+      v: 'Josef',
+      c: 'MP3',
+      f: '16khz_16bit_stereo',
+      src: text
+    });
+
+    const res = await fetch('https://api.voicerss.org/', { method: 'POST', body: params });
+    const blob = await res.blob();
+    if (!blob.type.startsWith('audio')) throw new Error('VoiceRSS non-audio');
+
+    audioEl.src = URL.createObjectURL(blob);
+    audioEl.onended = () => finishReading();
+
+    // může selhat kvůli autoplay politice – v tom případě vyhodíme chybu a spadne to do fallbacku
+    await audioEl.play().catch(() => { throw new Error('autoplay blocked'); });
+    setBtnState('⏹ Stop', true);
+  }
+
+  // --- Web Speech (FALLBACK) ---
+  function splitToSentences(text, maxLen=1400){
+    const raw = text.replace(/\s+/g,' ').trim();
+    const parts = raw.split(/(?<=[\.\?\!])\s+/);
+    const out = [];
+    let buf = '';
+    for (const p of parts){
+      if ((buf + ' ' + p).trim().length <= maxLen){ buf = (buf ? buf + ' ' : '') + p; }
+      else { if (buf) out.push(buf); buf = p; }
+    }
+    if (buf) out.push(buf);
+    return out;
+  }
+
+  function pickCzechVoice(){
+    const voices = window.speechSynthesis.getVoices();
+    return voices.find(v => v.lang?.toLowerCase().startsWith('cs') && /male|pavel|josef|microsoft|google|cz/i.test(v.name))
+        || voices.find(v => v.lang?.toLowerCase().startsWith('cs'))
+        || null;
+  }
+
+  async function tryWebSpeech(text){
+    const synth = window.speechSynthesis;
+    wsCancelled = false;
+
+    let voice = pickCzechVoice();
+    if (!voice){ await new Promise(r => setTimeout(r, 250)); voice = pickCzechVoice(); }
+
+    wsQueue = splitToSentences(text, 1400);
+    if (wsQueue.length === 0){ finishReading(); return; }
+
+    const speakNext = ()=>{
+      if (wsCancelled || wsQueue.length === 0){ finishReading(); return; }
+      const chunk = wsQueue.shift();
+      const ut = new SpeechSynthesisUtterance(chunk);
+      ut.lang = 'cs-CZ';
+      if (voice) ut.voice = voice;
+      ut.onend = ()=> speakNext();
+      ut.onerror = ()=> speakNext();
+      synth.speak(ut);
+    };
+
+    // nastartuj sekvenci
+    const test = new SpeechSynthesisUtterance(' ');
+    test.onend = ()=>{ speakNext(); };
+    synth.cancel(); synth.speak(test);
+  }
+
+  function finishReading(){
+    isReading = false;
+    setBtnState('🔊 Číst', false);
+  }
+</script>
+</body>
+</html>
+
