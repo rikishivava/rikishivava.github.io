@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- OG (ponecháno prázdné k doplnění) -->
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="article" />
+
+  <title></title>
+
+  <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    /* Ovládání čtení – nad textovým blokem vpravo */
+    .reader-toolbar{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+      gap:8px;
+      margin:8px 0 6px 0;
+      position:relative;
+      z-index:3;
+    }
+    .tts-button{
+      font-size:14px;
+      padding:4px 10px;
+      border:1px solid #bbb;
+      border-radius:6px;
+      background:#eee;
+      cursor:pointer;
+      line-height:1.2;
+      color:#222;
+      user-select:none;
+    }
+    .tts-button[aria-busy="true"]{ opacity:0.8; cursor:progress; }
+    .tts-button:hover{ background:#e5e5e5; }
+    .tts-button:active{ transform: translateY(1px); }
+  </style>
+</head>
+
+<body>
+  <!-- Horní lišta -->
+  <div class="topbar">
+    <div class="left-group">
+      <a href="/" class="logo">
+        <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+      </a>
+    </div>
+    <div class="language-switch">
+      <a href="" title="Čeština">🇨🇿</a>
+      <a href="" title="English">🇬🇧</a>
+      <a href="" title="ไทย">🇹🇭</a>
+    </div>
+  </div>
+
+  <!-- Dekorace a obsah -->
+  <div class="main-container">
+    <div class="wrapper">
+
+      <!-- Zen linky -->
+      <div class="zen-corner top-horizontal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+          <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+                stroke-linecap="round" stroke-opacity="0.4" />
+        </svg>
+      </div>
+      <div class="zen-corner left-vertical">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+          <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+                stroke-linecap="round" stroke-opacity="0.4" />
+        </svg>
+      </div>
+      <div class="zen-corner right-vertical">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+          <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+                stroke-linecap="round" stroke-opacity="0.4" />
+        </svg>
+      </div>
+      <div class="zen-corner bottom-horizontal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+          <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+                stroke-linecap="round" stroke-opacity="0.4" />
+        </svg>
+      </div>
+
+      <!-- Ovládání čtení nahlas -->
+      <div class="reader-toolbar">
+        <button id="tts-btn" class="tts-button" type="button" onclick="speakOrStop()" aria-busy="false">🔊 Číst</button>
+      </div>
+
+      <!-- TEXTOVÝ BLOK – prázdná šablona k doplnění -->
+      <div class="text-block" id="text-block">
+        <!-- ZDE VLOŽ OBSAH -->
+        <p>
+<strong>Vnímání reality</strong>
+</p>
+<p>Jednoduchý, ale zásadní posun v tom, jak chápeme lidskou zkušenost:</p>
+<p>Vědomí se nejeví jako okno otevřené do hotové reality, nýbrž jako průběžně vznikající vnitřní model, který mozek vytváří proto, aby udržel organismus při životě a v rovnováze. Člověk nežije v přímém kontaktu se světem, ale v prostoru významů, pravděpodobností a očekávání, které mozek neustále skládá dohromady z minulých zkušeností a aktuálních signálů. To, co prožíváme jako „realitu“, má proto blíže k interpretaci než k otisku.</p>
+<p>Z psychologického hlediska to znamená, že prožitek není pasivní reakcí na podněty, ale aktivním výsledkem vnitřního procesu. Mozek musí svět i sebe sama neustále „dopočítávat“, protože smyslové informace jsou neúplné, zpožděné a samy o sobě beze smyslu. Vzniká tak kontinuální proud vědomí, který je překvapivě stabilní právě proto, že mozek sází na to, co se osvědčilo dříve. Stabilita osobnosti, pocit identity a samozřejmost každodenní reality se opírají o úspěšnost těchto predikcí. Člověk pak žije v přesvědčení, že svět je takový, jaký se mu jeví, aniž by si uvědomoval, kolik neviditelné práce se za tímto dojmem skrývá.</p>
+<p>Tento pohled zároveň vysvětluje, proč jsou iluze, zkreslení a klamy tak běžné. Jde o vedlejší efekt strategie, která funguje dostatečně dobře ve většině situací. Mozek dává přednost smyslu před přesností, soudržnosti před detailem a kontinuitě před pravdou v abstraktním smyslu. V psychologii to má dalekosáhlé důsledky, protože hranice mezi běžným vnímáním a patologickým prožitkem se posouvá od obsahu k mechanismu. Rozdíl mezi tím, co nazýváme „normální zkušeností“ a tím, co označujeme jako halucinaci či blud, spočívá především v tom, jak silně jsou predikce ukotveny v korekci ze smyslů a vnitřní regulaci.</p>
+<p>Zvlášť významná je v tomto kontextu role těla. Pocit sebe sama nevzniká pouze z myšlenek, vzpomínek a sociálních rolí, ale z nepřetržitého vyhodnocování vnitřních tělesných stavů. Vědomí je úzce spjato s regulací tepu, dechu, napětí a vnitřní chemie. Psychologický prožitek stability nebo ohrožení tak není jen mentální interpretací situace, ale odrazem toho, jak dobře se daří tělu udržovat rovnováhu. Emoce lze chápat jako zhuštěné signály o stavu tohoto vnitřního řízení, které mozek překládá do subjektivního prožitku.</p>
+<p>V tomto světle se i psychické potíže jeví jinak. Úzkost, deprese či poruchy identity mohou být chápány jako stavy, kdy se predikční modely příliš zafixují, nebo naopak ztratí schopnost pružně se přizpůsobovat. Člověk pak nežije v přítomném okamžiku, ale ve světě předpovědí, které se samy potvrzují. Psychoterapie zde získává nový rozměr, protože může být nahlížena jako proces jemného přenastavení vnitřních modelů reality a sebe sama, nikoli pouze jako práce s obsahem myšlenek.</p>
+<p>Tento pohled zároveň relativizuje absolutní jistotu vlastního prožívání, aniž by ho znehodnocoval. Subjektivní zkušenost zůstává jediným místem, kde se člověk se světem setkává. Zároveň se však ukazuje, že tento svět je vždy vnitřní konstrukcí. Psychologická zralost pak může spočívat v tom, že si člověk tuto skutečnost uvědomuje, aniž by ztratil orientaci. Vědomí se tak nejeví jako pevný bod, ale jako živý proces, který se neustále rodí z napětí mezi očekáváním, tělem a světem.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Patička -->
+  <footer>
+    &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+  </footer>
+
+  <!-- Skrytý audio prvek pro VoiceRSS fallback -->
+  <audio id="tts-audio" preload="none"></audio>
+
+  <script>
+    // --- TTS logika: VoiceRSS (priorita) -> Web Speech (fallback) ---
+    const VOICE_RSS_KEY = 'be55c98280ea426f8bd8e5b471651642';
+    const ttsBtn = document.getElementById('tts-btn');
+    const audioEl = document.getElementById('tts-audio');
+    let isReading = false;
+    let wsQueue = [];
+    let wsCancelled = false;
+
+    function speakOrStop(){
+      if (isReading) { stopReading(); return; }
+      startReading();
+    }
+
+    function startReading(){
+      const text = (document.getElementById('text-block')?.innerText || '').trim();
+      if (!text) return;
+
+      isReading = true;
+      setBtnState('⏹ Stop', true);
+
+      // PRIORITA: VoiceRSS, při chybě fallback na Web Speech
+      tryVoiceRSS(text).catch(() => {
+        if ('speechSynthesis' in window) tryWebSpeech(text);
+        else finishReading();
+      });
+    }
+
+    function stopReading(){
+      if ('speechSynthesis' in window) { wsCancelled = true; window.speechSynthesis.cancel(); }
+      audioEl.pause(); audioEl.currentTime = 0;
+      isReading = false;
+      setBtnState('🔊 Číst', false);
+    }
+
+    function setBtnState(label, busy){
+      ttsBtn.textContent = label;
+      ttsBtn.setAttribute('aria-busy', busy ? 'true' : 'false');
+    }
+
+    // --- VoiceRSS (PRIORITA) ---
+    async function tryVoiceRSS(text){
+      if (!VOICE_RSS_KEY) throw new Error('VOICE_RSS_KEY missing');
+
+      setBtnState('⏳ Připravuji…', true);
+      const params = new URLSearchParams({
+        key: VOICE_RSS_KEY,
+        hl: 'cs-cz',
+        v: 'Josef',
+        c: 'MP3',
+        f: '16khz_16bit_stereo',
+        src: text
+      });
+
+      const res = await fetch('https://api.voicerss.org/', { method: 'POST', body: params });
+      const blob = await res.blob();
+      if (!blob.type.startsWith('audio')) throw new Error('VoiceRSS non-audio');
+
+      audioEl.src = URL.createObjectURL(blob);
+      audioEl.onended = () => finishReading();
+
+      await audioEl.play().catch(() => { throw new Error('autoplay blocked'); });
+      setBtnState('⏹ Stop', true);
+    }
+
+    // --- Web Speech (FALLBACK) ---
+    function splitToSentences(text, maxLen=1400){
+      const raw = text.replace(/\s+/g,' ').trim();
+      const parts = raw.split(/(?<=[\.\?\!])\s+/);
+      const out = [];
+      let buf = '';
+      for (const p of parts){
+        const next = (buf ? (buf + ' ' + p) : p).trim();
+        if (next.length <= maxLen) buf = next;
+        else { if (buf) out.push(buf); buf = p; }
+      }
+      if (buf) out.push(buf);
+      return out;
+    }
+
+    function pickCzechVoice(){
+      const voices = window.speechSynthesis.getVoices();
+      return voices.find(v => v.lang?.toLowerCase().startsWith('cs') && /male|pavel|josef|microsoft|google|cz/i.test(v.name))
+          || voices.find(v => v.lang?.toLowerCase().startsWith('cs'))
+          || null;
+    }
+
+    async function tryWebSpeech(text){
+      const synth = window.speechSynthesis;
+      wsCancelled = false;
+
+      let voice = pickCzechVoice();
+      if (!voice){ await new Promise(r => setTimeout(r, 250)); voice = pickCzechVoice(); }
+
+      wsQueue = splitToSentences(text, 1400);
+      if (wsQueue.length === 0){ finishReading(); return; }
+
+      const speakNext = ()=>{
+        if (wsCancelled || wsQueue.length === 0){ finishReading(); return; }
+        const chunk = wsQueue.shift();
+        const ut = new SpeechSynthesisUtterance(chunk);
+        ut.lang = 'cs-CZ';
+        if (voice) ut.voice = voice;
+        ut.onend = ()=> speakNext();
+        ut.onerror = ()=> speakNext();
+        synth.speak(ut);
+      };
+
+      const test = new SpeechSynthesisUtterance(' ');
+      test.onend = ()=>{ speakNext(); };
+      synth.cancel(); synth.speak(test);
+    }
+
+    function finishReading(){
+      isReading = false;
+      setBtnState('🔊 Číst', false);
+    }
+  </script>
+</body>
+</html>
