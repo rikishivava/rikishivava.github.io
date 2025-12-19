@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- OG (ponecháno prázdné k doplnění) -->
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="article" />
+
+  <title></title>
+
+  <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    /* Ovládání čtení – nad textovým blokem vpravo */
+    .reader-toolbar{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+      gap:8px;
+      margin:8px 0 6px 0;
+      position:relative;
+      z-index:3;
+    }
+    .tts-button{
+      font-size:14px;
+      padding:4px 10px;
+      border:1px solid #bbb;
+      border-radius:6px;
+      background:#eee;
+      cursor:pointer;
+      line-height:1.2;
+      color:#222;
+      user-select:none;
+    }
+    .tts-button[aria-busy="true"]{ opacity:0.8; cursor:progress; }
+    .tts-button:hover{ background:#e5e5e5; }
+    .tts-button:active{ transform: translateY(1px); }
+  </style>
+</head>
+
+<body>
+  <!-- Horní lišta -->
+  <div class="topbar">
+    <div class="left-group">
+      <a href="/" class="logo">
+        <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+      </a>
+    </div>
+    <div class="language-switch">
+      <a href="" title="Čeština">🇨🇿</a>
+      <a href="" title="English">🇬🇧</a>
+      <a href="" title="ไทย">🇹🇭</a>
+    </div>
+  </div>
+
+  <!-- Dekorace a obsah -->
+  <div class="main-container">
+    <div class="wrapper">
+
+      <!-- Zen linky -->
+      <div class="zen-corner top-horizontal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+          <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+                stroke-linecap="round" stroke-opacity="0.4" />
+        </svg>
+      </div>
+      <div class="zen-corner left-vertical">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+          <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+                stroke-linecap="round" stroke-opacity="0.4" />
+        </svg>
+      </div>
+      <div class="zen-corner right-vertical">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+          <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+                stroke-linecap="round" stroke-opacity="0.4" />
+        </svg>
+      </div>
+      <div class="zen-corner bottom-horizontal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+          <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+                stroke-linecap="round" stroke-opacity="0.4" />
+        </svg>
+      </div>
+
+      <!-- Ovládání čtení nahlas -->
+      <div class="reader-toolbar">
+        <button id="tts-btn" class="tts-button" type="button" onclick="speakOrStop()" aria-busy="false">🔊 Číst</button>
+      </div>
+
+      <!-- TEXTOVÝ BLOK – prázdná šablona k doplnění -->
+      <div class="text-block" id="text-block">
+        <!-- ZDE VLOŽ OBSAH -->
+<h2>
+<strong>Život jako běh</strong>
+</h2>
+<h2>
+<strong>Zkušenost nekončícího očekávání</strong>
+</h2>
+<p>Hnát se za cíli patří k nejběžnějším lidským prožitkům. Člověk má dojem, že určitého bodu ještě nedosáhl, a právě proto v sobě nese napětí, neklid nebo pocit nedokončenosti. Lepší práce, stabilnější vztah, vyšší příjem, uznání okolí, vnitřní klid nebo pocit, že už je vše vyřešeno. Obsah těchto cílů se liší, struktura zkušenosti zůstává stejná.</p>
+<p>Jakmile se k vytyčenému cíli člověk přiblíží, očekávaný pocit naplnění se dostaví jen přechodně, případně se neobjeví vůbec. Brzy se vynoří další meta, často formulovaná jako přirozené pokračování té předchozí. Vzniká dojem, že je potřeba více vytrvalosti, lepší strategie nebo hlubší práce na sobě. Pozornost se proto znovu obrací k budoucnosti a k dalšímu úsilí.</p>
+<p>Tento vzorec se neomezuje na jednu oblast života. Objevuje se v profesní rovině, ve vztazích, v osobním rozvoji i v duchovních snahách. Právě jeho univerzální výskyt ukazuje, že nejde o individuální chybu nebo selhání, ale o obecný způsob, jakým mysl pracuje s očekáváním a smyslem.</p>
+<p>Toto úsilí samo o sobě nepůsobí patologicky. Často je vnímáno jako projev aktivity, odpovědnosti a životní orientace. Při delším trvání se však ukazuje jeho vedlejší efekt. Klid je systematicky přesouván do budoucnosti a přítomnost zůstává místem, které má být překonáno. Tím vzniká trvalé vnitřní napětí.</p>
+<h2>
+<strong>Jak vzniká „podsouvaný“ cíl</strong>
+</h2>
+<p>Psychologickým základem tohoto fenoménu je schopnost mysli vytvářet obrazy budoucnosti. Mysl pracuje s představami, scénáři a očekáváními, které dávají jednání směr a motivaci. Budoucí cíl se stává nositelem příslibu úlevy, uspokojení nebo pocitu úplnosti. Tento příslib nebývá formulován vědomě, přesto má silný vliv na chování.</p>
+<p>Ve chvíli dosažení cíle dochází ke krátkému uvolnění. Napětí poleví, objevuje se pocit úlevy nebo radosti. Tento stav však nemá dlouhého trvání, protože mysl je orientovaná na pohyb a změnu. Jakmile se situace stabilizuje, ztrácí orientaci a vytváří nový obraz budoucího uspokojení. Cíl se tím posouvá, aniž by si toho člověk musel být vědom.</p>
+<p>Tento proces probíhá automaticky. Mysl tím plní svou základní funkci orientace v čase. Obtíže se objevují ve chvíli, kdy je tomuto mechanismu <strong>připsána role zdroje životního štěstí</strong> a vnitřního klidu. Budoucnost se stává místem, kde má být vyřešeno to, co je prožíváno v přítomnosti.</p>
+<p>Podsouvaný cíl tedy nevzniká vlivem vnější manipulace, ale jako důsledek <strong>vnitřní dynamiky mysli</strong>. Čím více je klid spojován s budoucím stavem, tím častěji je tento stav aktualizován a odsouván. Tento proces se tím udržuje sám sebou.</p>
+<h2>
+<strong>Individuální rovina: identita a hodnota</strong>
+</h2>
+<p>Na osobní rovině se nekončící honba propojuje s otázkou identity. Cíle nenesou pouze praktický význam, ale často se stávají nositeli odpovědi na otázku vlastní hodnoty. Úspěch přináší potvrzení, výkon posiluje obraz sebe sama, selhání jej narušuje. Cíl tím získává <strong>psychologickou váhu</strong>, která <strong>přesahuje jeho původní funkci</strong>.</p>
+<p>Pokud je hodnota člověka odvozována od dosažení určité mety, vzniká <strong>vnitřní tlak</strong> tento stav opakovaně potvrzovat. Dosažení cíle poskytne krátký pocit stability, který se však rychle vytrácí. Identita zůstává závislá na dalším pohybu a mysl přirozeně vytváří další cíl, jenž má tuto stabilitu znovu zajistit.</p>
+<p>V tomto nastavení se i pozitivní zkušenosti mění v závazek. Úspěch vytváří očekávání dalšího úspěchu. Neúspěch nese význam <strong>osobního selhání</strong>. Emoční reakce se zesilují, protože jednotlivé výsledky nesou širší význam než samotná situace.</p>
+<p>Člověk se v tomto rámci vztahuje k sobě skrze budoucí stav. Přítomnost má hodnotu především jako prostředek. Identita se tak opírá o to, co má teprve přijít, nikoli o to, co je aktuálně zakoušeno.</p>
+<h2>
+<strong>Společenská rovina: normalizace výkonu</strong>
+</h2>
+<p>Společenské prostředí tento vnitřní mechanismus výrazně podporuje. Kulturní důraz na výkon, růst a srovnávání vytváří dojem, že trvalý pohyb vpřed je přirozeným a žádoucím stavem. Budoucnost je prezentována jako prostor, kde se nachází smysl, bezpečí a uznání. Přítomnost slouží jako přípravná fáze.</p>
+<p>Ve veřejném diskurzu bývá štěstí často spojováno s naplněním cílů. Materiální zajištění, vztahová stabilita, seberealizace nebo duchovní pokrok jsou prezentovány jako kroky ke <strong>šťastnému životu</strong>. Tím se posiluje přesvědčení, že štěstí leží v dosažení určitého stavu.</p>
+<p>Tento rámec nepůsobí jako nátlak, ale jako tiché očekávání. Zastavení je vnímáno jako nevyužitý potenciál, spokojenost jako uspokojení se málem. Honba za výkonem se tím stává normou, která není zpochybňována.</p>
+<p>V takovém prostředí je obtížné rozpoznat, že samotná struktura honby za výkonem může být zdrojem psychického vyčerpání. Je sdílená většinou společnosti a potvrzovaná zvenčí, což jí dodává zdání samozřejmosti.</p>
+<h2>
+<strong>Psychické důsledky</strong>
+</h2>
+<p>Dlouhodobým důsledkem nekončící honby je chronické <strong>vnitřní napětí</strong>. I při splnění cílů se objevuje pocit nenaplnění, který bývá obtížně pojmenovatelný. Vnější podmínky naznačují spokojenost, vnitřní prožívání tomu ale neodpovídá. Tento rozpor bývá zdrojem frustrace.</p>
+<p>Postupně se může rozvíjet únava, ztráta radosti a pocit prázdnoty. Honba za štěstím se v tomto bodě paradoxně stává jedním z faktorů, které přispívají k depresivnímu ladění. <strong>Čím více je štěstí chápáno jako stav, kterého je třeba dosáhnout, tím silnější je pocit selhání, když se nedostavuje</strong>.</p>
+<p>Emoční prožívání se stává nestabilním. Úspěch přináší krátké zlepšení nálady, neúspěch výrazné zhoršení. Psychika se pohybuje v cyklech, které nejsou dány samotnými událostmi, ale významem, jenž jim je připisován v rámci honby za štěstím.</p>
+<p>V této dynamice se člověk může postupně <strong>vzdalovat vlastní existenciální zkušenosti</strong>. Funguje, plní role a cíle, ale ztrácí kontakt s prostým faktem, že je naživu. Štěstí je hledáno v budoucích stavech, zatímco <strong>samotná existence zůstává přehlížena</strong>.</p>
+<h2>
+<strong>Filozofická perspektiva reality</strong>
+</h2>
+<p>Z filozofického pohledu lze tento fenomén chápat jako důsledek <strong>zaměření vědomí na mentální konstrukce</strong>. Cíl existuje jako <strong>obraz budoucího stavu</strong>. Vědomí však vždy zakouší pouze to, co se odehrává právě teď. Mezi těmito rovinami vzniká trvalé napětí.</p>
+<p>Mysl se snaží strukturovat plynoucí realitu pomocí plánů a očekávání. Tento proces je funkční a praktický. Obtíže vznikají ve chvíli, kdy je budoucí obraz považován za zdroj štěstí. Pozornost se tím přesouvá <strong>mimo přímou zkušenost existence</strong>.</p>
+<p>Z tohoto pohledu <strong>štěstí neexistuje jako objekt, který by bylo možné dosáhnout</strong>. Neobjevuje se v naplnění materiálních, vztahových ani spirituálních cílů. Je přítomné jako <strong>kvalita samotné existence, která je zakoušena tady a teď</strong>.</p>
+<p>Porozumění této skutečnosti nevede k odmítnutí cílů, ale k jejich správnému zasazení. Cíle zůstávají součástí života, štěstí se však přestává hledat v jejich naplnění. Pozornost se vrací k přímému prožívání bytí.</p>
+<h2>
+<strong>Obrat v porozumění</strong>
+</h2>
+<p>Obrat nastává ve chvíli, kdy se pozornost přesune od obsahu cílů k samotnému <strong>mechanismu honby za cíli</strong>. Člověk začíná rozpoznávat, jak mysl vytváří očekávání a jak <strong>systematicky odsouvá spokojenost do budoucnosti</strong>. Toto rozpoznání přináší jasnost a uvolnění.</p>
+<p>Jakmile je tento mechanismus pochopen, ztrácí svou skrytou moc. Mysl může nadále plánovat a stanovovat cíle, jejich psychologická váha se však snižuje. Jednání přestává být nástrojem k dosažení štěstí a stává se přirozeným vyjádřením situace.</p>
+<p>V každodenním životě se tento posun projevuje větší stabilitou. Úspěch přináší radost, která nevyžaduje další potvrzení. Neúspěch poskytuje informaci, nikoli ohrožení vlastní hodnoty. Emoční reakce se postupně vyrovnávají.</p>
+<p>Člověk se začíná pohybovat v realitě s menším vnitřním napětím. Přítomnost získává vlastní hodnotu. Hnaní se za cíli ztrácí naléhavost, protože jeho původní “slib” byl rozpoznán jako nefunkční.</p>
+<h2>
+</h2>
+<p>Výsledkem tohoto porozumění je stabilnější vztah k vlastní existenci, ve kterém pohyb, změna a cíle zůstávají přirozenou součástí života. Štěstí se neobjevuje jako cíl, ale jako kvalita bytí.</p>
+<p>Cíle fungují jen jako orientační body v praktickém jednání. Nepotřebuje se tak očekávání štěstí ani klidu. Honba za výkonem tak ztrácí psychologický význam. Projevuje se klidnější prožívání přítomnosti a mizí potřeba neustálého dokazování si. Štěstí je rozpoznáno jako samotná existence, kterou právě jsi.</p>
+
+        
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Patička -->
+  <footer>
+    &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+  </footer>
+
+  <!-- Skrytý audio prvek pro VoiceRSS fallback -->
+  <audio id="tts-audio" preload="none"></audio>
+
+  <script>
+    // --- TTS logika: VoiceRSS (priorita) -> Web Speech (fallback) ---
+    const VOICE_RSS_KEY = 'be55c98280ea426f8bd8e5b471651642';
+    const ttsBtn = document.getElementById('tts-btn');
+    const audioEl = document.getElementById('tts-audio');
+    let isReading = false;
+    let wsQueue = [];
+    let wsCancelled = false;
+
+    function speakOrStop(){
+      if (isReading) { stopReading(); return; }
+      startReading();
+    }
+
+    function startReading(){
+      const text = (document.getElementById('text-block')?.innerText || '').trim();
+      if (!text) return;
+
+      isReading = true;
+      setBtnState('⏹ Stop', true);
+
+      // PRIORITA: VoiceRSS, při chybě fallback na Web Speech
+      tryVoiceRSS(text).catch(() => {
+        if ('speechSynthesis' in window) tryWebSpeech(text);
+        else finishReading();
+      });
+    }
+
+    function stopReading(){
+      if ('speechSynthesis' in window) { wsCancelled = true; window.speechSynthesis.cancel(); }
+      audioEl.pause(); audioEl.currentTime = 0;
+      isReading = false;
+      setBtnState('🔊 Číst', false);
+    }
+
+    function setBtnState(label, busy){
+      ttsBtn.textContent = label;
+      ttsBtn.setAttribute('aria-busy', busy ? 'true' : 'false');
+    }
+
+    // --- VoiceRSS (PRIORITA) ---
+    async function tryVoiceRSS(text){
+      if (!VOICE_RSS_KEY) throw new Error('VOICE_RSS_KEY missing');
+
+      setBtnState('⏳ Připravuji…', true);
+      const params = new URLSearchParams({
+        key: VOICE_RSS_KEY,
+        hl: 'cs-cz',
+        v: 'Josef',
+        c: 'MP3',
+        f: '16khz_16bit_stereo',
+        src: text
+      });
+
+      const res = await fetch('https://api.voicerss.org/', { method: 'POST', body: params });
+      const blob = await res.blob();
+      if (!blob.type.startsWith('audio')) throw new Error('VoiceRSS non-audio');
+
+      audioEl.src = URL.createObjectURL(blob);
+      audioEl.onended = () => finishReading();
+
+      await audioEl.play().catch(() => { throw new Error('autoplay blocked'); });
+      setBtnState('⏹ Stop', true);
+    }
+
+    // --- Web Speech (FALLBACK) ---
+    function splitToSentences(text, maxLen=1400){
+      const raw = text.replace(/\s+/g,' ').trim();
+      const parts = raw.split(/(?<=[\.\?\!])\s+/);
+      const out = [];
+      let buf = '';
+      for (const p of parts){
+        const next = (buf ? (buf + ' ' + p) : p).trim();
+        if (next.length <= maxLen) buf = next;
+        else { if (buf) out.push(buf); buf = p; }
+      }
+      if (buf) out.push(buf);
+      return out;
+    }
+
+    function pickCzechVoice(){
+      const voices = window.speechSynthesis.getVoices();
+      return voices.find(v => v.lang?.toLowerCase().startsWith('cs') && /male|pavel|josef|microsoft|google|cz/i.test(v.name))
+          || voices.find(v => v.lang?.toLowerCase().startsWith('cs'))
+          || null;
+    }
+
+    async function tryWebSpeech(text){
+      const synth = window.speechSynthesis;
+      wsCancelled = false;
+
+      let voice = pickCzechVoice();
+      if (!voice){ await new Promise(r => setTimeout(r, 250)); voice = pickCzechVoice(); }
+
+      wsQueue = splitToSentences(text, 1400);
+      if (wsQueue.length === 0){ finishReading(); return; }
+
+      const speakNext = ()=>{
+        if (wsCancelled || wsQueue.length === 0){ finishReading(); return; }
+        const chunk = wsQueue.shift();
+        const ut = new SpeechSynthesisUtterance(chunk);
+        ut.lang = 'cs-CZ';
+        if (voice) ut.voice = voice;
+        ut.onend = ()=> speakNext();
+        ut.onerror = ()=> speakNext();
+        synth.speak(ut);
+      };
+
+      const test = new SpeechSynthesisUtterance(' ');
+      test.onend = ()=>{ speakNext(); };
+      synth.cancel(); synth.speak(test);
+    }
+
+    function finishReading(){
+      isReading = false;
+      setBtnState('🔊 Číst', false);
+    }
+  </script>
+</body>
+</html>
