@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- OG (ponecháno prázdné k doplnění) -->
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="article" />
+
+  <title> Buddhismus ve všem </title>
+
+  <link rel="stylesheet" href="/style.css" />
+
+  <style>
+    /* Ovládání čtení – nad textovým blokem vpravo */
+    .reader-toolbar{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+      gap:8px;
+      margin:8px 0 6px 0;
+      position:relative;
+      z-index:3;
+    }
+    .tts-button{
+      font-size:14px;
+      padding:4px 10px;
+      border:1px solid #bbb;
+      border-radius:6px;
+      background:#eee;
+      cursor:pointer;
+      line-height:1.2;
+      color:#222;
+      user-select:none;
+    }
+    .tts-button[aria-busy="true"]{ opacity:0.8; cursor:progress; }
+    .tts-button:hover{ background:#e5e5e5; }
+    .tts-button:active{ transform: translateY(1px); }
+  </style>
+</head>
+
+<body>
+  <!-- Horní lišta -->
+  <div class="topbar">
+    <div class="left-group">
+      <a href="/" class="logo">
+        <img src="/assets/logoa.png" alt="rikishivava.org logo" class="logo-img" />
+      </a>
+    </div>
+    <div class="language-switch">
+      <a href="" title="Čeština">🇨🇿</a>
+      <a href="" title="English">🇬🇧</a>
+      <a href="" title="ไทย">🇹🇭</a>
+    </div>
+  </div>
+
+  <!-- Dekorace a obsah -->
+  <div class="main-container">
+    <div class="wrapper">
+
+      <!-- Zen linky -->
+      <div class="zen-corner top-horizontal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+          <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+                stroke-linecap="round" stroke-opacity="0.4" />
+        </svg>
+      </div>
+      <div class="zen-corner left-vertical">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+          <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+                stroke-linecap="round" stroke-opacity="0.4" />
+        </svg>
+      </div>
+      <div class="zen-corner right-vertical">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 80" preserveAspectRatio="none">
+          <path d="M5,0 C4,20 6,60 5,80" stroke="#c00" stroke-width="0.5" fill="none"
+                stroke-linecap="round" stroke-opacity="0.4" />
+        </svg>
+      </div>
+      <div class="zen-corner bottom-horizontal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 10" preserveAspectRatio="none">
+          <path d="M0,5 C20,6 60,4 80,5" stroke="#c00" stroke-width="0.5" fill="none"
+                stroke-linecap="round" stroke-opacity="0.4" />
+        </svg>
+      </div>
+
+      <!-- Ovládání čtení nahlas -->
+      <div class="reader-toolbar">
+        <button id="tts-btn" class="tts-button" type="button" onclick="speakOrStop()" aria-busy="false">🔊 Číst</button>
+      </div>
+
+      <!-- TEXTOVÝ BLOK – prázdná šablona k doplnění -->
+      <div class="text-block" id="text-block">
+
+        <h2>
+</h2>
+<p>V klasickém pojetí theravádového buddhismu je učení Buddhy chápáno jako praktický popis fungování lidské zkušenosti. Nejde o metafyzický systém ani o víru v nadpřirozené principy, ale o <strong>přímé zkoumání</strong> utrpení, jeho příčin, možnosti jeho <em>ustání</em> a cesty, která k tomuto <em>ustání</em> vede. Důraz je kladen na etické jednání, rozvoj pozornosti a kultivaci moudrosti. Buddha nevystupuje jako božská autorita, ale jako člověk, který skrze vlastní zkušenost rozpoznal univerzální zákonitosti mysli a vědomí a předal je dál jako návod k ověření.</p>
+<p>S odstupem let pro mě začalo být zřejmé, jak je Buddhovo učení uchopitelné skrz vlastní poznání. Jednotlivé principy se postupně odhalují v průběhu života, v konkrétních situacích, které člověk prožívá. To, co zpočátku působí jako abstraktní myšlenka, se časem promění v osobní zkušenost. Následujících pět bodů popisuji tak, jak jsem je sám u sebe postupně objevoval, jak se mi potvrzovaly skrze životní události a jak je dál rozvíjím skrze jednoduchou, ale vytrvalou praxi.</p>
+<h2>
+<strong>1. Připoutanost</strong>
+</h2>
+<p>Připoutanost je přirozená tendence mysli chtít, aby věci zůstaly takové, jaké jsou. Když se objeví příjemný stav, vztah nebo identita, mysl si je osvojí a začne je považovat za samozřejmé. Jakmile se realita začne měnit, vzniká vnitřní rozpor a s ním i utrpení.</p>
+<p>Každý u sebe pozoruje nespokojenost. V určitých situacích jsem reagoval nepřiměřeně silně, ať už šlo o ztrátu kontroly, změnu plánů nebo narušení obrazu o sobě. Teprve postupně mi došlo, že problém neleží v situacích samotných, ale v mém vnitřním požadavku, aby se neměnily. Praxí se pro mě stalo prosté <strong>pozorování okamžiku</strong>, kdy se připoutanost objeví. Nezasahuji do ní, nesnažím se ji potlačit. Jen ji pozoruji. Tím postupně ztrácí svou sílu.</p>
+<h2>
+<strong>2. Pomíjivost</strong>
+</h2>
+<p>Pomíjivost popisuje fakt, že vše, co vzniká, se mění a zaniká. Myšlenky, emoce, tělesné stavy i životní role nemají trvalou povahu. Mysl má však sklon tuto skutečnost přehlížet a chovat se, jako by některé věci měly vydržet.</p>
+<p>Tento bod se mi začal potvrzovat velmi nenápadně. Nejprve skrze emoce, které se zdály silné a definitivní, ale po čase samy odezněly. Později skrze hlubší životní změny, které se zpočátku jevily jako zásadní, ale s odstupem ztratily svou váhu. Praxí se pro mě stalo <strong>vědomé sledování proměny prožitků v přítomném okamžiku</strong>. Když emoci <strong>nehodnotím</strong> ani neposiluji, mohu přímo pozorovat její vznik, trvání a zánik. Pomíjivost tak přestala být myšlenkou a stala se zřejmou <strong>zkušeností</strong>.</p>
+<h2>
+<strong>3. Karma jako přirozená příčinnost</strong>
+</h2>
+<p>Karma v buddhistickém smyslu není odměna ani trest. Jde o přirozený vztah mezi <strong>záměrem, jednáním a následným prožíváním</strong>. Opakované vnitřní postoje se časem otisknou do způsobu, jakým svět vnímáme a jak na něj reagujeme.</p>
+<p>Karmický princip vidíme často až při dlouhodobém pohledu zpět. Začal jsem si všímat, že určité situace se v mém životě opakují v různých obměnách. Když jsem sledoval, z jakého vnitřního nastavení jednám, začalo být zřejmé, proč se tyto vzorce vracejí. Mou praxí se stalo zpomalení. Krátké <strong>setrvání před reakcí</strong> a pozorování <strong>vlastního záměru</strong>. Tím se karma přestala jevit jako osud a začala být vnímána jako proces, do kterého lze vstupovat vědomě.</p>
+<h2>
+<strong>4. Zkušenost místo víry</strong>
+</h2>
+<p>Buddhovo učení opakovaně zdůrazňuje, že pravda nemá být přijímána na základě autority, ale ověřena <strong>vlastní zkušeností</strong>. To, co nelze přímo poznat, zůstává jen představou.</p>
+<p>Toto je zásadní posun od náboženství a vírách postavených na autoritách. Lidé se opírají o sdělené či načtené pojmy a výklady. Skutečná změna přišla ve chvíli, kdy jsem začal pravidelně setrvávat v tichu bez snahy cokoliv chápat. Praxí se stalo jednoduché bytí s tím, co je <strong>právě přítomné</strong>. Bez interpretace. V těchto chvílích se ukazuje, že mnohé odpovědi nejsou výsledkem myšlení, ale přímého vhledového poznání.</p>
+<h2>
+<strong>5. Trénovatelnost mysli</strong>
+</h2>
+<p>Mysl se na začátku jeví jako něco pevného a neměnného. Postupem času se však ukazuje, že jde o proces, který lze kultivovat. Reakce, které se dříve zdály automatické, začínají slábnout.</p>
+<p>U sebe jsem tento princip začal rozpoznávat skrze pravidelnou <strong>meditační praxi</strong>. Nešlo o snahu něco zlepšovat nebo opravovat, ale o dlouhodobé setrvávání v pozornosti. V meditaci se ukazuje, že myšlenky vznikají samovolně a stejně samovolně zanikají, pokud nejsou živeny pozorností. Tím se oslabuje jejich schopnost řídit chování.</p>
+<p>Praxe pro mě spočívá v každodenním návratu k jednoduchému <strong>ukotvení pozornosti</strong>, nejčastěji skrze dech nebo tělesné vjemy. Nejde o dosažení zvláštních stavů, ale o rozvíjení stability a jasnosti. S časem se tato kvalita přenáší i mimo formální meditaci. Mysl zůstává klidnější, reakce se zpomalují a v běžném životě se objevuje větší prostor pro <strong>vědomé jednání</strong>. Tím se potvrzuje, že mysl není pevně daná, ale formovatelná skrze přímý meditační rozvoj.</p>
+        
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Patička -->
+  <footer>
+    &copy; 2025 rikishivava.org · <strong>vývojová verze</strong>
+  </footer>
+
+  <!-- Skrytý audio prvek pro VoiceRSS fallback -->
+  <audio id="tts-audio" preload="none"></audio>
+
+  <script>
+    // --- TTS logika: VoiceRSS (priorita) -> Web Speech (fallback) ---
+    const VOICE_RSS_KEY = 'be55c98280ea426f8bd8e5b471651642';
+    const ttsBtn = document.getElementById('tts-btn');
+    const audioEl = document.getElementById('tts-audio');
+    let isReading = false;
+    let wsQueue = [];
+    let wsCancelled = false;
+
+    function speakOrStop(){
+      if (isReading) { stopReading(); return; }
+      startReading();
+    }
+
+    function startReading(){
+      const text = (document.getElementById('text-block')?.innerText || '').trim();
+      if (!text) return;
+
+      isReading = true;
+      setBtnState('⏹ Stop', true);
+
+      // PRIORITA: VoiceRSS, při chybě fallback na Web Speech
+      tryVoiceRSS(text).catch(() => {
+        if ('speechSynthesis' in window) tryWebSpeech(text);
+        else finishReading();
+      });
+    }
+
+    function stopReading(){
+      if ('speechSynthesis' in window) { wsCancelled = true; window.speechSynthesis.cancel(); }
+      audioEl.pause(); audioEl.currentTime = 0;
+      isReading = false;
+      setBtnState('🔊 Číst', false);
+    }
+
+    function setBtnState(label, busy){
+      ttsBtn.textContent = label;
+      ttsBtn.setAttribute('aria-busy', busy ? 'true' : 'false');
+    }
+
+    // --- VoiceRSS (PRIORITA) ---
+    async function tryVoiceRSS(text){
+      if (!VOICE_RSS_KEY) throw new Error('VOICE_RSS_KEY missing');
+
+      setBtnState('⏳ Připravuji…', true);
+      const params = new URLSearchParams({
+        key: VOICE_RSS_KEY,
+        hl: 'cs-cz',
+        v: 'Josef',
+        c: 'MP3',
+        f: '16khz_16bit_stereo',
+        src: text
+      });
+
+      const res = await fetch('https://api.voicerss.org/', { method: 'POST', body: params });
+      const blob = await res.blob();
+      if (!blob.type.startsWith('audio')) throw new Error('VoiceRSS non-audio');
+
+      audioEl.src = URL.createObjectURL(blob);
+      audioEl.onended = () => finishReading();
+
+      await audioEl.play().catch(() => { throw new Error('autoplay blocked'); });
+      setBtnState('⏹ Stop', true);
+    }
+
+    // --- Web Speech (FALLBACK) ---
+    function splitToSentences(text, maxLen=1400){
+      const raw = text.replace(/\s+/g,' ').trim();
+      const parts = raw.split(/(?<=[\.\?\!])\s+/);
+      const out = [];
+      let buf = '';
+      for (const p of parts){
+        const next = (buf ? (buf + ' ' + p) : p).trim();
+        if (next.length <= maxLen) buf = next;
+        else { if (buf) out.push(buf); buf = p; }
+      }
+      if (buf) out.push(buf);
+      return out;
+    }
+
+    function pickCzechVoice(){
+      const voices = window.speechSynthesis.getVoices();
+      return voices.find(v => v.lang?.toLowerCase().startsWith('cs') && /male|pavel|josef|microsoft|google|cz/i.test(v.name))
+          || voices.find(v => v.lang?.toLowerCase().startsWith('cs'))
+          || null;
+    }
+
+    async function tryWebSpeech(text){
+      const synth = window.speechSynthesis;
+      wsCancelled = false;
+
+      let voice = pickCzechVoice();
+      if (!voice){ await new Promise(r => setTimeout(r, 250)); voice = pickCzechVoice(); }
+
+      wsQueue = splitToSentences(text, 1400);
+      if (wsQueue.length === 0){ finishReading(); return; }
+
+      const speakNext = ()=>{
+        if (wsCancelled || wsQueue.length === 0){ finishReading(); return; }
+        const chunk = wsQueue.shift();
+        const ut = new SpeechSynthesisUtterance(chunk);
+        ut.lang = 'cs-CZ';
+        if (voice) ut.voice = voice;
+        ut.onend = ()=> speakNext();
+        ut.onerror = ()=> speakNext();
+        synth.speak(ut);
+      };
+
+      const test = new SpeechSynthesisUtterance(' ');
+      test.onend = ()=>{ speakNext(); };
+      synth.cancel(); synth.speak(test);
+    }
+
+    function finishReading(){
+      isReading = false;
+      setBtnState('🔊 Číst', false);
+    }
+  </script>
+</body>
+</html>
